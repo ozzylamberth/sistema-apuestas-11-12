@@ -10,7 +10,7 @@
 */
 
 session_start();
-include_once("DataConexion/conexion.php");
+include_once("../DataConexion/conexion.php");
 
 
 ?>

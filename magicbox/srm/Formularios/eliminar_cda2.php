@@ -11,7 +11,7 @@ se realiza el delete de la BD y se redirecciona a la pagina de inicio
 */
 
 session_start();
-include_once("DataConexion/conexion.php");
+include_once("../DataConexion/conexion.php");
 
 
 ?>
