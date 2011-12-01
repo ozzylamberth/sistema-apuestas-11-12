@@ -1,0 +1,69 @@
+11/27/11 21:36:09,931 [3980] DEBUG Sistema_de_Apuestas - My second message.
+11/27/11 21:36:09,932 [3980] INFO Sistema_de_Apuestas - My third message.
+11/27/11 21:36:09,932 [3980] WARN Sistema_de_Apuestas - My fourth message.
+11/27/11 21:36:09,933 [3980] ERROR Sistema_de_Apuestas - My fifth message.
+11/27/11 21:36:09,933 [3980] FATAL Sistema_de_Apuestas - My sixth message.
+11/27/11 21:38:09,909 [3980] DEBUG Sistema_de_Apuestas - My second message.
+11/27/11 21:38:09,911 [3980] INFO Sistema_de_Apuestas - My third message.
+11/27/11 21:38:09,911 [3980] WARN Sistema_de_Apuestas - My fourth message.
+11/27/11 21:38:09,911 [3980] ERROR Sistema_de_Apuestas - My fifth message.
+11/27/11 21:38:09,912 [3980] FATAL Sistema_de_Apuestas - My sixth message.
+11/28/11 15:31:13,271 [2872] DEBUG Sistema_de_Apuestas - My sjeje
+11/28/11 15:31:13,298 [2872] INFO Sistema_de_Apuestas - jejej
+11/28/11 15:31:13,298 [2872] WARN Sistema_de_Apuestas - jejej
+11/28/11 15:31:13,299 [2872] ERROR Sistema_de_Apuestas - jjaja
+11/28/11 15:31:13,299 [2872] FATAL Sistema_de_Apuestas - papap
+11/28/11 15:39:46,260 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 15:39:55,923 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 15:42:47,137 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 15:42:59,912 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 15:50:55,501 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 15:59:35,456 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 16:07:51,442 [2872] INFO Sistema_de_Apuestas - Debe ingresar la Casa de Apuesta en el Formulario
+11/28/11 16:11:21,703 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/28/11 16:16:36,269 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:16:37,679 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:20:02,160 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:20:52,037 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:25:37,116 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:35:14,587 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:36:09,019 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:51:42,826 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:53:12,941 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:54:03,085 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:56:20,802 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:56:41,446 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 16:59:06,663 [2872] INFO Sistema_de_Apuestas - Debe ingresar el nombre de la casa de apuesta en el formulario
+11/28/11 17:07:12,744 [2872] ERROR Sistema_de_Apuestas - AAAAAAAAAAAAA
+11/28/11 17:08:15,795 [2872] ERROR Sistema_de_Apuestas - AAAAAAAAAAAAA
+11/28/11 17:10:53,698 [2872] ERROR Sistema_de_Apuestas - Falta nombre de la casa de apuesta en el formulario
+11/28/11 17:12:06,696 [2872] ERROR Sistema_de_Apuestas - Falta nombre de la casa de apuesta en el formulario
+11/28/11 17:14:24,246 [2872] ERROR Sistema_de_Apuestas - Falta AAAAAAA en el formulario
+11/28/11 17:15:41,032 [2872] ERROR Sistema_de_Apuestas - Falta AAAAAAA en el formulario
+11/28/11 17:16:37,811 [2872] ERROR Sistema_de_Apuestas - Falta AAAAAAA en el formulario
+11/28/11 17:20:24,324 [2872] ERROR Sistema_de_Apuestas - Falta AAAAAAA en el formulario
+11/28/11 17:21:15,666 [2872] ERROR Sistema_de_Apuestas - irene
+11/28/11 17:38:22,799 [2872] ERROR Sistema_de_Apuestas - Esta agregando una casa de apuestas que ya existe
+11/28/11 17:40:42,991 [2872] INFO Sistema_de_Apuestas - form inc
+11/28/11 17:41:37,611 [2872] INFO Sistema_de_Apuestas - form inc
+11/28/11 17:41:55,667 [2872] INFO Sistema_de_Apuestas - form inc
+11/28/11 17:53:43,112 [2872] ERROR Sistema_de_Apuestas - Esta agregando una categoria que ya existe
+11/28/11 18:28:58,037 [2872] ERROR Sistema_de_Apuestas - Esta agregando una evento en una fecha que ya paso
+11/28/11 19:47:47,756 [2872] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/29/11 05:58:18,390 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/29/11 05:58:30,595 [2872] ERROR Sistema_de_Apuestas - Usuario No Existe
+11/29/11 23:46:43,518 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 02:20:59,354 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 02:20:59,825 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 02:25:36,154 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 02:26:25,640 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 02:29:16,481 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en un formulario tal...
+11/30/11 02:32:01,509 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en un formulario tal...
+11/30/11 03:12:53,009 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+11/30/11 03:14:15,401 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+11/30/11 03:23:51,671 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de registro de usuarios
+11/30/11 03:25:35,563 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de registro de usuarios
+11/30/11 03:28:16,877 [6168] ERROR Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de registro de usuarios
+11/30/11 08:45:33,492 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 08:47:16,225 [12568] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 08:48:07,285 [12568] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
