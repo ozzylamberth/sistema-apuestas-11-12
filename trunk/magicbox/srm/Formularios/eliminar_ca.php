@@ -11,37 +11,45 @@
 
 
 session_start();
-include_once("DataConexion/conexion.php");
+include_once("../DataConexion/conexion.php");
 
 
 ?>
 
-<body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
+<style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+	color: #000;
+}
+h1 {
+	font-size: xx-large;
+	color: #700;
+}
+-->
+</style><body bgcolor="gray">
+	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="997" height="142" alt="Banner1"></p>
 	
-<span class="Estilo1">
-    
       <?php
       $cat_nombre='';
       $cat_id='';
 
         $selec_Cat= sql("select cat_nombre from categoria");
-	    
-		
-		?>
+	   ?>
         
-</span>
     
-<p align="center" class="Estilo1"><strong>Eliminar</strong></p>
+<h1 align="center" class="Estilo1"><strong>Eliminar</strong> Categoria</h1>
    
-    <span class="Estilo1">
-    <br>
     
-<p align="center" class="Estilo1 Estilo3"><strong>Seleccione la o las Categorias</strong></p>
+<p  class="Estilo1 Estilo3"><strong>Seleccione la  Categoria que desea eliminar:</strong></p>
   
   <form action="" method="post" name="form1" id="form1">
 
-      <p class="Estilo1 Estilo3">
+      <p class="Estilo3">
       <select name="cate_nom" id="cate_nom">
       <option value="0">Seleccione </option>
        <?PHP
@@ -56,9 +64,9 @@ include_once("DataConexion/conexion.php");
     $cat_nombre = $_POST['cate_nom']; //Te devolveria el atributo value del option seleccionado
 	?>
     
-</p>
+    </p>
 
-  <p class="Estilo1 Estilo3">
+  <p class="Estilo1">
     <label>
      <input type="submit" name="Buscar" id="Buscar" value="Buscar">
     </label>
@@ -74,14 +82,9 @@ include_once("DataConexion/conexion.php");
 		$cat_nombre= $row1['CAT_NOMBRE'];
 		}
      ?>
- 
-
-
-  <p align="center" class="Estilo1 Estilo3">&nbsp;</p>
   <form id="formPariente" name="formPariente" method="post" action="eliminar_ca2.php">
     <fieldset>
-      <legend></legend>
-      <table width="485" height="65" border="1" align="center">
+      <table width="485" height="65" border="2" align="center">
         <tr>
           <th scope="col"><legend>Datos de la Casa de Apuesta a Eliminar :</legend>
             <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $cat_id ?>"/>
@@ -93,7 +96,7 @@ include_once("DataConexion/conexion.php");
             </p>
             <p>
               <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
-            </p>
+            <img src="../Imagenes/close.gif" width="17" height="17" alt="X"></p>
            </th>
         </tr>
       </table>
