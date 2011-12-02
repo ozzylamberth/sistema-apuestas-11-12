@@ -9,7 +9,7 @@ include_once "conexion.php";
 		//print_r($fila);
 	 
 	 $xml='<?xml version="1.0" encoding="utf-8"?>';
-	 $nombre='C:/Users/Irene/Desktop/eventos.xml'; 
+	 $nombre='C:/Users/Eleany G/Desktop/eventos.xml'; 
      $archivo = fopen ($nombre,'w'); 
 	 fwrite ($archivo, $xml);  
 	 
@@ -86,14 +86,7 @@ include_once "conexion.php";
 		fwrite ($archivo, $ganac);
 		
 		
-	    $maq='<maquina>'.PHP_EOL;
-		fwrite ($archivo, $maq);
-		
-		$nmaq= $fila['EVE_FK_ID_MAQ'].PHP_EOL;
-	    fwrite ($archivo, $nmaq);
-		
-		$maqc='</maquina>'.PHP_EOL;
-		fwrite ($archivo, $maqc);
+	
 		
 		
 		$pago='<pago>'.PHP_EOL;

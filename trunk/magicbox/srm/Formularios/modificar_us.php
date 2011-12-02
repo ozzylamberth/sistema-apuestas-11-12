@@ -36,8 +36,30 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.bnm {
+	font-family: "Comic Sans MS", cursive;
+	color: #800;
+	background-color: #000;
+}
+.mn {
+	font-family: "Comic Sans MS", cursive;
+}
+.Estilo1.Estilo1 {
+	font-size: x-large;
+	color: #700;
+}
+-->
+</style><body bgcolor="white">
+<p align="center" class="Estilo1">Modificar Administrador</p>
 
     <?php
 
@@ -47,21 +69,14 @@ include_once("../DataConexion/conexion.php");
   $admin_nombre='';
   $admin_apellido='';
   $admin_cedula=0;
-  
-  
-  
-  
-
-  
-  
-  
+   
   
 
     $selec_admin= sql("SELECT admin_cedula FROM administrador ORDER BY admin_cedula");
 
 ?>
 <form action="" method="post" name="formId" id="formId">
-  <select name="admin_cedula1" id="admin_cedula1">
+  <select name="admin_cedula1" class="mn" id="admin_cedula1">
     <option value="0">Seleccione </option>
     <?php  
 	while ($rows=oci_fetch_array($selec_admin,OCI_BOTH))
@@ -75,7 +90,7 @@ include_once("../DataConexion/conexion.php");
       $admin_cedula = $_POST['admin_cedula1']; //Te devolveria el atributo value del option seleccionado
     ?>
         <p>
-          <input type="submit" name="Submit" value="Buscar" />
+          <input name="Submit" type="submit" class="bnm" value="Buscar" />
         </p>
 </form>
 
@@ -103,13 +118,6 @@ include_once("../DataConexion/conexion.php");
             <?php echo $admin_login ; ?>
           </label>
         </p>
-       <p>
-          <label>Contrasena:
-            <input type="password" name="contrasena" id="contrasena" value="<?php echo $admin_contrasena;?>">
-
-          </label>
-        </p>
-      
         <p>
           <label>Nombre:
             <?php echo $admin_nombre ; ?>
@@ -147,7 +155,7 @@ include_once("../DataConexion/conexion.php");
     </p>
     <p>
       <label>Contrasena: </label>
-      <input type="text" name="admin_contrasena" id="admin_contrasena"  maxlength="20"/>
+      <input type="password" name="admin_contrasena" id="admin_contrasena"  maxlength="20"/>
     </p>
    
     <p>
@@ -165,8 +173,8 @@ include_once("../DataConexion/conexion.php");
     </p>
     
     <p>
-      <input type="button" name="enviar" id="enviar" value="Modificar" onClick="validaSubmite()"/>
-      <input type="reset" name="limpiar" id="limpiar" value=" Limpiar" />
+      <center><input name="enviar" type="button" class="bnm" id="enviar" onClick="validaSubmite()" value="Modificar"/>
+      <input name="limpiar" type="reset" class="bnm" id="limpiar" value=" Limpiar" /></center>
     </p>
     <div align="center">
       </label>

@@ -5,7 +5,7 @@
 * @Eliminarcion de eventos
 * 
 * @autor: Eleany Garcia
-* Página de eliminacion de eventos contiene la información de los distintos eventos que se pueden eliminar
+* PÃ¡gina de eliminacion de eventos contiene la informaciÃ³n de los distintos eventos que se pueden eliminar
 *
 */
 
@@ -15,12 +15,36 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
-<p align="center" class="Estilo1"><strong>Eliminar</strong></p>
-    <span class="Estilo1">
-    
-    <?php
+<style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+
+
+.Estilo1 strong {
+	font-family: "Comic Sans MS";
+	color: #800;
+	font-size: xx-large;
+	font-weight: bold;
+}
+body,td,th {
+	font-family: Comic Sans MS;
+	font-weight: bold;
+}
+.Estilo1.Estilo3 {
+	font-family: Comic Sans MS, cursive;
+}
+.Estilo1 strong {
+	font-family: Comic Sans MS, cursive;
+}
+
+</style><body bgcolor="white">
+	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="880" height="137" alt="H3"></p>
+<p align="center" class="Estilo1"><strong>Eliminar Evento</strong><br>
+</p>
+<p  class="body,td,th">Seleccione el evento que desea eliminar
+  <?php
 $eve_nombre='';
 $eve_id=0;
 $eve_status='';
@@ -29,23 +53,21 @@ $eve_nro_gan=0;
 $eve_tipo_pago=0;
 $eve_fecha='';
 
-        $selec_Eve= sql("select EVE_NOMBRE from evento");
+        $selec_Eve= sql("SELECT EVE_NOMBRE from EVENTO");
 	 
 	?>
-        
-  <br>
-  <p align="center" class="Estilo1 Estilo3"><strong>Seleccione el Evento</strong></p>
-      
-  <form name="form1" method="post" action="">
-
- <p class="Estilo1 Estilo3">
+  </p>
+</p>
+<form name="form1" method="post" action="">
+  
+  <p class="Estilo1 Estilo3">
   
    <select name="evento" id="evento">
     <option value="0">Seleccione </option>
       <?PHP
          while ($rowev=oci_fetch_array($selec_Eve,OCI_BOTH)){?>
       
-        <option value="<?php echo $rowsev["EVE_NOMBRE"] ?>" > <?php echo $rowsev["EVE_NOMBRE"]?></option>
+        <option value="<?php echo $rowev["EVE_NOMBRE"] ?>" > <?php echo $rowev["EVE_NOMBRE"]?></option>
       <?php  } ?>
    </select>
     
@@ -74,9 +96,6 @@ $eve_fecha='';
   
      }
      ?>
- 
-
-<p align="center" class="Estilo1 Estilo3">&nbsp;</p>
   <form id="formPariente" name="formPariente" method="post" action="eliminar_ev2.php">
     <fieldset>
       <legend></legend>

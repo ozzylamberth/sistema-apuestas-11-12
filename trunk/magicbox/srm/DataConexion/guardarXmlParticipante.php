@@ -1,13 +1,13 @@
 <?Php
-/*  function guardarXmlParticipante()
-{ */
+  function guardarXmlParticipante()
+{ 
 include_once "conexion.php";
   
    $SelectEve= sql("SELECT P.PAR_NOMBRE, E.EVE_ID, PE.PE_TIPO_PAGO, PE.PE_TOP_APUESTA, E.EVE_TIPO_PAGO FROM PARTICIPANTE P, EVENTO E, PAR_EVE PE WHERE E.EVE_ID = PE.PE_FK_EVE_ID AND PE.PE_FK_PAR_ID = P.PAR_ID ");
      	
 	 
 	 $xml='<?xml version="1.0" encoding="utf-8"?>';
-	 $nombre='C:/Users/Irene/Desktop/participantes.xml'; 
+	 $nombre='C:/Users/Eleany G/Desktop/administrador.xml'; 
      $archivo = fopen ($nombre,'w'); 
 	 fwrite ($archivo, $xml);  
 	 
@@ -92,7 +92,7 @@ include_once "conexion.php";
 	 fwrite ($archivo, $adminc); 
 
       fclose ($archivo); 
-/*  } */
+  } 
 		   
  	
  ?> 

@@ -59,7 +59,7 @@ document.write("<b><font face=arial size=2 color=#ffffff>Logged On:  "+mensagem+
         </form>
       </div>
       <div class="logo">
-        <h1><a href="srm/Formularios/home.php" target='paginita'>SISTEMA APUESTAS<span> MG</span> <small> </small></a></h1>
+        <h1><a href="srm/Formularios/home.php" target='paginita'>SISTEMA APUESTAS<span> SG</span> <small> </small></a></h1>
       </div>
       <div class="clr"></div>
       <style type="text/css">
@@ -205,8 +205,8 @@ border:1px solid #ddd;
 			<li><a href="srm/Formularios/casa_apuesta.php" target='paginita'>Casa Apuesta</a></li>			
 			<li><a href="srm/Formularios/categoria.php" target='paginita'>Categorias</a></li>			
 			<li><a href="srm/Formularios/eventos.php" target='paginita'>Eventos</a></li>			
-			<li><a href="srm/Formularios/ganador_evento.php" target='paginita'>Ganador Evento</a></li>			
-				
+			<li><a href="srm/Formularios/Generar_Resultados.php" target='paginita'>Generar Resultados</a></li>			
+		<li><a href="srm/Formularios/mapa.php" target='paginita'>Registro De Maquinas</a></li>		
 			</ul>
 		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
 		</li>
@@ -266,7 +266,7 @@ border:1px solid #ddd;
 	
 		<li><a href="srm/Formularios/listareventos.php" target='paginita'>Listar Eventos</a></li>
 		
-		<li><a href="srm/Formularios/listarganadores.php" target='paginita'>Listar Ganadores</a></li>
+		<li><a href="srm/Formularios/listar_ganadores.php" target='paginita'>Listar Ganadores</a></li>
 	</ul>
 	</li>
 	
@@ -280,7 +280,7 @@ border:1px solid #ddd;
 </ul>
 </div>
 
-<h4>Copyright &copy; 2011 CSS MG</h4>
+<h4>Copyright &copy; 2011 CSS </h4>
       
     </div>
   </div>
@@ -293,10 +293,10 @@ border:1px solid #ddd;
 		
           <p class="infopost">Post <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com">No Comments <span></span></a></p>
           <div class="clr"></div>
-          <div class="img"><img src="" width="198" height="188" alt="" class="fl" /></div>
+          <div class="img"><img src="srm/Imagenes/H3_2166_2011_XmasCalendar2011.jpg" width="182" height="165" alt="mm" /></div>
           <div class="post_content">
-            <p> <a href="#"></a> </p>
-            <p><strong></strong> </p>
+            <p> <a href="#"></a><img src="srm/Imagenes/futbol.jpg" width="410" height="236" alt="nn" /></p>
+            <p><strong></strong></p>
             <p class="spec"><a href="#" class="rm">&raquo; Read more</a></p>
           </div>
           <div class="clr"></div>
@@ -305,13 +305,13 @@ border:1px solid #ddd;
           <h2><span>Un nuevo espacio</span> en La Castellana</h2>
           <p class="infopost">Posted <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com">No Comments <span></span></a></p>
           <div class="clr"></div>
-          <div class="img"><img src="" width="198" height="188" alt="" class="fl" /></div>
+          <div class="img"><img src="srm/Imagenes/pokerblog_teaser.jpg" width="182" height="207" alt="mm" /></div>
           <div class="post_content">
-            <p> <a href="#"></a> Ahora muy cerca de ti.</p>
-            <p><strong></strong> </p>
+            <p> <a href="#"></a></p>
+            <p><strong></strong>PROXIMOS EVENTOS!!!</p>
             <p class="spec"><a href="#" class="rm">&raquo; Read more</a></p>
           </div>
-          <div class="clr"></div>
+          <div class="clr"><img src="srm/Imagenes/3671.gif" width="728" height="90" alt="ima5" /></div>
         </div>
         <p class="pages"><small>Page 1 of 1</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
       </div>

@@ -36,8 +36,30 @@ session_start();
 include_once("../DataConexion/conexion.php");
 ?>
 
-<body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+	color: #000;
+}
+.hjk {
+	font-family: "Comic Sans MS", cursive;
+}
+.njm {
+	font-family: "Comic Sans MS", cursive;
+	color: #A00;
+	background-color: #000;
+}
+.Estilo1.Estilo1 strong {
+	color: #800;
+}
+-->
+</style><body bgcolor="white">
+	<h1 align="center" class="Estilo1 Estilo1"><strong>Modificar Evento</strong></h1>
 <form action="" method="post" name="formId" id="formId">
   <p>
     <?php 
@@ -63,7 +85,7 @@ $eve_status='';
 ?>
   </p>
   <p>
-    <select name="eve_nombre1" id="eve_nombre1">
+    <select name="eve_nombre1" class="hjk" id="eve_nombre1">
       <option value="0">Seleccione </option>
       <?php  
      while ($rows=oci_fetch_array($selec_evento,OCI_BOTH))
@@ -77,9 +99,8 @@ $eve_status='';
       $eve_nombre = $_POST['eve_nombre1']; //Te devolveria el atributo value del option seleccionado
       ?>
   </p>
-<p>&nbsp; </p>
         <p>
-          <input type="submit" name="Submit" value="Buscar" />
+          <input name="Submit" type="submit" class="njm" value="Buscar" />
         </p>
 </form>
          <?php 
@@ -110,7 +131,7 @@ $eve_status='';
             <?php echo $eve_fecha ; ?>
           </label>
             
-        </p>
+    </p>
         
           <p>
           <label>Nro de Participantes:
@@ -137,7 +158,7 @@ $eve_status='';
     <legend></legend>
     <table>
       <tr align='left'>
-        <td align='left'><strong>FECHA ACTUAL</td></strong>
+        <td align='left'><strong>FECHA ACTUAL</td>
         <td align='left'><input type="text" name="Fecha" readonly="readonly" value="<?php 
 			//$fecha= date("d/m/Y");
 			$fecha1=time();
@@ -172,8 +193,8 @@ $eve_status='';
     
     
     <p>
-     <input type="button" name="enviar" id="enviar" value="Modificar" onClick="validaSubmite()" />
-      <input type="reset" name="limpiar" id="limpiar" value=" Limpiar" />
+     <center><input name="enviar" type="button" class="njm" id="enviar" onClick="validaSubmite()" value="Modificar" />
+      <input name="limpiar" type="reset" class="njm" id="limpiar" value=" Limpiar" /></center>
     </p>
   </fieldset>
   

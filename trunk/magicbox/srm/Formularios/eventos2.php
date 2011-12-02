@@ -6,7 +6,7 @@ include_once ("../DataConexion/conexion.php");
 /* session_start();
 $usuario= $_SESSION['usuario'];
 include_once ('conexion.php'); */
- $cat_Nombre= $_POST["cat_Nombre"];
+ $cat_Nombre= $_POST["Cat_nombre"];
  $desc_Evento= $_POST["desc_Evento"];
  $fecha_Evento= $_POST["fecha_Evento"];
 $fecha= $_POST['Fecha'];
@@ -199,17 +199,19 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 </form>
 	 <p>
 	<?php 	
-	} 
-	if ($tipo_Ganador==='tabla_Resultados'){   
+	} 	if ($tipo_Ganador==='tabla_Resultados'){   
 	?>
     </p>
 	    <form name="eventos2" id= "eventos2" method="post" action="eventos3.php">
+	      <p>&nbsp;</p>
 	      <table align="center" border="0" width="900">
 	        <tr>
 	          <td width="500" align='center'><p><strong> Ingrese el Nro de resultados:
 	            </select>
-	            <input type="text" name="nro_Resultados" id="nro_Resultados" onKeyPress="return acceptNum(event)">
-	            </strong> </p>
+	          </strong> <strong>
+	          <input type="text" name="nro_Resultados" id="nro_Resultados" onKeyPress="return acceptNum(event)">
+	          </strong></p>
+	            <p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
 	            <p>
 	              <select name="par_nombre" id="par_nombre" >
 	               <option value="0">Seleccione </option>
@@ -225,26 +227,29 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
                     
                   </select>
                   
-	              <input name="nro_Participantes2" id="nro_Participantes2" type="hidden" value="<?php echo $nro_Participantes?>">
-	              <input name="tipo_Ganador2" type="hidden" value="<?php echo $tipo_Ganador?>">
-	              <input name="fecha_Evento2" type="hidden" value="<?php echo $fecha_Evento?>">
-	              <input name="desc_Evento2" type="hidden" value="<?php echo $desc_Evento?>">
-	              <input name="cat_Id2" type="hidden" value="<?php echo $cat_Id?>">
+	              <input name="nro_Participantes" id="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
+	              <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>">
+	              <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>">
+	              <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
+	              <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
 	              <input type="button" name="Agregar2" id="Agregar2" value="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')">
 	              </strong></p>
 	            <p>
-                <strong><br/>
-                </p>
+                <strong>Ingrese el Nombre, Raz&oacute;n de pago y Monto tope si aplica</p>
 	            
                 <p>
 	              <?php
-			      $nro_Part2=1;
-                  while ($nro_Part2 <=  $nro_Participantes){
-                  echo $nro_Part2 ?>
-	              <input name="<?php echo $nro_Part2 ?>" id="Id_<?php echo $nro_Part2 ?>"  type="hidden" maxlength="20">
-	              <input name="Participante_<?php echo $nro_Part2 ?>" id="Participante_<?php echo $nro_Part2 ?>" type="text" maxlength="20">
+			      $nro_Part=1;
+                  while ($nro_Part <=  $nro_Participantes){
+                  echo $nro_Part ?>
+                  
+                
+                  
+	              <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
+                  
+	              <input name="Participante_<?php echo $nro_Part ?>" id="Participante_<?php echo $nro_Part ?>" type="text" maxlength="20">
 	              <label>
-	              <select name="tipo_Pago_<?php echo $nro_Part2 ?>" id="tipo_Pago_<?php echo $nro_Part2 ?>">
+	                <select name="tipo_Pago_<?php echo $nro_Part ?>" id="tipo_Pago_<?php echo $nro_Part ?>">
 	                  <option value="1">2:1</option>
 	                  <option value="2">1:1</option>
 	                  <option value="3">3:1</option>
@@ -256,14 +261,14 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	                  <option value="9">9:1</option>
 	                  <option value="10">10:1</option>
                     </select>
-                  </label>
+	              </label>
 	              <label>
-	                <input type="text" name="tope_Apuesta_<?php echo $nro_Part2 ?>" id="tope_Apuesta_<?php echo $nro_Part2 ?>">
+	                <input type="text" name="tope_Apuesta_<?php echo $nro_Part ?>" id="tope_Apuesta_<?php echo $nro_Part ?>">
                   </label>
 	              <br>
 	              </br>
 	              <?php 
-				  $nro_Part2++; 
+				  $nro_Part++; 
 			    }
 				   ?>
                 </p>
@@ -281,25 +286,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	    }	
 	    ?>
 	<fieldset>
-  <legend><strong> Registro Realizado </strong></legend>
-	  
-	  
-  <!--        AQUI  LO QUE DEBERIA DE IR EN EL INSERT A LA BD     -->	
-	  
-		  
-	
-
-
-	
-
-
-<table align="center">
-	<tr>
-	
- 		<!--META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"--> </head > 
-			<b>
-			<p align="center" class="Estilo1"><strong>Registro Realizado con Exito!!! </strong></p>
-			<p align="center" class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es re dirigido por favor ingrese en el siguiente enlace<a href='home.php' class="Estilo1"></br>Regresar al Menu Principal</a></p>
+  
             
 			
   </tr>

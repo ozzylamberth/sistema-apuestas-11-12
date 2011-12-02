@@ -15,7 +15,25 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.rt {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+
+.Estilo1 strong {
+	font-family: "Comic Sans MS", cursive;
+}
+.Estilo1 strong {
+	font-size: xx-large;
+	color: #800;
+}
+-->
+</style><body bgcolor="white">
  <?php
 $admin_nombre='';
 $admin_cedula=0;
@@ -26,10 +44,10 @@ $admin_apellido='';
         $selec_Adm= sql("select admin_nombre from administrador");
 ?>
     
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
-<p align="center" class="Estilo1"><strong>Eliminar</strong></p>
-<tr><br>
-<p align="center" class="Estilo1 Estilo3"><strong>Seleccione Administrador</strong></p>
+	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="957" height="119" alt="h5"></p>
+<p align="center" class="Estilo1"><strong>Eliminar Administrador</strong> </p>
+<tr class="rt">
+  <p  class="rt">Seleccione Administrador</p>
 
 <form name="form1" method="post" action="">
   
@@ -50,7 +68,7 @@ $admin_apellido='';
   </p>
   <p class="Estilo1 Estilo3">
 
-      <input type="submit" name="Buscar" id="Buscar">
+      <input name="Buscar" type="submit" id="Buscar" value="Buscar">
  </p>
  </form>
  
@@ -66,10 +84,6 @@ $selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLID
   }
 
 ?>
-  
-
-
-<p align="center" class="Estilo1 Estilo3">&nbsp;</p>
   <form id="formAdmin" name="formAdmin" method="post" action="eliminar_us2.php">
   
   

@@ -9,17 +9,37 @@
 *
 */
 
-session_start();
 include_once("../DataConexion/conexion.php");
 
 
 ?>
 
-<body bgcolor="white">
-<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.ddd {
+	font-family: "Comic Sans MS", cursive;
+	color: #A00;
+	background-color: #111;
+}
+.ee {
+	font-family: "Comic Sans MS", cursive;
+}
+.Estilo1.Estilo1 strong {
+	color: #700;
+}
+-->
+</style><body bgcolor="white">
+<h1 align="center" class="Estilo1 Estilo1"><strong></strong></h1>
 	
 
-<p align="center" class="Estilo1"><strong>Modificar Casa De Apuestas</strong></p>
+<h1 align="center" class="Estilo1"><strong>Modificar Casa De Apuestas</strong></h1>
  <script>
 		 function validaSubmite(){
 			if (document.modif.casapu_nombre.value == false)
@@ -39,7 +59,7 @@ include_once("../DataConexion/conexion.php");
 ?>
 
 <form action="" method="post" name="formId" id="formId">
-  <select name="casapu_nombre" id="casapu_nombre">
+  <select name="casapu_nombre" class="ee" id="casapu_nombre">
     <option value="0">Seleccione </option>
     
     <?php  
@@ -59,7 +79,7 @@ include_once("../DataConexion/conexion.php");
   ?>
 
         <p>
-          <input type="submit" name="Submit" value="Buscar" />
+          <input name="Submit" type="submit" class="ddd" value="Buscar" />
         </p>
 </form>
 
@@ -101,10 +121,10 @@ include_once("../DataConexion/conexion.php");
     </p>
    
         <div align="right">
-            <input type="button" name="enviar" id="enviar" value="Modificar" onClick="validaSubmite()" />
-            <input type="reset" name="limpiar" id="limpiar" value=" Limpiar" />
-          </div>
-   </fieldset>
+            <center><input name="enviar" type="button" class="ddd" id="enviar" onClick="validaSubmite()" value="Modificar" />
+            <input name="limpiar" type="reset" class="ddd" id="limpiar" value=" Limpiar" /></center>
+    </div>
+  </fieldset>
 </form>
 <?php }?>
 

@@ -10,7 +10,6 @@
 */
 
 
-session_start();
 include_once("../DataConexion/conexion.php");
 
 
@@ -50,16 +49,14 @@ h1 {
   <form action="" method="post" name="form1" id="form1">
 
       <p class="Estilo3">
-      <select name="cate_nom" id="cate_nom">
-      <option value="0">Seleccione </option>
-       <?PHP
+        <select name="cate_nom" id="cate_nom">
+          <option value="0">Seleccione </option>
+          <?PHP
          while ($row=oci_fetch_array($selec_Cat,OCI_BOTH)){?>
-      
-       <option value="<?php echo $row["CAT_NOMBRE"] ?>" > <?php echo $row["CAT_NOMBRE"]?></option>
-        <?php  } ?>
-      </select>
-   
-    <?PHP
+          <option value="<?php echo $row["CAT_NOMBRE"] ?>" > <?php echo $row["CAT_NOMBRE"]?></option>
+          <?php  } ?>
+        </select>
+        <?PHP
     if(isset($_POST['cate_nom'])) 
     $cat_nombre = $_POST['cate_nom']; //Te devolveria el atributo value del option seleccionado
 	?>
@@ -96,7 +93,7 @@ h1 {
             </p>
             <p>
               <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
-            <img src="../Imagenes/close.gif" width="17" height="17" alt="X"></p>
+            </p>
            </th>
         </tr>
       </table>
