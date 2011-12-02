@@ -1,0 +1,7 @@
+
+	/*ESTILOS DE TABLAS*/
+	.table{color:#000000; width: 100%;}
+	#lista_main table th{text-align: center; background-color: grey; color: white;}
+	#lista_main table tr{text-align: center; background-color: #EEF1ED;}
+	#lista_main table tr:hover{background-color: #CCCCCC;}
+	/*ESTILOS DE TABLAS*/

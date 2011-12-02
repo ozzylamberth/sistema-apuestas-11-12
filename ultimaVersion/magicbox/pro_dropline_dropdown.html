@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title> Stu Nicholls | CSSplay | Professional dropline / dropdown menu </title>
+<style type="text/css">
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menus/pro_dropline_dropdown.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+.pro_linedrop {
+height:36px;
+width:742px;
+background:url(line/blank_sepia.gif);
+position:relative; 
+font-family:arial, verdana, sans-serif; 
+font-size:11px;
+z-index:500;
+}
+
+.pro_linedrop .select {
+margin:0; 
+padding:0; 
+list-style:none; 
+white-space:nowrap;
+}
+
+.pro_linedrop li {
+float:left;
+background:url(line/blank_over_sepia.gif);
+}
+
+.pro_linedrop .select a {
+display:block; 
+height:36px; 
+float:left; 
+background: url(line/blank_sepia.gif); 
+padding:0 0 0 15px; 
+text-decoration:none; 
+line-height:25px; 
+white-space:nowrap; 
+color:#ddd;
+}
+
+.pro_linedrop .select li.line a {color:#fc0;}
+
+.pro_linedrop .select a b {
+display:block; 
+padding:0 30px 10px 15px; 
+background:url(line/blank_sepia.gif) right top;
+}
+
+.pro_linedrop .select a:hover, 
+.pro_linedrop .select li:hover a {
+background: url(line/blank_over_sepia.gif); 
+padding:0 0 0 15px;
+line-height:27px;
+cursor:pointer; 
+color:#fff;
+}
+
+.pro_linedrop .select li.line a:hover, 
+.pro_linedrop .select li.line:hover a {
+color:#fc6;}
+
+.pro_linedrop .select a:hover b, 
+.pro_linedrop .select li:hover a b {
+display:block; 
+padding:0 30px 9px 15px; 
+background:url(line/blank_over_sepia.gif) right top; 
+cursor:pointer;
+}
+
+.pro_linedrop .sub {
+display:none;
+}
+.pro_linedrop ul ul {display:none;}
+
+/* IE6 only */
+.pro_linedrop table {
+border-collapse:collapse; 
+margin:-1px; 
+font-size:1em; 
+width:0; 
+height:0;
+}
+
+.pro_linedrop .sub {
+margin:0; 
+padding:0;
+list-style:none;
+}
+
+.pro_linedrop .sub li {background:transparent;}
+
+.pro_linedrop .select :hover .sub {
+height:25px;
+display:block; 
+position:absolute;
+float:left;
+width:740px;
+top:28px; 
+left:0; 
+text-align:center;
+background:transparent url(line/transparent.gif);
+border:1px solid #aaa;
+}
+
+.pro_linedrop .select :hover .rt li {float:right;}
+
+.pro_linedrop .select :hover .sub li a 
+{display:block; height:25px; line-height:22px; float:left; background:transparent url(line/transparent.gif); padding:0 16px; margin:0; white-space:nowrap; color:#888;font-size:10px;}
+
+.pro_linedrop .select :hover .sub li.subline a {color:#c00;}
+
+.pro_linedrop .select :hover .sub li a:hover,
+.pro_linedrop .select :hover .sub li:hover
+{color:#000; line-height:20px; position:relative;}
+
+.pro_linedrop .select :hover .sub li:hover > a {color:#000;}
+
+.pro_linedrop .select :hover .sub :hover ul {padding:0; margin:0; list-style:none; display:block; width:112px; position:absolute; left:-1px; top:25px; border:1px solid #aaa; border-top:0; background:#fff;}
+
+.pro_linedrop .select :hover .sub :hover ul li a {width:80px; text-align:left; height:20px; line-height:18px;}
+.pro_linedrop .select :hover .sub :hover ul li a:hover {line-height:16px;}
+
+</style>
+
+</head>
+
+<body>
+<h1>Professional dropline / dropdown menu</h1>
+<div class="pro_linedrop">
+<ul class="select">
+<li><a href="#nogo"><b>Home</b></a></li>
+<li class="line"><a href="#nogo"><b>Products</b><!--[if IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="sub">
+		<li class="subline"><a href="#nogo">Cameras<!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+			<ul>
+			<li><a href="#nogo">Nikon</a></li>
+			<li><a href="#nogo">Minolta</a></li>
+			<li><a href="#nogo">Pentax</a></li>
+			</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		<li class="subline"><a href="#nogo">Lenses<!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+			<ul>
+			<li><a href="#nogo">Wide Angle</a></li>
+			<li><a href="#nogo">Standard</a></li>
+			<li><a href="#nogo">Telephoto</a></li>
+			<li><a href="#nogo">Zoom</a></li>
+			<li><a href="#nogo">Mirror</a></li>
+			</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		<li><a href="#nogo">Flashguns</a></li>
+		<li><a href="#nogo">Tripods</a></li>
+		<li><a href="#nogo">Filters</a></li>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li class="line"><a href="#nogo"><b>Services</b><!--[if IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="sub">
+		<li><a href="#nogo">Printing</a></li>
+		<li><a href="#nogo">Photo Framing</a></li>
+		<li><a href="#nogo">Retouching</a></li>
+		<li><a href="#nogo">Archiving</a></li>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li class="line"><a href="#nogo"><b>Contacts</b><!--[if IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="sub rt">
+		<li><a href="#nogo">Support</a></li>
+		<li class="subline"><a href="#nogo">Sales<!--[if gte IE 7]><!--></a><!--<![endif]-->
+		<!--[if lte IE 6]><table><tr><td><![endif]-->
+			<ul>
+			<li><a href="#nogo">USA</a></li>
+			<li><a href="#nogo">Canadian</a></li>
+			<li><a href="#nogo">Australian</a></li>
+			<li><a href="#nogo">Asian</a></li>
+			<li><a href="#nogo">South American</a></li>
+			</ul>
+		<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+		</li>
+		<li><a href="#nogo">Buying</a></li>
+		<li><a href="#nogo">Photographers</a></li>
+		<li><a href="#nogo">Stockist</a></li>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li class="line"><a href="#nogo"><b>Shop</b><!--[if IE 7]><!--></a><!--<![endif]-->
+<!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="sub rt">
+		<li><a href="#nogo">Online</a></li>
+		<li><a href="#nogo">Catalogue</a></li>
+		<li><a href="#nogo">Mail Order</a></li>
+	</ul>
+<!--[if lte IE 6]></td></tr></table></a><![endif]-->
+</li>
+<li><a href="#nogo"><b>Privacy Policy</b></a></li>
+</ul>
+</div>
+
+<h3>Copyright &copy; 2007 CSS play - Stu Nicholls</h3>
+</body>
+</html>

@@ -1,0 +1,340 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	background: #FFFFFF url(../images/Dibujo4.jpg) repeat-x;
+	font: normal small Verdana, Arial, Helvetica, sans-serif;
+	color: #0F3460;
+}
+
+h1, h2, h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #0F3460;
+}
+
+h2 {
+	margin-bottom: .8em;
+	font-size: 2em;
+	font-weight: normal;
+}
+
+h3 {
+	margin-bottom: 1em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font: bold x-small Verdana, Arial, Helvetica, sans-serif;
+}
+
+p, blockquote, ul, ol {
+	margin-bottom: 1.4em;
+	line-height: 1.8em;
+	text-align: justify;
+}
+
+blockquote {
+	margin-left: 2em;
+	margin-right: 2em;
+	font-style: italic;
+}
+
+ul {
+	margin-left: 3em;
+}
+
+ol {
+	margin-left: 3em;
+}
+
+a {
+	text-decoration: none;
+	color: #0F3460;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Boxed Style */
+
+.boxed {
+	margin-bottom: 20px;
+}
+
+.boxed .title {
+	height: 25px;
+	margin: 0;
+	padding: 4px 0 0 15px;
+	background: url(../images/menu1.gif) no-repeat;
+	font-size: 1.0em;
+	color: #0F3460;
+}
+
+.boxed .content {
+	padding: 15px;
+}
+
+/* Post */
+
+.post .meta p {
+	line-height: normal;
+	font-size: 9px;
+}
+
+#clave {
+	width: 60%;
+	margin-left:15px;
+}
+
+#clave td{
+	padding: 5px 10px;
+}
+
+#formulario td{
+    padding: 5px 10px;
+}
+
+#formulario form{
+    padding: 5px 10px;
+}
+
+/* Header */
+
+#header {
+	width: 740px;
+	height: 100px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+}
+
+/* Header > Logo */
+
+#logo {
+	float: left;
+	width: 732px;
+	height: 50px;
+}
+
+#logo  img{
+	border: 4px solid #0F3460;
+}
+
+#logo h1 {
+	float: left;
+	margin: 0;
+	padding: 21px 0 0 1em;
+	font-size: 1em;
+}
+
+#logo h2 {
+	float: left;
+	margin: 0;
+	padding: 24px 0 0 .5em;
+	font-size: .7em;
+}
+
+#logo a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #0F3065;
+}
+
+/* Header > Menu */
+
+#menu {
+	float: left;
+	width: 500px;
+	height: 30px;
+}
+
+#menu ul {
+	margin: 0;
+	list-style: none;
+}
+
+#menu li {
+	display: inline;
+}
+
+#menu a {
+	display: block;
+	float: left;
+	width: 100px;
+	height: 45px;
+	padding: 19px 0 0 0;
+	text-align: center;
+	font-size: 11px;
+	font-weight: bold;
+	color: #0F3460;
+}
+
+#menu a:hover, #menu .active a {
+	color: #0F3460;
+}
+
+/* Content */
+
+#content {
+	width: 950px;
+	margin: 0 auto;
+}
+
+/* Content > Main */
+
+
+/* Content > Main > Welcome */
+
+
+/* Content > Main > Example */
+
+
+/* Content > Sidebar */
+
+#sidebar {
+	float: left;
+	width: 242px;
+}
+
+/* Content > Sidebar > Login */
+
+#login {
+	float: right;
+	width: 77%;
+}
+
+#login h2{
+	float: right;
+	width: 90%;
+}
+
+#cerrarSesion h2{
+	float: right;
+	width: 74%;
+}
+
+#usuario {
+	float: right;
+	width: 65%;
+}
+
+#login input {
+	margin-bottom: 5px;
+	padding: 2px 5px;
+	border: 1px solid #0F3460;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#usuario input{
+	margin-bottom: 5px;
+	padding: 2px 5px;
+	border: 1px solid #0F3460;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#login fieldset {
+	border: none;
+}
+
+#login legend {
+	display: none;
+}
+
+#login label {
+	font-size: x-small;
+	font-weight: bold;
+}
+
+#login input {
+	border: 1px solid #0F3460;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#redireccion input{
+	border: 1px solid #0F3460;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#inputtext1, #inputtext2 {
+	color: #0F3460;
+}
+
+#inputsubmit1 {
+	background: #0F3460;
+	color: #FFFFFF;
+}
+
+/* Content > Sidebar > Updates*/
+
+#updates ul {
+	margin: 0;
+	list-style: none;
+}
+
+#updates h3 {
+	margin: 0;
+	font: bold x-small Verdana, Arial, Helvetica, sans-serif;
+}
+
+#updates p {
+	margin-bottom: 1.4em;
+	font-size: smaller;
+	line-height: normal;
+}
+
+/* Content > Sidebar > Partners*/
+
+#partners .content {
+	padding: 10px 0;
+}
+
+#partners ul {
+	margin: 0;
+	border-bottom: 1px solid #0F3460;
+	list-style: none;
+	line-height: normal;
+}
+
+#partners li {
+	padding: 10px;
+	border-top: 1px solid #0F3460;
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	padding: 20px 50px;
+	border-top: 3px solid #0F3460;
+	border-bottom: 3px solid #0F3460;
+	border-left: 3px solid #0F3460;
+	border-right: 3px solid #0F3460;
+	background: #87B6D9;
+}
+
+#footer p {
+	width: 770px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: small;
+	color: #0F3460;
+}
+
+#footer a {
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+#footer a:hover {
+	text-decoration: underline;
+}
+
+/* Footer > Legal */
+
+/* Footer > Links */
