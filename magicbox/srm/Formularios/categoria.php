@@ -8,7 +8,6 @@
 * Página de creación de categorias contiene la información del formulario y se 
 *
 */
-include_once ("../DataConexion/conexion.php");
 session_start();
 $usuario= $_SESSION['usuario'];
 // Replace the path with where you installed log4php
@@ -45,23 +44,42 @@ else
 		
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
+        body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+#categoria center h1 {
+	color: #700;
+}
+        .buttones {
+	font-family: "Comic Sans MS", cursive;
+	color: #800;
+	background-color: #000;
+}
         </style>
 		
 		<title>
 		Registro de Categoria
 		</title>
 		
-		</head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
                  <body>
 
 					
 				
 
-<form action="categoria2.php" name="categoria"  id="categoria" method="post">
+<form action="../controladores/ControlCategoria.php" name="categoria"  id="categoria" method="post">
 
-<table>
-		<tr align='left'>	
+<center>
+  <h1><img src="../Imagenes/GA1_Carousel_1995_2011_genTeaserKickoffX_bwincom.jpg" width="942" height="177" alt="ll"></h1>
+  <h1>Registro de Categorias</h1>
+</center>
+<table align="center">
+	  <tr align='center'>	
 			<td align='left'><strong>FECHA</td>
 			<td align='left'><input type="text" name="Fecha" readonly="readonly" value="<?php 
 			//$fecha= date("d/m/Y");
@@ -74,51 +92,38 @@ else
 </table>
 				
 <fieldset height="100">
-<legend><strong>Datos de la Categoria </strong></legend>
+<legend></legend>
+
 <table align="center" border="0" width="" >
-		<tr>
-        <table align="center" border="0" width="900">
-			<tr>
-		<td>&nbsp;</td>
-		</tr>
 			
-			<tr>
-			
-            <td width="500" align="center"><strong>Ingrese Categoria</strong></td>
+            <td width="504" align="center"><strong>Ingrese Categoria</strong></td>
 		</tr>
 		<tr>
-            <td width="500" align="center"><textarea name="cat_nombre" cols='60' rows='3' id="cat_nombre"></textarea>
+            <td width="504" align="center"><textarea name="cat_nombre" cols='60' rows='3' id="cat_nombre"></textarea>
+        </tr>
+			<tr>
+			<td width="504" align="center">
             
-			</tr>
-			
-			<tr>
-			
-            <td width="500" align="center">&nbsp;</td>
+            <table align="center">
+	       <tr>
+	      <td><input name="Registrar" type="button" class="buttones" id="Registrar" onClick="validaSubmite()" value="Registrar"></td>
+    
+	         <?PHP //echo "<input type='hidden' name='' value=''></td>"; ?>
+	        </tr>
+
+        </table> </td>
 		</tr>
-			<tr>
+			
 		<?PHP
 		////Seleccionar esta opcion si es Un evento que tenga mas de un ganador por ejemplo concursos de belleza.
 		?>		
-		<td align='center'>&nbsp;</td>
-		
+		  
 			</tr>
 		</table>
 
-<table align="center">
-	<tr>
-	<td><input type="button" name="Registrar" id="Continuar con Registro" value="Continuar con Registro" onClick="validaSubmite()"></td>
-    
-	<?PHP //echo "<input type='hidden' name='' value=''></td>"; ?>
-	</tr>
 
-</table>
 </form>
-<form name='volverse' action='home.php'> 
-<table align='center'>
-					<td><input type="submit" align='center' name="Cancelar" id="button2" value="Cancelar"></td>
-				</tr>
-					</table>
-</form>
+
 <?PHP
 require_once("../Contenedores/footer.php");
 ?>

@@ -67,3 +67,47 @@
 11/30/11 08:45:33,492 [6168] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
 11/30/11 08:47:16,225 [12568] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
 11/30/11 08:48:07,285 [12568] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+11/30/11 23:36:33,546 [3952] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+11/30/11 23:36:56,340 [3952] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 01:00:08,420 [3952] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/01/11 01:00:24,584 [3952] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/01/11 01:01:12,359 [3952] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/01/11 06:05:11,589 [3952] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/01/11 06:05:27,260 [3952] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/01/11 06:05:48,660 [3952] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 07:38:52,256 [3952] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 07:40:00,800 [3952] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 16:54:03,246 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 16:55:00,816 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 17:03:28,488 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/01/11 17:38:26,234 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/01/11 21:58:38,594 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/01/11 22:01:34,913 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/01/11 22:01:56,165 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/01/11 22:40:11,115 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/01/11 22:53:03,226 [4052] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/02/11 00:48:24,277 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 05:45:03,856 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 05:47:11,606 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 05:48:30,553 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 05:49:28,375 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 05:50:04,511 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 05:54:48,167 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 06:05:34,840 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 06:06:44,649 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 06:07:58,484 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 08:06:09,586 [4052] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/02/11 08:07:41,240 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 08:07:42,506 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 08:07:43,144 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 08:13:52,643 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 08:15:24,198 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 14:05:56,883 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 14:08:11,461 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 14:09:15,002 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 14:09:46,304 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 14:10:32,623 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario de casa apuesta
+12/02/11 14:10:45,096 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 14:13:08,535 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 14:14:30,182 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/02/11 14:15:08,796 [4052] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria

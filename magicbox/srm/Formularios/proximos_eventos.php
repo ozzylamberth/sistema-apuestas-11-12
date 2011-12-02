@@ -16,7 +16,26 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+	color: #700;
+}
+#formAdmin .Estilo1 strong {
+	color: #000;
+}
+#formAdmin table {
+	color: #000;
+}
+.gg {
+	font-size: x-large;
+}
+-->
+</style><body bgcolor="white">
 	
  <p>&nbsp; </p>
  <p>
@@ -38,7 +57,7 @@ include_once("../DataConexion/conexion.php");
  <p>&nbsp;    
    
  </p>
-<p align="center" class="Estilo1"><strong>Seleccione Evento</strong></p>
+<p align="center" class="gg"><strong>Seleccione Evento</strong></p>
    
 <form name="form1" method="post" action="">
   
@@ -129,4 +148,4 @@ include_once("../DataConexion/conexion.php");
 	?>
 </form>    
  
-<center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p></center>
+<center><p><?php  echo "<a href='../../index.html'> Continuar </a> "; ?></p></center>

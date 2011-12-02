@@ -9,7 +9,7 @@ include_once "conexion.php";
 		//print_r($fila);
 	 
 	 $xml='<?xml version="1.0" encoding="utf-8"?>';
-	 $nombre='C:/Users/Irene/Desktop/administradores.xml'; 
+	 $nombre='C:/Users/Eleany G/Desktop/administrador.xml'; 
      $archivo = fopen ($nombre,'w'); 
 	 fwrite ($archivo, $xml);  
 	 
@@ -50,7 +50,7 @@ include_once "conexion.php";
 	 $adminc='</administradores>';
 	 fwrite ($archivo, $adminc); 
 
-	echo "holaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+
       fclose ($archivo); 
  } 
 		   

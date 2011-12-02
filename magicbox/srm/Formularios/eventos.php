@@ -68,10 +68,13 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; 
 		 display:none}
-        </style>
+        body {
+	background-image: url(../Imagenes/fondo.png);
+}
+</style>
 		<title>Creacion de Eventos</title>
 		
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
 <body>
 
@@ -122,7 +125,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
  
   
         if(isset($_POST['Cat_nombre'])) //$_GET si se hace por GET (url)
-        $cat_Nombre = $_POST['Cat_nombre']; //Te devolveria el atributo value del option seleccionado		
+        $Cat_nombre = $_POST['Cat_nombre']; //Te devolveria el atributo value del option seleccionado		
 ?>
 			
 			</select>
@@ -193,7 +196,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		</table>
    
         
-        <input name="cat_Nombre" type="hidden" value="<?php echo $cat_Nombre ?>">
+  
         <tr>
         <input type="button" name="Registrar" id="Continuar con Registro" value="Continuar con Registro" onClick="validaSubmite()">
   <tr> 

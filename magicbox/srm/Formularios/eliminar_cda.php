@@ -9,14 +9,38 @@
 *
 */
 
-session_start();
+
 include_once("../DataConexion/conexion.php");
 
 
 ?>
 
-<body bgcolor="white">
-	<p align="center" class="Estilo1"><strong>Eliminar</strong></p>
+<style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+	color: #010;
+}
+.Estilo1 strong {
+	color: #500;
+}
+.Estilo1 strong {
+	color: #000;
+}
+.hola {
+	color: #700;
+	font-size: xx-large;
+}
+.hola strong {
+	color: #700;
+}
+-->
+</style><body bgcolor="white">
+	
     <span class="Estilo1">
      <?php
 	 
@@ -26,10 +50,12 @@ include_once("../DataConexion/conexion.php");
         $selec_Casapu= sql("select casapu_nombre from casa_apuesta");
 	   
 		?>
+     <p align="center" class="Estilo1 Estilo1"><strong></strong>
+       <img src="../Imagenes/header.gif" width="990" height="127" alt="h2">
+<h1 align="center" class="hola">Eliminar Casa de Apuesta</h1>
+   
     
-    <br>
-<p align="center" class="Estilo1 Estilo3"><strong>Seleccione La Casa de Apuesta</strong></p>
-
+<p  class="Estilo1 Estilo3"><strong>Seleccione la  Casa de apuesta que desea eliminar:</strong></p>
 <form name="form1" method="post" action="">
 
   <p class="Estilo1 Estilo3">
@@ -65,9 +91,6 @@ include_once("../DataConexion/conexion.php");
 	 $casapu_nombre = $rowc1['CASAPU_NOMBRE'];
 	 }
      ?>
-
-
-<p align="center" class="Estilo1 Estilo3">&nbsp;</p>
   <form id="formPariente" name="formPariente" method="post" action="eliminar_cda2.php">
     <fieldset>
       <legend></legend>

@@ -14,22 +14,52 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.hyu {
+	color: #800;
+	font-size: xx-large;
+}
+.jjj {
+	font-family: "Comic Sans MS", cursive;
+	color: #D6D6D6;
+}
+.gh {
+	font-family: "Comic Sans MS", cursive;
+	color: #000;
+}
+.botn {
+	font-family: "Comic Sans MS", cursive;
+	color: #700;
+	background-color: #000;
+}
+-->
+</style><body bgcolor="white">
 	
- <?php
+ <p>
+   <?php
         $eve_nombre='';
 		$eve_id=0;
 		$eve_fecha='';
 		$eve_nro_gan=0;
         $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Inactivo'");
   ?>    
-    
-    
-<p align="center" class="Estilo1"><strong>Seleccione Evento</strong></p>
+ </p>
+ <center>
+   <h1 class="hyu">GANADORES!!!</h1>
+ </center>
+<p align="left" class="Estilo1"><strong>Seleccione Evento</strong>:</p>
    
 <form name="form1" method="post" action="">
   
-    <select name="eve" id="eve">
+    <select name="eve" class="gh" id="eve">
     <option value="0">Seleccione </option>
       <?PHP
         while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
@@ -46,7 +76,7 @@ include_once("../DataConexion/conexion.php");
   
  <p class="Estilo1 Estilo3">
 
-      <input type="submit" name="Buscar" id="Buscar">
+      <input name="Buscar" type="submit" class="botn" id="Buscar" value="Buscar">
 </form>
 
  
@@ -77,14 +107,10 @@ include_once("../DataConexion/conexion.php");
  </strong></p>
  <p align="center" class="Estilo1"><strong> Fecha: <?php echo $eve_fecha?>
   </strong></p>
- <p align="center" class="Estilo1"><strong>Nro de Ganadores: <?php echo $eve_nro_gan?>
- </strong></p>
- <p align="center" class="Estilo1"><strong>GANADOR O GANADORES:
- </strong></p>
- 
-<table width="200" border="1" align="center">
-  <tr>
-    <td width="200">Nombre</td>
+ <p align="center" class="Estilo1"><strong>Nro de Ganadores: <?php echo $eve_nro_gan?></strong></p>
+ <table width="200" border="1" align="center">
+   <tr>
+    <td  align="center" width="200">NOMBRES</td>
     
   
       <?php
@@ -109,5 +135,5 @@ include_once("../DataConexion/conexion.php");
 	?>
 </form>    
  
-<center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p></center>
+<center><p><?php  echo "<a href='../../index.html'> Continuar </a> "; ?></p></center>
 </p>

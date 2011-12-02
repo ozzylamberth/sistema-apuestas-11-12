@@ -8,34 +8,44 @@
 *
 */
 
-session_start();
-include_once("../DataConexion/conexion.php");
 
+
+include_once("../controladores/ControlUsuario2.php")
 
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.png);
+	font-family: "Cooper Std Black";
+}
+.Estilo1 strong {
+	color: #700;
+	font-size: x-large;
+}
+.Estilo2 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+-->
+</style><body bgcolor="white">
 	
-<?php
-	$admin_cedula = $_POST['admin_cedula'];
-	$admin_login = $_POST['admin_login'];
-	$admin_contrasena = $_POST['admin_contrasena'];
-	$admin_nombre = $_POST['admin_nombre'];
-	$admin_apellido = $_POST['admin_apellido'];
-	$admin_status = $_POST['admin_status'];
- 
-  	$query = sql("UPDATE administrador SET admin_login='$admin_login', admin_status='$admin_status', admin_contrasena='$admin_contrasena',admin_nombre= '$admin_nombre', admin_apellido='$admin_apellido' WHERE  $admin_cedula=".$admin_cedula);
-   	guardarXml();
-  ?>
+
 
 <table align="center">
-	<tr>
+  <tr>
 	
- 		<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"> </head > 
-			<b>
-			<p align="center" class="Estilo1"><strong>Modificacion Realizada con Exito!!! </strong></p>
-			<p align="center" class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es re dirigido por favor ingrese en el siguiente enlace<a href='home.php' class="Estilo1"></br>Regresar al Menu Principal</a></p>
-            
-	</tr>
+ 		 
+			</tr>
+  <img src="../Imagenes/FB-ES-980x200-MW-9660-Europa-League.jpg" width="995" height="200" alt=",,">
+  <tr><b></tr>
+  <p>&nbsp;</p>
+  <tr>
+    <p align="center" class="Estilo1"><strong><?php $mensaje?> </strong></p>
+			<p align="center" class="Estilo2"><span class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es re dirigido por favor ingrese en el siguiente enlace<a href='home.php' class="Estilo1"></br>
+	      </a></span></p>
+			<p align="center" class="Estilo2"><span class="Estilo2"><a href='home.php' class="Estilo1">Regresar al Menu Principal</a></span><a href='home.php' class="Estilo1"></a></p>
+    
+</tr>
 
 </body>

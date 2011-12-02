@@ -25,10 +25,32 @@ $usuario= $_SESSION['usuario'];
 $cat_nombre ='';
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.Estilo1 strong {
+	color: #700;
+}
+.NuevoBoton {
+	font-family: "Comic Sans MS", cursive;
+	color: #700;
+	background-color: #000;
+}
+.hhh {
+	font-family: "Comic Sans MS", cursive;
+	color: #000;
+}
+-->
+</style><body bgcolor="white">
 	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
 	
-<p align="center" class="Estilo1"><strong>Modificar Categoria</strong></p>
+<h1 align="center" class="Estilo1"><strong>Modificar Categoria</strong></h1>
    
 <?php	
  $cat_nombre='';
@@ -55,7 +77,7 @@ $cat_nombre ='';
     ?>
 
         <p>
-          <input type="submit" name="Submit" value="Buscar" />
+          <input name="Submit" type="submit" class="NuevoBoton" value="Buscar" />
         </p>
 </form>
 
@@ -95,8 +117,8 @@ $cat_nombre ='';
     </p>
    
          <div align="right">
-           <input type="button" name="enviar" id="enviar" value="Modificar" onClick="validaSubmite()" />
-           <input type="reset" name="limpiar" id="limpiar" value=" Limpiar" />
+           <center><input name="enviar" type="button" class="NuevoBoton" id="enviar" onClick="validaSubmite()" value="Modificar" />
+           <input name="limpiar" type="reset" class="NuevoBoton" id="limpiar" value=" Limpiar" /></center>
             
           </div>
         

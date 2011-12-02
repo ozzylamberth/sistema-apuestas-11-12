@@ -22,31 +22,30 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
+        body {
+	background-image: url(../Imagenes/fondo.png);
+}
+.Estilo1 strong {
+	font-family: Comic Sans MS, cursive;
+	color: #700;
+	font-size: x-large;
+}
+        .Estilo2 {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
         </style>
 		
-		<title>
-		<strong>Registro de Casa De Apuesta</strong>
-		</title>
-		
-		</head>
+</head>
 
-                 <body>
+  <body>
 
 <form action="" name=""  id="" method="post">
 
-<fieldset>
-<legend><strong> Registro Realizado </strong></legend>
-
-<!--        AQUI  LO QUE DEBERIA DE IR EN EL INSERT A LA BD     -->	
-	<?php
-	
-	    $selec_Preid= sql("select pre_id from pregunta_secreta where pre_des LIKE '$pre_des'");
+       <?php
+         $selec_Preid= sql("select pre_id from pregunta_secreta where pre_des LIKE '$pre_des'");
     	 $filas=oci_fetch_array($selec_Preid,OCI_BOTH);
 	    $pre_id= $filas['PRE_ID'];
 	
-		
-		
-		
 	     $validar_Existencia=sql("select * from administrador where admin_cedula = $admin_cedula");
          $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
 		  $filas=oci_num_rows($validar_Existencia);
@@ -56,10 +55,8 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		$log->error("Esta agregando un administrador que ya existe"); 
 		echo "El administrador ya existe, verifica cuidadosamente la informacion e intenta nuevamente";
 		?>
-		<td colspan="3"><a href="RegistroUsuario.php"><h5 align="center">Continuar</h5></a></td>
 		
-		
-		<?PHP
+	<?PHP
 			exit(0);
 		}
 		else
@@ -71,24 +68,18 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	    guardarXml();
 		
 		?>
-	</fieldset>
 
-
-<table align="center">
-	<tr>
 	
-		<!---META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"> </head--> 
-			<b>
-			<p align="center" class="Estilo1"><strong>Registro Realizado con Exito!!! </strong></p>
-			<p align="center" class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es re dirigido por favor ingrese en el siguiente enlace<a href='/magicbox/MenuOperativo2.php' class="Estilo1"></br>Regresar al Menu Principal</a></p>
+		
+			
+  <p align="center" class="Estilo1"><strong>Registro Realizado con Exito!!! </strong></p>
+			
+			<p align="center" class="Estilo2"><img src="../Imagenes/ca1.jpg" width="885" height="234" alt="lk"></p>
       
-	</tr>
+
 	<?PHP
 		} 
-
-?>	
-
-
+      ?>	
 
 </form>
 <?PHP

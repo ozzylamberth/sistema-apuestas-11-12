@@ -1,5 +1,5 @@
 <?Php
-include_once ("../DataConexion/conexion.php");
+
 session_start();
 $usuario= $_SESSION['usuario'];
 require 'php/Logger.php';
@@ -14,13 +14,32 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
+        body,td,th {
+	font-family: Comic Sans MS, cursive;
+	color: #000;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+}
+#casa_apuesta p {
+	color: #700;
+	font-size: x-large;
+}
+        .asd {
+	color: #800;
+}
+        .sss {
+	color: #A00;
+	background-color: #000;
+}
         </style>
 		
 		<title>
 		Registro de Casa de Apuesta
 		</title>
 		
-		</head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
                  <body>
 
@@ -48,24 +67,26 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 
 <form action="casa_apuesta2.php" name="casa_apuesta"  id="casa_apuesta" method="post">
 
-<table>
+<center>
+  <p><img src="../Imagenes/header.jpg" width="1000" height="205" alt="dd"></p>
+  <p>Registrar Casa de Apuestas</p></center>
+<table align="center">
 		<tr align='left'>	
 			<td align='left'><strong>FECHA</td>
 			<td align='left'><input type="text" name="Fecha" readonly="readonly" value="<?php 
-			//$fecha= date("d/m/Y");
 			$fecha1=time();
 	$fecha1 -= (270 * 60);
 	$fecha = date("Y-m-d", $fecha1 );
 			echo $fecha?>">
 			</td>
-		</tr>		
+	</tr><		
 </table>
 				
 <fieldset height="100">
-<legend><strong>Datos de la Casa de Apuesta </strong></legend>
+<legend></legend>
 <table align="center" border="0" width="" >
-		<tr>
-        <table align="center" border="0" width="900">
+  <tr>
+    <table align="center" border="0" width="900">
 			<tr>
 		<td>
 		
@@ -79,26 +100,20 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		<tr>
             <td width="500" align="center"><textarea name="casapu_nombre" rows='3' cols='60'></textarea>
             
-			</tr>
-		</table>
+	  </tr>
+	</table>
 		
 
 <table align="center">
 	<tr>
-	<td><input type="button" name="Registrar" id="Continuar con Registro" value="Continuar con Registro" onClick="validaSubmite()"></td>
+	<td height="42"><input name="Registrar" type="button" class="sss" id="Continuar con Registro" onClick="validaSubmite()" value="Registrar "></td>
     
 	<?PHP //echo "<input type='hidden' name='' value=''></td>"; ?>
 	</tr>
 
 </table>
 </form>
-<form name='volverse' action='home.php'> 
-<table align='center'>
-					<td><input type="submit" align='center' name="Cancelar" id="button2" value="Cancelar"></td>
-		
-					</tr>
-					</table>
-</form>
+
 <?PHP
 require_once("../Contenedores/footer.php");
 ?>

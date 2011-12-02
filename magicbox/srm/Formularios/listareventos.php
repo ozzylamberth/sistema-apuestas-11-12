@@ -14,7 +14,22 @@ include_once("../DataConexion/conexion.php");
 
 ?>
 
-<body bgcolor="white">
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Comic Sans MS, cursive;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.png);
+	color: #800;
+	font-size: x-large;
+}
+.kk {
+	color: #000;
+}
+-->
+</style><body bgcolor="white">
 	
 <p align="center" class="Estilo1"><strong>Lista de Eventos</strong></p>
    
@@ -25,7 +40,7 @@ include_once("../DataConexion/conexion.php");
 	?>
  
 <table width="900" border="1" align="center">
-  <tr>
+  <tr class="kk">
     <td width="200">Nombre</td>
     <td width="200">Status</td>
     <td width="200">Fecha</td>
