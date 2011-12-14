@@ -27,6 +27,24 @@
 .main .content .content_resize .mainbar .article h2 #formAdmin table tr td {
 	font-family: "Comic Sans MS", cursive;
 }
+.main .content .content_resize .mainbar .article p strong {
+	font-size: xx-large;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	font-size: 14px;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	color: #E9D3AD;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	color: #000;
+}
+.main .content .content_resize .mainbar .article #formAdmin p strong {
+	font-size: 14;
+}
+.main .content .content_resize .mainbar .article #formAdmin p strong {
+	color: #000;
+}
 -->
 </style>
 </head>
@@ -76,7 +94,7 @@ include_once("../DataConexion/conexion.php");
           <li class="active"><a href="../../index.html"><span>Inicio</span></a></li>
           <li></li>
           <li><a href="javascript:ventanaSecundaria('/Sistema_Apuestas/magicbox/srm/Formularios/iniciar.php')"><span>Log In</span></a></li>
-          <li><a href="proximos_eventos.php"><span>Próximos Eventos</span></a></li>
+          <li><a href="listar_ganadores.php"><span>Ganadores</span></a></li>
         </ul>
       </div>
       <div class="clr"></div>
@@ -94,35 +112,48 @@ include_once("../DataConexion/conexion.php");
         <div class="article">
           <h2>
             <p align="left" ><strong>Seleccione Evento</strong>:
-              <?php
+             <?php
+ 
+         $fecha1=time();
+	     $fecha1 -= (270 * 60);
+		  $fecha = date("Y-m-d", $fecha1 );
+        $eve_nombre='';
+		$eve_id=0;
+		$eve_fecha='';
+		$eve_nro_part=0;
+		
+        $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Activo'");
+		
+		
+  ?>
+           <?php
         $eve_nombre='';
 		$eve_id=0;
 		$eve_fecha='';
 		$eve_nro_gan=0;
-        $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Inactivo'");
+        $selec_nom_eve= sql("select eve_nombre from evento");
   ?>
-            </p>
-   
-<form name="form1" method="post" action="">
-  
-    <select name="eve" class="gh" id="eve">
-    <option value="0">Seleccione </option>
-      <?PHP
+          </p>
+          <form name="form1" method="post" action="">
+              
+            <select name="eve" class="gh" id="eve">
+              <option value="0">Seleccione </option>
+              <?PHP
         while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
-      
-        <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
-      <?php  } ?>
-    </select>
-    
-    <?PHP
+                
+              <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
+              <?php  } ?>
+            </select>
+              
+            <?PHP
     if(isset($_POST['eve'])) 
     $eve_nombre = $_POST['eve']; //Te devolveria el atributo value del option seleccionado
 	?>
-    
-  
- <p class="Estilo1 Estilo3">
-
-      <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
+              
+              
+            <p class="Estilo1 Estilo3">
+                
+              <input name="Buscar" type="submit" class="botn" id="Buscar" value="Buscar">
 </form>
 
  
@@ -139,14 +170,12 @@ include_once("../DataConexion/conexion.php");
 	   ?>
   	 
  
-<?php
-		if ($eve_nombre !='' )
-		{ ?>
+
 <form id="formAdmin" name="formAdmin" method="post" action="">
    
      <?php 
 	 
-	 $selec_Id_Par= sql("SELECT P.PAR_NOMBRE FROM RES_PAR RP, EVENTO E, PARTICIPANTE P WHERE RP.RP_FK_PAR_ID=P.PAR_ID AND RP.RP_FK_EVE_ID=E.EVE_ID AND E.EVE_ID=".$eve_id);
+	 $query=sql("SELECT P.PAR_NOMBRE, PE.PE_TOP_APUESTA, PE.PE_TIPO_PAGO FROM EVENTO E, PAR_EVE PE, PARTICIPANTE P WHERE P.PAR_ID=PE.PE_FK_PAR_ID AND PE.PE_FK_EVE_ID = E.EVE_ID");
 	   
 	?>
     
@@ -158,14 +187,15 @@ include_once("../DataConexion/conexion.php");
  <p align="center" ><strong>Nro de Ganadores: <?php echo $eve_nro_gan?></strong></p>
  <table width="200" border="1" align="center">
    <tr>
-    <td  align="center" width="200">NOMBRES</td>
+    <td  align="center" width="200">Participantes</td>
     
   
       <?php
 	    $var= 1;
-           While($row=oci_fetch_array($selec_Id_Par,OCI_BOTH)){
+           While($row=oci_fetch_array($query,OCI_BOTH)){
                $par_nombre = $row['PAR_NOMBRE']; 
-		
+		        $pe_top_apuesta = $row['PE_TOP_APUESTA']; 
+				$pe_tipo_pago = $row['PE_TIPO_PAGO'];
 	     ?>
  
 </table>
@@ -174,6 +204,31 @@ include_once("../DataConexion/conexion.php");
         <tr>
           <th width="200" scope="col"> <?php echo $par_nombre; ?> </th> 
         </tr>
+         <tr>
+          <th width="200" scope="col"> <?php
+		  if ($pe_top_apuesta==0) 
+		  {
+			echo "Sin tope apuesta";  
+		  }
+		  else
+		  {
+		  echo $pe_top_apuesta ;
+		  }
+		  ?>
+          </th> 
+        </tr>
+        <tr>
+          <th width="200" scope="col"> <?php
+		  if ($pe_tipo_pago==0) 
+		  {
+			echo "Sin tipo pago especial";  
+		  }
+		  else
+		  {
+		  echo $pe_tipo_pago ;
+		  }
+		  ?> </th> 
+        </tr>
       </table>
     
 
@@ -181,11 +236,12 @@ include_once("../DataConexion/conexion.php");
    $var ++;
    }
 	?>
-</form>  <?php }?></h2>
+</form>
+<center></center>
           <div class="clr"></div>
           <div class="clr"></div>
         </div>
-        <p class="pages"><small>Page 1 of 1</small> <span>1</span> </p>
+        <p class="pages"><small>Page 1 of 1</small></p>
       </div>
       <div class="sidebar">
         <div class="gadget">
