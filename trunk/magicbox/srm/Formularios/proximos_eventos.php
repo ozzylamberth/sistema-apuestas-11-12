@@ -1,12 +1,61 @@
-<?PHP
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Apuestas GSG</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-times.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/coin-slider.min.js"></script>
+<style type="text/css">
+<!--
+.main .content .content_resize .mainbar .article h2 p strong {
+	color: #700;
+}
+.main .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	color: #000;
+}
+.main .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	font-family: "Comic Sans MS", cursive;
+}
+.fff {
+	color: #A00;
+}
+.main .content .content_resize .mainbar .article h2 #formAdmin table tr td {
+	font-family: "Comic Sans MS", cursive;
+}
+.main .content .content_resize .mainbar .article p strong {
+	font-size: xx-large;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	font-size: 14px;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	color: #E9D3AD;
+}
+.main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	color: #000;
+}
+-->
+</style>
+</head>
+<body>
+<script language=javascript>
+function ventanaSecundaria (URL){
+   window.open(URL,"ventana1","width=120,height=300,scrollbars=NO,resizable=no")
+}
+</script> 
 
+<?PHP
 /** 
 *
-* @Lista de proximos eventos
+* @Lista de Eventos caducados y sus ganadores
 * 
 * @autor: Eleany Garcia
-* Página que lista los proximos eventos a realizarce, asi como los participantes de los mismos y la razon de pago por cada uno de ellos
-con el fin de informar al usuario (apostador)
+* PÃ¡gina que lista los eventos ya finalizados y su ganador o ganadores
 *
 */
 
@@ -15,31 +64,49 @@ session_start();
 include_once("../DataConexion/conexion.php");
 
 ?>
-
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Comic Sans MS, cursive;
-}
-body {
-	background-image: url(../Imagenes/fondo.png);
-	color: #700;
-}
-#formAdmin .Estilo1 strong {
-	color: #000;
-}
-#formAdmin table {
-	color: #000;
-}
-.gg {
-	font-size: x-large;
-}
--->
-</style><body bgcolor="white">
-	
- <p>&nbsp; </p>
- <p>
-   <?php
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+      <div class="searchform">
+        <form id="formsearch" name="formsearch" method="post" action="#">
+          <span>
+          
+          </span>
+         
+        </form>
+      </div>
+      <div class="logo">
+        <h1><a href="index.html">SISTEMA<span> APUESTAS SOGAR </span> <small></small></a></h1> 
+     
+      </div>
+      <div class="clr"></div>
+      <div class="menu_nav">
+        <ul>
+        
+     
+        
+          <li class="active"><a href="../../index.html"><span>Inicio</span></a></li>
+          <li></li>
+          <li><a href="javascript:ventanaSecundaria('/Sistema_Apuestas/magicbox/srm/Formularios/iniciar.php')"><span>Log In</span></a></li>
+          <li><a href="listar_ganadores.php"><span>Ganadores</span></a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+      <div class="slider">
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ca2.jpg" width="957" height="186" alt=""><span>
+        </span></a></div>
+        <div class="clr"></div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="content_resize">
+      <div class="mainbar">
+        <div class="article">
+          <h2>
+            <p align="left" ><strong>Seleccione Evento</strong>:
+             <?php
  
          $fecha1=time();
 	     $fecha1 -= (270 * 60);
@@ -53,32 +120,27 @@ body {
 		
 		
   ?>
- </p>
- <p>&nbsp;    
-   
- </p>
-<p align="center" class="gg"><strong>Seleccione Evento</strong></p>
-   
-<form name="form1" method="post" action="">
-  
-    <select name="eve" id="eve">
-    <option value="0">Seleccione </option>
-      <?PHP
+            </p>
+          <form name="form1" method="post" action="">
+              
+            <select name="eve" id="eve">
+                <option value="0">Seleccione </option>
+                <?PHP
         while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
-      
-        <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
-      <?php  } ?>
-    </select>
-    
-    <?PHP
+                
+                <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
+                <?php  } ?>
+            </select>
+              
+              <?PHP
     if(isset($_POST['eve'])) 
     $eve_nombre = $_POST['eve']; //Te devolveria el atributo value del option seleccionado
 	?>
-    
-  
- <p class="Estilo1 Estilo3">
-
-      <input type="submit" name="Buscar" id="Buscar">
+              
+              
+              <p class="Estilo1 Estilo3">
+                
+                <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
 </form>
  
  
@@ -96,7 +158,9 @@ body {
 	   
 	   ?>
   
- 
+ <?php
+		if ($eve_nombre !='' )
+		{ ?>
 
 <form id="formAdmin" name="formAdmin" method="post" action="">
    
@@ -115,7 +179,7 @@ body {
  
 <table width="400" border="1" align="center">
   <tr>
-    <td width="200">Nombre</td>
+    <td width="200" height="22">Nombre</td>
     <td width="200">Razon de Pago</td>
    </tr>
   
@@ -147,5 +211,45 @@ body {
    }
 	?>
 </form>    
- 
-<center><p><?php  echo "<a href='../../index.html'> Continuar </a> "; ?></p></center>
+ <?php } ?>
+<center>
+  <p>&nbsp;</p></center>
+          <div class="clr"></div>
+          <div class="clr"></div>
+        </div>
+        <p class="pages"><small>Page 1 of 1</small> <span>1</span> </p>
+      </div>
+      <div class="sidebar">
+        <div class="gadget">
+         
+          <div class="clr"></div>
+          <ul class="sb_menu">
+           
+          </ul>
+        </div>
+        <div class="gadget">
+        
+          <div class="clr"></div>
+          <ul class="ex_menu">
+           
+          </ul>
+        </div>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="fbg">
+    <div class="fbg_resize">
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">&copy; Copyright <a href="#">GrupoSG</a></p>
+      <p class="rf">Design by <a href="#">Grupo SG</a></p>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
