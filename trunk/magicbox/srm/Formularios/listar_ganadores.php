@@ -81,7 +81,7 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ca2.jpg" width="957" height="186" alt=""><span>
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="1022" height="100" alt="" /><span>
         </span></a></div>
         <div class="clr"></div>
       </div>
