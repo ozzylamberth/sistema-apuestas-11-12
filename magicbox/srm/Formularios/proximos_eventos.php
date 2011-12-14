@@ -93,7 +93,7 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ca2.jpg" width="957" height="186" alt=""><span>
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="1023" height="100" alt=""><span>
         </span></a></div>
         <div class="clr"></div>
       </div>
@@ -105,6 +105,7 @@ include_once("../DataConexion/conexion.php");
       <div class="mainbar">
         <div class="article">
           <h2>
+            <p>&nbsp;</p>
             <p align="left" ><strong>Seleccione Evento</strong>:
              <?php
  

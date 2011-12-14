@@ -28,7 +28,7 @@
 	font-family: "Comic Sans MS", cursive;
 }
 .main .content .content_resize .mainbar .article p strong {
-	font-size: xx-large;
+	font-size: 18px;
 }
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
 	font-size: 14px;
@@ -44,6 +44,9 @@
 }
 .main .content .content_resize .mainbar .article #formAdmin p strong {
 	color: #000;
+}
+.main .content .content_resize .mainbar .article p strong {
+	font-size: 18px;
 }
 -->
 </style>
@@ -99,7 +102,7 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ca2.jpg" width="957" height="186" alt=""><span>
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/participantes.gif" width="1000" height="100" alt=""><span>
         </span></a></div>
         <div class="clr"></div>
       </div>
@@ -130,7 +133,8 @@ include_once("../DataConexion/conexion.php");
         $eve_nombre='';
 		$eve_id=0;
 		$eve_fecha='';
-		$eve_nro_gan=0;
+		$eve_nro_gan='';
+		$eve_tipo_pago='';
         $selec_nom_eve= sql("select eve_nombre from evento");
   ?>
           </p>
@@ -157,14 +161,19 @@ include_once("../DataConexion/conexion.php");
 </form>
 
  
-  <?PHP  
-      $selec_Id_Eve= sql("SELECT EVE_ID, EVE_NRO_GAN, EVE_FECHA FROM EVENTO WHERE EVE_NOMBRE LIKE '$eve_nombre'");
+  <?PHP 
+       $selec_id= sql( "SELECT EVE_ID FROM EVENTO WHERE EVE_NOMBRE LIKE '$eve_nombre'");
+	   $id= oci_fetch_array($selec_id,OCI_BOTH);
+	   $eve_id= $id['EVE_ID'];
+  
+      $selec_Id_Eve= sql("SELECT EVE_NRO_GAN, EVE_FECHA, EVE_TIPO_PAGO FROM EVENTO WHERE EVE_ID= '$eve_id'");
 	  
 	  While($roweve2=oci_fetch_array($selec_Id_Eve,OCI_BOTH))
 	   {	
-	      $eve_id= $roweve2['EVE_ID'];
+	   
           $eve_nro_gan = $roweve2['EVE_NRO_GAN'];
 		  $eve_fecha = $roweve2['EVE_FECHA'];
+		  $eve_tipo_pago = $roweve2['EVE_TIPO_PAGO'];
        }
 	   
 	   ?>
@@ -185,6 +194,9 @@ include_once("../DataConexion/conexion.php");
  <p align="center" ><strong> Fecha: <?php echo $eve_fecha?>
   </strong></p>
  <p align="center" ><strong>Nro de Ganadores: <?php echo $eve_nro_gan?></strong></p>
+
+ <p align="center" ><strong>Tipo de Pago: <?php echo $eve_tipo_pago?></strong></p>
+
  <table width="200" border="1" align="center">
    <tr>
     <td  align="center" width="200">Participantes</td>
