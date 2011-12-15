@@ -1,0 +1,314 @@
+
+
+create sequence AUTO_INC_categoria
+increment by 1
+start with 1
+ cache 10;
+
+create sequence AUTO_INC_lugar
+increment by 1
+start with 1
+ cache 10;
+
+create sequence AUTO_INC_evento
+increment by 1
+start with 1
+ cache 10;
+
+
+create sequence AUTO_INC_resultado
+increment by 1
+start with 1
+ cache 10;
+
+create sequence AUTO_INC_maquina_apuesta
+increment by 1
+start with 1
+ cache 10;
+
+create sequence AUTO_INC_participante
+increment by 1
+start with 1
+ cache 10;
+
+create sequence AUTO_INC_pregunta_secreta
+increment by 1
+start with 1
+ cache 10;
+
+
+create sequence AUTO_INC_administrador
+increment by 1
+start with 1
+ cache 10;
+
+
+
+
+REM ****************************************************
+REM *                  PARTICIPANTE                    *         
+REM ****************************************************
+
+CREATE TABLE     participante  (
+   par_id              number(10) NOT NULL,
+   par_nombre          varchar(200) NOT NULL,
+   
+
+CONSTRAINT pk_participante
+PRIMARY KEY(par_id)
+
+); 
+
+ 
+
+REM ****************************************************
+REM *                 CATEGORIA                        *         
+REM ****************************************************
+
+CREATE TABLE     categoria  (
+   cat_id  number(10) NOT NULL,
+   cat_nombre  varchar(200) NOT NULL,
+ 
+CONSTRAINT pk_categoria
+PRIMARY KEY(cat_id)
+
+); 
+
+
+
+REM ****************************************************
+REM *                  EVENTO                          *         
+REM ****************************************************
+
+
+CREATE TABLE     evento (
+   eve_id  NUMBER(10) NOT NULL,    
+   eve_nombre  varchar(200) NOT NULL,
+   eve_status  varchar(200) NOT NULL,
+   eve_fecha  DATE NOT NULL,
+   eve_nro_part number(10) NOT NULL,
+   eve_nro_gan number(10) NOT NULL,
+   eve_tipo_pago number(5) NOT NULL,
+   eve_fk_id_admin  NUMBER(10) NOT NULL,
+   eve_fk_id_categoria  NUMBER(10) NOT NULL,
+
+CONSTRAINT pk_evento
+PRIMARY KEY(eve_id),
+
+CONSTRAINT ch_status
+check (eve_status in ('Activo','Inactivo'))
+
+); 
+
+
+
+REM ****************************************************
+REM *                  MAQUINA_APUESTA                 *         
+REM ****************************************************
+
+
+CREATE TABLE     maquina_apuesta  (
+   maq_id  number(10) NOT NULL,
+   maq_status  varchar(100) NOT NULL,
+   maq_longitud  number(10) NOT NULL,
+   maq_latitud  number(10) NOT NULL,
+   maq_marca varchar(20) NOT NULL,
+   maq_maodelo varchar(20) NOT NULL,
+   maq_memoria varchar(20) NOT NULL,
+   maq_procesador varchar(40) NOT NULL,
+   maq_medidas varchar(40) NOT NULL,
+   maq_tarj_mem varchar(40) NOT NULL,
+   maq_cap_disco varchar(40) NOT NULL,
+   
+CONSTRAINT pk_maquina_apuesta
+PRIMARY KEY(maq_id),
+
+CONSTRAINT ch_status_ma
+check (maq_status in ('Activo','Inactivo'))
+
+); 
+
+
+REM ****************************************************
+REM *                  PREGUNTA_SECRETA                *         
+REM ****************************************************
+
+CREATE TABLE     pregunta_secreta  (
+   pre_id  number(10) NOT NULL,
+   pre_des  varchar(150) NOT NULL,
+
+CONSTRAINT pk_pregunta_secreta
+PRIMARY KEY(pre_id)
+
+); 
+
+
+
+REM ****************************************************
+REM *                  TABLA RESULTADO                 *         
+REM ****************************************************
+
+CREATE TABLE     resultado  (
+      res_id  number(10) NOT NULL,
+      res_resultado  varchar(200) NOT NULL,
+      
+
+CONSTRAINT pk_resultado
+PRIMARY KEY(res_id)
+); 
+
+
+
+REM ****************************************************
+REM *                 ADMINISTRADOR                        *         
+REM ****************************************************
+
+CREATE TABLE  administrador  (
+   admin_cedula  number(11) NOT NULL,
+   admin_login  varchar(30) NOT NULL,
+   admin_contrasena  varchar(100) NOT NULL,
+   admin_resp_secreta  varchar(30) NOT NULL,
+   admin_nombre  varchar(100) NOT NULL,
+   admin_apellido varchar(100) NOT NULL,
+   admin_status  varchar(15) NOT NULL,
+   admin_fk_id_pre number(10) NOT NULL,
+ 
+CONSTRAINT pk_usuario
+PRIMARY KEY(admin_cedula),
+
+CONSTRAINT ch_status_u
+check (admin_status in ('Activo','Inactivo'))
+
+);
+
+
+REM ****************************************************
+REM *                 PAR_EVE                          *         
+REM ****************************************************
+
+CREATE TABLE  par_eve  (
+   pe_fk_eve_id  number(11) NOT NULL,
+   pe_fk_par_id  number(10) NOT NULL,
+   pe_tipo_pago  number(10) NOT NULL,
+   pe_top_apuesta     float(10) NOT NULL,
+
+CONSTRAINT pk_C_FLOR
+PRIMARY KEY(pe_fk_eve_id,pe_fk_par_id)
+
+);
+
+
+REM ****************************************************
+REM *                 MAQ_EVE                          *         
+REM ****************************************************
+
+CREATE TABLE  maq_eve  (
+   me_fk_eve_id  number(11) NOT NULL,
+   me_fk_maq_id  number(10) NOT NULL,
+   
+CONSTRAINT pk_maq_eve
+PRIMARY KEY(me_fk_eve_id,me_fk_maq_id)
+
+);
+
+
+REM ****************************************************
+REM *                 RES_PAR                          *         
+REM ****************************************************
+
+CREATE TABLE  res_par  (
+   rp_fk_res_id  number(11) NOT NULL,
+   rp_fk_par_id  number(10) NOT NULL,
+   rp_fk_eve_id  number(10) NOT NULL,
+
+
+CONSTRAINT pk_res_par
+PRIMARY KEY(rp_fk_res_id,rp_fk_par_id,rp_fk_eve_id)
+
+);
+
+
+
+REM ////////////////////////////////////////////////////
+REM ///////////////////ALTER TABLE//////////////////////        
+REM ////////////////////////////////////////////////////
+
+
+
+REM ****************************************************
+REM *                  ALTER evento            *         
+REM ****************************************************
+
+alter table evento
+	add constraint eve_fk_cat foreign key (eve_fk_id_categoria)
+references categoria (cat_id);
+
+
+alter table evento
+	add constraint eve_fk_adm foreign key (eve_fk_id_admin)
+references administrador (admin_cedula);
+
+
+
+
+REM ****************************************************
+REM *                  ALTER PAR_EVE                   *         
+REM ****************************************************
+
+alter table par_eve
+	add constraint pareve_fk_eve foreign key (pe_fk_eve_id)
+references evento (eve_id) ON DELETE CASCADE;
+
+alter table par_eve
+	add constraint pareve_fk_par foreign key (pe_fk_par_id)
+references participante (par_id);
+
+
+
+
+REM ****************************************************
+REM *                  ALTER RES_PAR                   *         
+REM ****************************************************
+
+
+alter table res_par
+	add constraint respar_fk_par foreign key (rp_fk_res_id)
+references resultado (res_id);
+
+alter table res_par
+	add constraint respar_fk_parti foreign key (rp_fk_par_id)
+references participante (par_id);
+
+alter table res_par
+	add constraint respar_fk_eve foreign key (rp_fk_eve_id)
+references evento (eve_id) ON DELETE CASCADE;
+
+
+
+
+
+
+REM ****************************************************
+REM *                  ALTER maquina_evento           *         
+REM ****************************************************
+
+
+alter table maq_eve
+	add constraint maa_fk_caa foreign key (me_fk_eve_id)
+references evento (eve_id);
+
+alter table maq_eve
+	add constraint maa_fk_caa1 foreign key (me_fk_maq_id)
+references maquina_apuesta (maq_id) ;
+
+
+
+REM ****************************************************
+REM *                  ALTER ADMINISTRADOR             *         
+REM ****************************************************
+
+alter table administrador
+	add constraint admi_fk_preg foreign key (admin_fk_id_pre)
+references pregunta_secreta (pre_id);
+
+
