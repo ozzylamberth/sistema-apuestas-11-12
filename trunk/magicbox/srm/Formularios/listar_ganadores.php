@@ -81,7 +81,11 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
+<<<<<<< .mine
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="957" height="186" alt=""><span>
+=======
         <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="1022" height="100" alt="" /><span>
+>>>>>>> .r11
         </span></a></div>
         <div class="clr"></div>
       </div>
@@ -91,7 +95,7 @@ include_once("../DataConexion/conexion.php");
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
-        <div class="article">
+        <div  style="background-image:url(../Imagenes/fondo.jpg)"class="article">
           <h2>
             <p align="left" ><strong>Seleccione Evento</strong>:
               <?php
@@ -187,27 +191,6 @@ include_once("../DataConexion/conexion.php");
         </div>
         <p class="pages"><small>Page 1 of 1</small> <span>1</span> </p>
       </div>
-      <div class="sidebar">
-        <div class="gadget">
-         
-          <div class="clr"></div>
-          <ul class="sb_menu">
-           
-          </ul>
-        </div>
-        <div class="gadget">
-        
-          <div class="clr"></div>
-          <ul class="ex_menu">
-           
-          </ul>
-        </div>
-      </div>
-      <div class="clr"></div>
-    </div>
-  </div>
-  <div class="fbg">
-    <div class="fbg_resize">
       <div class="clr"></div>
     </div>
   </div>
