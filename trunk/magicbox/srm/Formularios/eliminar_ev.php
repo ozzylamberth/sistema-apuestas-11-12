@@ -18,7 +18,7 @@ include_once("../DataConexion/conexion.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 
 
@@ -37,14 +37,20 @@ body,td,th {
 }
 .Estilo1 strong {
 	font-family: Comic Sans MS, cursive;
+	font-size: 24px;
 }
 
+.mmm {
+	color: #A00;
+}
 </style><body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="880" height="137" alt="H3"></p>
-<p align="center" class="Estilo1"><strong>Eliminar Evento</strong><br>
-</p>
-<p  class="body,td,th">Seleccione el evento que desea eliminar
-  <?php
+<p align="center" class="Estilo1 Estilo1">
+    <img src="../Imagenes/header.gif" width="880" height="137" alt="H3"></p>
+<p align="center" class="Estilo1"><strong>Eliminar Evento</strong></p>
+<form name="form1" method="post" action="">
+  
+  <p class="Estilo1 Estilo3"><span class="body,td,th">Seleccione el evento que desea eliminar
+      <?php
 $eve_nombre='';
 $eve_id=0;
 $eve_status='';
@@ -56,28 +62,24 @@ $eve_fecha='';
         $selec_Eve= sql("SELECT EVE_NOMBRE from EVENTO");
 	 
 	?>
-  </p>
-</p>
-<form name="form1" method="post" action="">
-  
+  </span> </p>
   <p class="Estilo1 Estilo3">
-  
-   <select name="evento" id="evento">
-    <option value="0">Seleccione </option>
+    <select name="evento" id="evento">
+      <option value="0">Seleccione </option>
       <?PHP
          while ($rowev=oci_fetch_array($selec_Eve,OCI_BOTH)){?>
       
-        <option value="<?php echo $rowev["EVE_NOMBRE"] ?>" > <?php echo $rowev["EVE_NOMBRE"]?></option>
+      <option value="<?php echo $rowev["EVE_NOMBRE"] ?>" > <?php echo $rowev["EVE_NOMBRE"]?></option>
       <?php  } ?>
-   </select>
+    </select>
     
-     <?PHP
+    <?PHP
       if(isset($_POST['evento'])) 
      $eve_nombre = $_POST['evento']; //Te devolveria el atributo value del option seleccionado
 	?>
- </p>
+  </p>
   <p class="Estilo1 Estilo3">
-    <input type="submit" name="Buscar" id="Buscar" value="Buscar">
+    <input name="Buscar" type="submit" class="mmm" id="Buscar" value="Buscar">
  </p>
 </form> 
  
@@ -96,6 +98,10 @@ $eve_fecha='';
   
      }
      ?>
+     <?php
+		if ($eve_nombre !='' )
+		{ ?>
+     
   <form id="formPariente" name="formPariente" method="post" action="eliminar_ev2.php">
     <fieldset>
       <legend></legend>
@@ -125,11 +131,13 @@ $eve_fecha='';
               <label>Status: <?php echo $eve_status ; ?> </label>
             </p>
             <p>
-              <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
+              <input name="Eliminar" type="submit" class="mmm" id="Eliminar" value="Eliminar" />
             </p></th>
         </tr>
       </table>
     </fieldset>
+    <?php
+		} ?>
 </form>
 
 

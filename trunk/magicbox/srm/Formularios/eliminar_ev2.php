@@ -20,11 +20,11 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .Estilo1 strong {
 	font-family: Cooper Black;
-	font-size: x-large;
+	font-size: large;
 	color: #700;
 }
 .Estilo2 {

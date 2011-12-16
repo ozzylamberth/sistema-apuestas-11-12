@@ -69,9 +69,19 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; 
 		 display:none}
         body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
-</style>
+#eventos legend strong {
+	color: #800;
+}
+        body,td,th {
+	font-family: Comic Sans MS, cursive;
+}
+        .nn {
+	font-family: "Comic Sans MS", cursive;
+	color: #800;
+}
+        </style>
 		<title>Creacion de Eventos</title>
 		
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
@@ -149,7 +159,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		</tr>
    
 		<tr>
-            <td width="500" align='center'><textarea name="desc_Evento" cols='60' rows='3' id="desc_Evento" ></textarea></td>
+            <td width="500" align='center'><input name="desc_Evento" type="text" id="desc_Evento" value="" size="60" maxlength="60"></td>
          </tr>
 		</table>
 		
@@ -190,7 +200,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		  <tr>
 		  <td width="500" align='center'><strong>Indique el Nro De Participantes</strong></td>
                 <td><label>
-                  <input type="text" name="nro_Participantes" id="nro_Participantes" onKeyPress="return acceptNum(event)">
+                  <input name="nro_Participantes" type="text" id="nro_Participantes" onKeyPress="return acceptNum(event)" maxlength="4">
                 </label></td>
 		  </tr>
 		</table>
@@ -198,19 +208,17 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
         
   
         <tr>
-        <input type="button" name="Registrar" id="Continuar con Registro" value="Continuar con Registro" onClick="validaSubmite()">
+        <input name="Registrar" type="button" class="nn" id="Continuar con Registro" onClick="validaSubmite()" value="Continuar con Registro">
   <tr> 
 </form>
 
 
 <form name='volverse' action='home.php'> 
   <p>
-    <input type="submit" align='center' name="Cancelar" id="button2" value="Cancelar">
+    <input name="Cancelar" type="submit" class="nn" id="button2" value="Cancelar" align='left'>
   </p>
-  <table align='center'>
-					<td>&nbsp;</td>
-		
-					</tr>
+  <center><p><img src="../Imagenes/ELECCIONES2012.gif" width="1000" height="90" alt="gg"></p></center>
+  <table align='center'>				
   </table>
 </form>
 <?PHP

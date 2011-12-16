@@ -49,15 +49,24 @@ else
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 #categoria center h1 {
 	color: #700;
+	font-size: large;
 }
         .buttones {
 	font-family: "Comic Sans MS", cursive;
 	color: #800;
 	background-color: #000;
+}
+        .bl {
+	background-color: #F0F0F0;
+	background-image: url(../Imagenes/1323959047_profile_add.png);
+	border-top-color: #200;
+}
+        .xxx {
+	color: #800;
 }
         </style>
 		
@@ -99,14 +108,14 @@ body {
             <td width="504" align="center"><strong>Ingrese Categoria</strong></td>
 		</tr>
 		<tr>
-            <td width="504" align="center"><textarea name="cat_nombre" cols='60' rows='3' id="cat_nombre"></textarea>
-        </tr>
+            <td width="504" align="center"><input name="cat_nombre" type="text" id="cat_nombre" value="" size="60">
+    </tr>
 			<tr>
 			<td width="504" align="center">
             
             <table align="center">
 	       <tr>
-	      <td><input name="Registrar" type="button" class="buttones" id="Registrar" onClick="validaSubmite()" value="Registrar"></td>
+	      <td><input name="Registrar" type="button" class="xxx" id="Registrar" onClick="validaSubmite()" value="Registrar"></td>
     
 	         <?PHP //echo "<input type='hidden' name='' value=''></td>"; ?>
 	        </tr>

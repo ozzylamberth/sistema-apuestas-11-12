@@ -18,7 +18,7 @@ include_once("../DataConexion/conexion.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 body,td,th {
 	font-family: Comic Sans MS, cursive;
@@ -29,6 +29,9 @@ h1 {
 	font-size: xx-large;
 	color: #700;
 }
+.bb {
+	color: #800;
+}
 -->
 </style><body bgcolor="gray">
 	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="997" height="142" alt="Banner1"></p>
@@ -37,7 +40,7 @@ h1 {
       $cat_nombre='';
       $cat_id='';
 
-        $selec_Cat= sql("select cat_nombre from categoria");
+        $selec_Cat= sql("select c.cat_nombre from categoria c , evento e where );
 	   ?>
         
     
@@ -53,7 +56,7 @@ h1 {
           <option value="0">Seleccione </option>
           <?PHP
          while ($row=oci_fetch_array($selec_Cat,OCI_BOTH)){?>
-          <option value="<?php echo $row["CAT_NOMBRE"] ?>" > <?php echo $row["CAT_NOMBRE"]?></option>
+          <option value="<?php echo $row["CAT_NOMBRE"] ?> <?php echo $row["CAT_NOMBRE"]?></option>
           <?php  } ?>
         </select>
         <?PHP
@@ -63,9 +66,9 @@ h1 {
     
     </p>
 
-  <p class="Estilo1">
+    <p class="Estilo1">
     <label>
-     <input type="submit" name="Buscar" id="Buscar" value="Buscar">
+     <input name="Buscar" type="submit" class="bb" id="Buscar" value="Buscar">
     </label>
   </p> 
 </form>
@@ -92,7 +95,7 @@ h1 {
               <label>Nombre: <?php echo $cat_nombre ; ?> </label>
             </p>
             <p>
-              <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
+              <input name="Eliminar" type="submit" class="bb" id="Eliminar" value="Eliminar" />
             </p>
            </th>
         </tr>

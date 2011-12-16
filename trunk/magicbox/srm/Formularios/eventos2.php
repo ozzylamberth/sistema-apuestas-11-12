@@ -99,16 +99,28 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 			}
 		</script>
         
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
 
 		<head>
        <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
-        </style>
+        body,td,th {
+	font-family: Comic Sans MS, cursive;
+	color: #000;
+	font-weight: bold;
+}
+body {
+	background-image: url(../Imagenes/fondo.jpg);
+	color: #800;
+}
+       .hhhh {
+	color: #800;
+}
+       </style>
 		
 		<title>
-		<strong>Registro de Categoria</strong>
+<strong>Registro de Categoria</strong>
 		</title>
 		
 		</head>
@@ -148,9 +160,10 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 			</strong>
          </p>
 			  
-		<select name="par_nombre" id="par_nombre" >
-		        <option value="0">Seleccione </option>
-		        <?PHP
+		          <p>
+		            <select name="par_nombre" id="par_nombre" >
+		              <option value="0">Seleccione </option>
+		              <?PHP
 		        $selec_Parnom = sql("select par_nombre, par_id from participante");
 	 
 	 			print_r($select_Parnom);
@@ -158,45 +171,49 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 				 {
 					 
 					 echo $rows["PAR_NOMBRE"]?>
-		             <option value="<?php echo $rows["PAR_ID"]?>" > <?php echo $rows["PAR_NOMBRE"]?></option>
-		        <?php  
+		              <option value="<?php echo $rows["PAR_ID"]?>" > <?php echo $rows["PAR_NOMBRE"]?></option>
+		              <?php  
 				}        
                 ?>
-	     </select>
-			  
-              <input name="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
-              <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>"> 
-              <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>"> 
-              <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
-              <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
-              <input type="button" name="Agregar" id="Agregar" value="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')">
-              <br> </br>
-		    <?php 
+	                </select>
+		            
+		            <input name="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
+		            <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>"> 
+		            <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>"> 
+		            <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
+		            <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
+		            <input name="Agregar" type="button" class="hhhh" id="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
+	              </p>
+		          <p><br> 
+		            </br>
+		            <?php 
 			$nro_Part=1;
             while ($nro_Part <=  $nro_Participantes)
             {
            
 			    echo $nro_Part?>
-		        <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
-                   <input name="Participante_<?php echo $nro_Part ?>" id="Participante_<?php echo $nro_Part ?>" type="text" maxlength="20">
-		        <!--input name="Participante_<?php echo $nro_Part ?>" type="hidden" value="Participante_<?php echo $nro_Part ?>"-->
-              
-		      <br> </br>
-			    
-	     	    <?php $nro_Part++; 
+		            <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
+		            <input name="Participante_<?php echo $nro_Part ?>" type="text" id="Participante_<?php echo $nro_Part ?>" size="40" maxlength="40">
+		            <!--input name="Participante_<?php echo $nro_Part ?>" type="hidden" value="Participante_<?php echo $nro_Part ?>"-->
+		            
+		            <br> 
+		            </br>
+		            
+		            <?php $nro_Part++; 
 		    	}?>
-			    
+	              </p>
+		          <center><img src="../Imagenes/BANNERMISS.gif" width="1000" height="90" alt="misses"></center>
 			    
 			    
 		      </strong></p>
 		   
 			  <p>
-			    <input type="submit" align='center' name="continuar" id="button2" value="continuar">
+			    <input name="continuar" type="submit" class="hhhh" id="button2" value="continuar" align='center'>
 			  </p></td>
 		 	 </tr>
 			</table>
-		
-</form>
+    	  <p>&nbsp;</p>
+        </form>
 	 <p>
 	<?php 	
 	} 	if ($tipo_Ganador==='tabla_Resultados'){   
@@ -209,7 +226,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	          <td width="500" align='center'><p><strong> Ingrese el Nro de resultados:
 	            </select>
 	          </strong> <strong>
-	          <input type="text" name="nro_Resultados" id="nro_Resultados" onKeyPress="return acceptNum(event)">
+	          <input name="nro_Resultados" type="text" id="nro_Resultados" onKeyPress="return acceptNum(event)" maxlength="4">
 	          </strong></p>
 	            <p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
 	            <p>
@@ -232,7 +249,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 	              <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>">
 	              <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
 	              <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
-	              <input type="button" name="Agregar2" id="Agregar2" value="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')">
+	              <input name="Agregar2" type="button" class="hhhh" id="Agregar2" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
 	              </strong></p>
 	            <p>
                 <strong>Ingrese el Nombre, Raz&oacute;n de pago y Monto tope si aplica</p>
@@ -247,7 +264,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
                   
 	              <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
                   
-	              <input name="Participante_<?php echo $nro_Part ?>" id="Participante_<?php echo $nro_Part ?>" type="text" maxlength="20">
+	              <input name="Participante_<?php echo $nro_Part ?>" type="text" id="Participante_<?php echo $nro_Part ?>" size="20" maxlength="20">
 	              <label>
 	                <select name="tipo_Pago_<?php echo $nro_Part ?>" id="tipo_Pago_<?php echo $nro_Part ?>">
 	                  <option value="1">2:1</option>
@@ -263,7 +280,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
                     </select>
 	              </label>
 	              <label>
-	                <input type="text" name="tope_Apuesta_<?php echo $nro_Part ?>" id="tope_Apuesta_<?php echo $nro_Part ?>">
+	                <input name="tope_Apuesta_<?php echo $nro_Part ?>" type="text" id="tope_Apuesta_<?php echo $nro_Part ?>" size="20" maxlength="20">
                   </label>
 	              <br>
 	              </br>
@@ -273,15 +290,13 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 				   ?>
                 </p>
 	            <p>
-	              <input type="button" align='center' name="button" id="button" value="continuar" onClick="validaSubmite()">
+	              <input name="button" type="button" class="hhhh" id="button" onClick="validaSubmite()" value="continuar" align='center'>
 	            </p>
-                </td>
+              </td>
             </tr>
           </table>
+	      <center><p><img src="../Imagenes/BANNERMISS.gif" width="1000" height="90" alt="miisss"></p></center>
         </form>
-        
-        
-	    <p>&nbsp;</p>
 	    <?php 	
 	    }	
 	    ?>

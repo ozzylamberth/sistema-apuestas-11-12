@@ -34,7 +34,7 @@ $this->assertNotNull($admin_resp_secreta);
 $this->assertNotNull($pre_id);
 $this->assertNotNull($filas);
 $this->assertNotEquals($admin_cedula2,$admin_cedula); 
-$this->assertXmlFileNotEqualsXmlFile($xml,$xml2);
+
 	}
 }
 ?>

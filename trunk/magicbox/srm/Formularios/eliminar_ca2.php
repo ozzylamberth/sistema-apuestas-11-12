@@ -19,7 +19,7 @@ include_once("../controladores/ControlCategoria3.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .Prueba {
 	font-family: fantasy;

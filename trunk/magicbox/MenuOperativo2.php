@@ -267,6 +267,8 @@ border:1px solid #ddd;
 		<li><a href="srm/Formularios/listareventos.php" target='paginita'>Listar Eventos</a></li>
 		
 		<li><a href="srm/Formularios/listar_ganadores.php" target='paginita'>Listar Ganadores</a></li>
+        
+        <li><a href="srm/Formularios/mostrar_maquinas.php" target='paginita'>Mostrar Maquinas</a></li>
 	</ul>
 	</li>
 	
@@ -291,13 +293,15 @@ border:1px solid #ddd;
 		<iframe name="paginita" frameborder="0" width="1000" height="600" align='center' target="_blank">
           <h2><span></span></h2>
 		
-          <p class="infopost">Post <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com">No Comments <span></span></a></p>
+          <p class="infopost">Post <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com"><span></span></a></p>
           <div class="clr"></div>
           <div class="img"><img src="srm/Imagenes/H3_2166_2011_XmasCalendar2011.jpg" width="182" height="165" alt="mm" /></div>
+          <div class="img"><img src="srm/Imagenes/GA10_182x164_WelcomeFreeroll_1370_09.jpg" width="182" height="165" alt="mm" /></div>
+          <div class="img"><img src="srm/Imagenes/pokerblog_teaser.jpg" width="182" height="165" alt="mm" /></div>
           <div class="post_content">
-            <p> <a href="#"></a><img src="srm/Imagenes/futbol.jpg" width="410" height="236" alt="nn" /></p>
+            <center><p> <a href="#"></a><img src="srm/Imagenes/sce.png" width="359" height="236" alt="nn" /></p></center>
             <p><strong></strong></p>
-            <p class="spec"><a href="#" class="rm">&raquo; Read more</a></p>
+            <p class="spec"><a href="#" class="rm">&raquo; Leer MAS</a></p>
           </div>
           <div class="clr"></div>
         </div>
@@ -305,7 +309,8 @@ border:1px solid #ddd;
           <h2><span>Un nuevo espacio</span> en La Castellana</h2>
           <p class="infopost">Posted <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com">No Comments <span></span></a></p>
           <div class="clr"></div>
-          <div class="img"><img src="srm/Imagenes/pokerblog_teaser.jpg" width="182" height="207" alt="mm" /></div>
+          <div class="img"><img src="srm/Imagenes/PO6_2214_2011_WPTPrague_Pokerblog_COM.jpg" width="182" height="187" alt="mm" /></div>
+          <div class="img"><img src="srm/Imagenes/H2_2316_2011_CASIntegrationStep3_NowliveHardLaunchRaffle.jpg" width="235" height="187" alt="mm" /></div>
           <div class="post_content">
             <p> <a href="#"></a></p>
             <p><strong></strong>PROXIMOS EVENTOS!!!</p>
@@ -315,7 +320,6 @@ border:1px solid #ddd;
         </div>
         <p class="pages"><small>Page 1 of 1</small> <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
       </div>
-	  </iframe>
       <div class="sidebar">
         <div class="gadget">
          
