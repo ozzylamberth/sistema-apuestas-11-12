@@ -28,7 +28,7 @@
 	font-family: "Comic Sans MS", cursive;
 }
 .main .content .content_resize .mainbar .article p strong {
-	font-size: xx-large;
+	font-size: 18px;
 }
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
 	font-size: 14px;
@@ -92,21 +92,34 @@ include_once("../DataConexion/conexion.php");
         </ul>
       </div>
       <div class="clr"></div>
+<<<<<<< .mine
+=======
       <div class="slider">
         <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="1023" height="100" alt=""><span>
         </span></a></div>
         <div class="clr"></div>
       </div>
+>>>>>>> .r11
+      <div class="clr"></div>
+    </div>
       <div class="clr"></div>
     </div>
   </div>
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
+<<<<<<< .mine
+        <div style="background-image:url(../Imagenes/fondo.jpg) "class="article">
+          <form name="form1" method="post" action="" >
+           <center> <table width="500" border="0">
+  <tr>
+    <td width="300"> <p align="left" ><strong>Seleccione Evento</strong>:
+=======
         <div class="article">
           <h2>
             <p>&nbsp;</p>
             <p align="left" ><strong>Seleccione Evento</strong>:
+>>>>>>> .r11
              <?php
  
          $fecha1=time();
@@ -118,30 +131,31 @@ include_once("../DataConexion/conexion.php");
 		$eve_nro_part=0;
 		
         $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Activo'");
-		
-		
-  ?>
+		 ?>
             </p>
-          <form name="form1" method="post" action="">
-              
+            
             <select name="eve" id="eve">
-                <option value="0">Seleccione </option>
-                <?PHP
-        while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
-                
-                <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
-                <?php  } ?>
-            </select>
-              
+              <option value="0">Seleccione </option>
               <?PHP
+        while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
+              
+              <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
+              <?php  } ?>
+            </select>
+            
+            <?PHP
     if(isset($_POST['eve'])) 
     $eve_nombre = $_POST['eve']; //Te devolveria el atributo value del option seleccionado
 	?>
+            
+            
+            <p class="Estilo1 Estilo3">
               
-              
-              <p class="Estilo1 Estilo3">
-                
-                <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
+              <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar"></td>
+    <center>
+      <td width="200">&nbsp;</td></center>
+  </tr>
+</table> </center>         
 </form>
  
  
@@ -155,6 +169,8 @@ include_once("../DataConexion/conexion.php");
           $eve_nro_part = $roweve2['EVE_NRO_PART'];
 		  $eve_tipo_pago = $roweve2['EVE_TIPO_PAGO'];
 		  $eve_fecha = $roweve2['EVE_FECHA'];
+		  
+		  
        } 
 	   
 	   ?>
@@ -163,7 +179,7 @@ include_once("../DataConexion/conexion.php");
 		if ($eve_nombre !='' )
 		{ ?>
 
-<form id="formAdmin" name="formAdmin" method="post" action="">
+<form  id="formAdmin" name="formAdmin" method="post" action=""  >
    
    <?php 
 	   $queryListaEve = sql("SELECT P.par_nombre, PE.pe_tipo_pago FROM evento E, participante P, par_eve PE WHERE P.PAR_ID=PE.PE_FK_PAR_ID AND   PE.PE_FK_EVE_ID=E.EVE_ID AND E.eve_id=".$eve_id);
@@ -176,6 +192,8 @@ include_once("../DataConexion/conexion.php");
  <p align="center" class="Estilo1"><strong> Fecha de inicio: <?php echo $eve_fecha?>
   </strong></p>
  <p align="center" class="Estilo1"><strong>Nro de Participantes: <?php echo $eve_nro_part?>
+ </strong></p>
+ <p align="center" class="Estilo1"><strong>Tipo Pago: <?php echo  $eve_tipo_pago?>
  </strong></p>
  
 <table width="400" border="1" align="center">
@@ -212,38 +230,18 @@ include_once("../DataConexion/conexion.php");
    }
 	?>
 </form>    
- <?php } ?>
-<center>
-  <p>&nbsp;</p></center>
-          <div class="clr"></div>
+ <p>
+   <?php } ?>
+    <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="997" height="100" alt="">
+     <div class="clr"></div>
           <div class="clr"></div>
         </div>
-        <p class="pages"><small>Page 1 of 1</small> <span>1</span> </p>
-      </div>
-      <div class="sidebar">
-        <div class="gadget">
-         
-          <div class="clr"></div>
-          <ul class="sb_menu">
-           
-          </ul>
-        </div>
-        <div class="gadget">
-        
-          <div class="clr"></div>
-          <ul class="ex_menu">
-           
-          </ul>
-        </div>
+        <p class="pages"><small>Page 1 of 1</small> <span>1</span>  </p>
       </div>
       <div class="clr"></div>
     </div>
   </div>
-  <div class="fbg">
-    <div class="fbg_resize">
-      <div class="clr"></div>
-    </div>
-  </div>
+  <div class="fbg"></div>
   <div class="footer">
     <div class="footer_resize">
       <p class="lf">&copy; Copyright <a href="#">GrupoSG</a></p>
