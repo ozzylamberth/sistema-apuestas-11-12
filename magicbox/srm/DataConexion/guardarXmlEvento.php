@@ -3,7 +3,7 @@
 {  
 include_once "conexion.php";
   
-   $SelectEve= sql("SELECT * FROM EVENTO");
+   $SelectEve= sql("SELECT * FROM EVENTO WHERE eve_status LIKE 'Activo'");
      	//$fila=oci_fetch_array($SelectAdm,OCI_BOTH);
 		
 		//print_r($fila);

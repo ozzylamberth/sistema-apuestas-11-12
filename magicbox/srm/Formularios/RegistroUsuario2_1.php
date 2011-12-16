@@ -12,7 +12,7 @@ include_once ("../controladores/ControlUsuario.php");
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
         body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .Estilo1 strong {
 	font-family: Comic Sans MS, cursive;
@@ -24,7 +24,7 @@ include_once ("../controladores/ControlUsuario.php");
 }
         </style>
 		
-</head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
   <body>
 

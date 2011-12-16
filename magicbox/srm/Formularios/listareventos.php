@@ -21,9 +21,10 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	color: #800;
 	font-size: x-large;
+	text-align: center;
 }
 .kk {
 	color: #000;
@@ -82,3 +83,4 @@ body {
  
 <center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p></center>
 </p>
+<img src="../Imagenes/CASAAPUESTASOG.gif" width="907" height="106" alt="25"> 

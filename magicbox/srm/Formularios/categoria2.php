@@ -11,7 +11,7 @@ $usuario= $_SESSION['usuario'];
         <style type="text/css">
          label.error { float: none; color: red; padding-left: .5em; vertical-align: text-bottom; display:none}
         body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 body,td,th {
 	font-family: Comic Sans MS, cursive;
@@ -26,26 +26,26 @@ body,td,th {
         .Estilo2 {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+        .Estilo1 strong {
+	font-size: 24px;
+}
         </style>
 		
-		</head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
 
               <body>
 
 					
-<form action="" name=""  id="" method="post">
+
 
 	
-
-
-		
 			<h1 align="center" class="Estilo1"><strong><?php echo $mensaje ?>  </strong></h1>
-			
+			<p align="center">            
+			<p align="center" class="Estilo2"><span class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es re dirigido por favor ingrese en el siguiente enlace<a href='../Formularios/home.php' class="Estilo1"></br>
+			</a></span></p>
+			<p align="center" class="Estilo2"><span class="Estilo2"><a href='../Formularios/home.php' class="Estilo1">Regresar al Menu Principal</a></span>			</p>
+			<p align="center"><img src="../Imagenes/ClasicosFutbol.gif" width="1026" height="103" alt="cf"></p>
 
-
-
-
-</form>
 <?PHP
 require_once("../Contenedores/footer.php");
 

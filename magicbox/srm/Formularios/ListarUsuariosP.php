@@ -20,7 +20,7 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	color: #700;
 	font-size: x-large;
 }

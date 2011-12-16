@@ -68,7 +68,7 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .nn {
 	font-family: "Comic Sans MS", cursive;
@@ -89,6 +89,9 @@ body {
 .titulo {
 	font-size: x-large;
 	color: #700;
+}
+.mm {
+	color: #B00;
 }
 -->
 </style></head>
@@ -116,9 +119,40 @@ body {
 	?>
 </p>
 <p>
-<label>Descripcion de la maquina:
-  <textarea name="Maq_Des" class="nn" id="Maq_Des"></textarea>
-</label>
+<label>Marca: </label>
+<label>
+  <input name="marca" type="text" id="marca" size="30" maxlength="30" />
+</label></center>
+</p>
+<p>Modelo: 
+  <label>
+    <input name="modelo" type="text" id="modelo" size="30" maxlength="30" />
+  </label>
+</p>
+<p>Memoria: 
+  <label>
+    <input name="memoria" type="text" id="memoria" size="30" maxlength="30" />
+  </label>
+</p>
+<p>Procesador: 
+  <label>
+    <input name="procesador" type="text" id="procesador" size="30" maxlength="30" />
+  </label>
+</p>
+<p>Medidas: 
+  <label>
+    <input name="Medidas" type="text" id="Medidas" size="30" maxlength="30" />
+  </label>
+</p>
+<p>Tarjeta de memoria: 
+  <label>
+    <input name="TarMe" type="text" id="TarMe" size="30" maxlength="30" />
+  </label>
+</p>
+<p>Capacidad de disco:
+  <label>
+    <input name="Capacidad" type="text" id="Capacidad" size="30" maxlength="30" />
+  </label>
 </p>
 
  
@@ -129,7 +163,7 @@ body {
 <div id="map" style="width:600px; height:400px"></div>
 <div id="message"></div>
 
-<input name="Registrar" type="submit" class="bot" value="Registrar" />
+<input name="Registrar" type="submit" class="mm" value="Registrar" />
 
 <br />
 <center><input name="ejemplo" type="text" class="linea" id="ejemplo"  size="100"/></center>

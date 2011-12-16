@@ -1,6 +1,6 @@
 <?php
 /*
- * @copyright Eduardo Torres
+ * @copyright Eleany Garcia
  * fecha 03/08/2011
  * Ultimas Modificaciones: 03/08/2011 	
  */
@@ -14,7 +14,7 @@
 				<font face='Arial' color='gray' size='1'>
 				_____________________________________________________________________________
                     <br/>@copyright 2011. Todos los Derechos Reservados	
-                    <br/> Sistema de Apuestas MG.	
+                    <br/> Sistema de Apuestas SG.	
                     <br/> _____________________
                 </font>
 				</p>

@@ -19,7 +19,7 @@ include_once("../controladores/ControlCasaA3.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	color: #800;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }

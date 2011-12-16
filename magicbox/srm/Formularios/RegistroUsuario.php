@@ -51,7 +51,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 body,td,th {
 	font-family: Comic Sans MS, cursive;

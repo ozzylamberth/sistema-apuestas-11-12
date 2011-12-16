@@ -43,7 +43,7 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	color: #000;
 }
 .hjk {

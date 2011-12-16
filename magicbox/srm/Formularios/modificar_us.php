@@ -43,7 +43,7 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .bnm {
 	font-family: "Comic Sans MS", cursive;
@@ -54,7 +54,7 @@ body {
 	font-family: "Comic Sans MS", cursive;
 }
 .Estilo1.Estilo1 {
-	font-size: x-large;
+	font-size: xx-large;
 	color: #700;
 }
 -->

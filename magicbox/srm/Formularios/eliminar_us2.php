@@ -10,7 +10,7 @@ se realiza el delete de la BD y se redirecciona a la pagina de inicio
 *
 */
 
-session_start();
+
 include_once("../controladores/ControlUsuario3.php");
 
 
@@ -19,7 +19,7 @@ include_once("../controladores/ControlUsuario3.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	font-family: "Lucida Console", Monaco, monospace;
 }
 .f1 {
@@ -30,7 +30,7 @@ body {
 }
 
 .f1 strong {
-	font-size: x-large;
+	font-size: large;
 }
 -->
 </style><body bgcolor="white">

@@ -9,7 +9,7 @@ body,td,th {
 	font-family: Comic Sans MS, cursive;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 -->
 </style></head>
@@ -31,7 +31,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 
 
 
-/*$insertres= sql("INSERT INTO RESULTADO (res_id, res_resultado) VALUES (AUTO_INC_resultado.NEXTVAL,'$res_resultado')");
+$insertres= sql("INSERT INTO RESULTADO VALUES (AUTO_INC_resultado.NEXTVAL,'$res_resultado')");
 
 $select_Id_Res= sql("SELECT MAX(RES_ID) AS RES_ID FROM RESULTADO");
 $filas=oci_fetch_array($select_Id_Res,OCI_BOTH);
@@ -48,10 +48,10 @@ $res_id= $filas["RES_ID"];
 	    $insertrp= sql("INSERT INTO RES_PAR  VALUES ('$res_id' , '$par_id', '$eve_id')");
 		$nro_Part++;	
 						
-	    }
+	   }
 		
 		 $act_Edo_Ev= sql("update evento set  eve_status = 'Inactivo' where eve_id='$eve_id'");
-		*/
+		
 		
 		
 		
@@ -61,8 +61,10 @@ $res_id= $filas["RES_ID"];
 
  <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"> </head > 
 			<b>
-			<p align="center" class="Estilo2"><span class="Estilo2">TABLA DE RESULTADOS creada exitosamente .. Sera enviado a la pagina principal automaticamente.... Si no es redirigido por favor ingrese en el siguiente enlace<a href='home.php' class="Estilo1"></br>
-			</a></span></p>
+			<p align="center" class="Estilo2"><span class="Estilo2">TABLA DE RESULTADOS creada exitosamente ... </span></p>
+<p align="center" class="Estilo2"><span class="Estilo2">Sera enviado a la pagina principal automaticamente.... Si no es redirigido por favor ingrese en el siguiente enlace<a href='home.php' class="Estilo1"></br>
+		    </a></span></p>
 			<p align="center" class="Estilo2"><span class="Estilo2"><a href='home.php' class="Estilo1">Regresar al Menu Principal</a></span><a href='home.php' class="Estilo1"></a></p>
+			<p align="center" class="Estilo2"><img src="../Imagenes/ClasicosFutbol.gif" width="865" height="92" alt="cls" /></p>
 </body>
 </html>

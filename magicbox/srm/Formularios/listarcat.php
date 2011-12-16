@@ -21,7 +21,7 @@ body,td,th {
 	font-weight: bold;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	color: #700;
 	font-size: x-large;
 }
@@ -67,7 +67,9 @@ body {
    }
 	?>
  
-<center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p></center>
+<center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p>
+  <p><img src="../Imagenes/ClasicosFutbol.gif" width="814" height="97" alt="cf"></p>
+</center>
 </p>
 
 

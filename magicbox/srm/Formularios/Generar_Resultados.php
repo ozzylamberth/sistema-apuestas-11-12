@@ -19,15 +19,21 @@ include_once("../DataConexion/conexion.php");
 <!--
 body,td,th {
 	font-family: Comic Sans MS, cursive;
+	color: #000;
 }
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
+	color: #000;
+}
+.jj {
+	color: #000;
+}
+.bot {
+	color: #800;
 }
 -->
 </style><body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
-<p align="center" class="Estilo1">&nbsp;</p>
-    <span class="Estilo1">
+  <p align="center" class="Estilo1 Estilo1"><span class="Estilo1">
     
     <script>
 		 function validaSubmite(){
@@ -36,12 +42,12 @@ body {
 			else
      			document.eventos2.submit()
 			}
-    </script>
+      </script>
     
     
     
         
-        <script language="JavaScript">
+      <script language="JavaScript">
             function acceptNum(e)
 			{
 				var tecla;
@@ -109,7 +115,8 @@ $eve_fecha='';
 	?>
         
   <br>
-  <p align="center" class="Estilo1 Estilo3"><strong>Seleccione el Evento</strong></p>
+  </p>
+  <p align="center" class="Estilo1 Estilo3"><img src="../Imagenes/CASAAPUESTASOG.gif" width="925" height="79" alt="casa"></p>
       
   <form name="form1" id="form1" method="post" action="" >
 
@@ -119,7 +126,9 @@ $eve_fecha='';
       if(isset($_POST['eve_nombre'])) 
      $eve_nombre = $_POST['eve_nombre']; //Te devolveria el atributo value del option seleccionado
 	?>
- </p>
+ <center><table width="500" border="0">
+  <tr>
+    <td width="300"><strong>Seleccione el Evento</strong></p>
  <p class="Estilo1 Estilo3">
    <select name="eve_nombre" id="eve_nombre">
      <option value="0">Seleccione </option>
@@ -130,8 +139,13 @@ $eve_fecha='';
    </select>
  </p>
  <p class="Estilo1 Estilo3">
-    <input type="submit" name="Buscar" id="Buscar" value="Buscar">
- </p>
+    <input name="Buscar" type="submit" class="bot" id="Buscar" value="Buscar">
+ </p></td>
+    <center><td><img src="../Imagenes/bsb.png" width="127" height="114" alt="jhjh"></td></center>
+  </tr>
+</table></center>
+
+   
 </form> 
  
     <p>
@@ -152,10 +166,9 @@ $eve_fecha='';
     </p>
    
 <form action="Generar_Resultados2.php" method="post" name="resul">
-        <p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
-    	  <table align="center" border="0" width="900">
-			<tr>
-				<td width="500" height="137" align='center'><p>&nbsp;</p>
+  <table align="center" border="0" width="900">
+	<tr>
+				<td width="700" height="137" align='center'><p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
 			  
 		          <p>
 		            <select name="par_nombre" id="par_nombre" >
@@ -182,7 +195,7 @@ $eve_fecha='';
 		            <input name="eve_nro_gan" type="hidden" value="<?php echo $eve_nro_gan?>">
 		            
 		            
-		            <input type="button" name="Agregar" id="Agregar" value="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')">
+		            <input name="Agregar" type="button" class="bot" id="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
 		            <br> 
 		            </br>
 		            <?php 
@@ -193,7 +206,7 @@ $eve_fecha='';
            
 			    echo $nro_Part?>
 		            <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
-		            <input name="Participante_<?php echo $nro_Part ?>" id="Participante_<?php echo $nro_Part ?>" type="text" maxlength="20">
+		            <input name="Participante_<?php echo $nro_Part ?>" type="text" id="Participante_<?php echo $nro_Part ?>" size="40" maxlength="40">
 		            <!--input name="Participante_<?php echo $nro_Part ?>" type="hidden" value="Participante_<?php echo $nro_Part ?>"-->
 		            
 		            <br> 
@@ -201,18 +214,20 @@ $eve_fecha='';
 		            <?php $nro_Part++; 
 		    	}?>
 		          </p>
-		          <p>Descripción: 
-		            <label>
-                      <textarea name="descripcion_eve" id="descripcion_eve"></textarea>
-	                </label>
+		          <p><span class="jj">Descripción:</span>
+<label>
+            <textarea name="descripcion_eve" cols="40" rows="2" id="descripcion_eve"></textarea>
+            </label>
 		            </strong></p>
 		            
 	              </p>
 		          <p>
-			    <input type="submit" align='center' name="continuar" id="button2" value="continuar">
+			    <input name="continuar" type="submit" class="bot" id="button2" value="continuar" align='center'>
 			  </p>
-	          </td>
-		 	 </tr>
-			</table>
+      </td>
+      <td width="200">
+      </td>
+    </tr>
+  </table>
 		
 </form>

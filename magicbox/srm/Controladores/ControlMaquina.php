@@ -15,9 +15,13 @@ include_once ("../Modelo/ModeloMaquina.php");
 		//muestra los datos consultados de acuerdo a la opción
 		
 		$coordenadas =$_POST['ejemplo'];
-		$casapu_nombre =$_POST['casapu_nombre'];
-		$maq_des =$_POST['Maq_Des'];
-
+		$maq_marca =$_POST['marca'];
+		$maq_modelo =$_POST['modelo'];
+		$maq_memoria =$_POST['memoria'];
+		$maq_procesador =$_POST['procesador'];
+		$maq_medidas =$_POST['Medidas'];
+		$maq_tarj_mem =$_POST['TarMe'];
+		$maq_cap_disco =$_POST['Capacidad'];
 		
 		try
 		{
@@ -27,7 +31,7 @@ include_once ("../Modelo/ModeloMaquina.php");
 			list($latitud,$longitud)=explode(',',$coord);
 			
 			
-				salvarMaquina($latitud,$longitud,$casapu_nombre,$maq_des);
+				salvarMaquina($latitud,$longitud,$maq_marca,$maq_modelo,$maq_memoria,$maq_procesador,$maq_medidas,$maq_tarj_mem,$maq_cap_disco);
 				
 				$mensaje= "La Maquina se creo de forma exitosa";
 				$log->info("Se creó una nueva maquina de forma exitosa"); 		

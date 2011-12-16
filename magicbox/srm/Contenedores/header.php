@@ -9,7 +9,7 @@
 ?>
 <html>
     <head>
-		<title>Sistema de Registro de Requisiones de Materiales</title>
+		<title>Sistema de Apuestas SG</title>
 
 		<link type="text/css" rel="stylesheet" href="../css/overcast/jquery-ui-1.7.2.custom.css"></link>
 		<link type="text/css" rel="stylesheet" href="../css/ui.jqgrid.css" media="screen"></link>

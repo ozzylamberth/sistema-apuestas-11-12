@@ -18,7 +18,7 @@ include_once("../DataConexion/conexion.php");
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .rt {
 	font-family: Comic Sans MS, cursive;
@@ -29,8 +29,11 @@ body {
 	font-family: "Comic Sans MS", cursive;
 }
 .Estilo1 strong {
-	font-size: xx-large;
+	font-size: large;
 	color: #800;
+}
+.kkk {
+	color: #B00;
 }
 -->
 </style><body bgcolor="white">
@@ -68,7 +71,7 @@ $admin_apellido='';
   </p>
   <p class="Estilo1 Estilo3">
 
-      <input name="Buscar" type="submit" id="Buscar" value="Buscar">
+      <input name="Buscar" type="submit" class="kkk" id="Buscar" value="Buscar">
  </p>
  </form>
  
@@ -84,6 +87,10 @@ $selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLID
   }
 
 ?>
+<?php
+		if ($admin_nombre !='' )
+		{ ?>
+
   <form id="formAdmin" name="formAdmin" method="post" action="eliminar_us2.php">
   
   
@@ -109,11 +116,14 @@ $selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLID
               <label>Status: <?php echo $admin_status; ?> </label>
             </p>
            
-              <input type="submit" name="Eliminar" id="Eliminar" value="Eliminar" />
+              <input name="Eliminar" type="submit" class="kkk" id="Eliminar" value="Eliminar" />
             </p></th>
         </tr>
       </table>
     </fieldset>
+    <?php
+		}
+		?>
 </form>
 
 

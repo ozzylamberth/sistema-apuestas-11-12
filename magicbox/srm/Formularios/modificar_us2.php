@@ -17,7 +17,7 @@ include_once("../controladores/ControlUsuario2.php")
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 	font-family: "Cooper Std Black";
 }
 .Estilo1 strong {
