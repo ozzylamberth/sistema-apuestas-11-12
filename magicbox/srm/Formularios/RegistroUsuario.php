@@ -66,6 +66,9 @@ body,td,th {
 	color: #A00;
 	background-color: #000;
 }
+.botonregs {
+	color: #000;
+}
 -->
 </style></head>
 
@@ -87,62 +90,58 @@ body,td,th {
 </table>
 		
 <form name="RegistroUsuario" id="RegistroUsuario" method="post" action="../controladores/ControlUsuario.php">
+<p>&nbsp;</p>
 <table align="center" width="400" height="439" border="0">
-    <tr>
-      <th align="left" width="300" scope="col">
-      <p><strong>Nombre:</strong>
-        <input name='admin_nombre' type='text' id='admin_nombre' value="" maxlength="25">
-      </p>
-      <p>
-      <strong>Apellido:</strong>
-        <input name='admin_apellido' type='text' id='admin_apellido' value="" maxlength="25">
-     </p>
-      <p>
-      <strong>Cedula:</strong>
-      <input name='admin_cedula' type='text' id='admin_cedula' onKeyPress="return acceptNum(event)" value="" maxlength="10">
-     </p>
-     <p> Login: 
-    <input name="admin_login" type="text" id="admin_login" maxlength="15">
-     <p>
-     <strong>Contrase&ntilde;a:</strong>
-    <input name="admin_contrasena" type="password" id="admin_contrasena" maxlength="8">
+  <tr>
+    <th align="left" width="300" scope="col"> <p>
+      <strong>Nombre:</strong>
+      <input name='admin_nombre' type='text' id='admin_nombre' value="" maxlength="25">
     </p>
-     <p>
-      <strong>Pregunta Secreta:</strong>
-       <select name="pre_desc" id="pre_desc" ><
-       <option value="0">Seleccione </option>
-        <?PHP
+      <p> <strong>Apellido:</strong>
+        <input name='admin_apellido' type='text' id='admin_apellido' value="" maxlength="25">
+      </p>
+      <p> <strong>Cedula:</strong>
+        <input name='admin_cedula' type='text' id='admin_cedula' onKeyPress="return acceptNum(event)" value="" maxlength="10">
+      </p>
+      <p> Login:
+        <input name="admin_login" type="text" id="admin_login" maxlength="15">
+      <p> <strong>Contrase&ntilde;a:</strong>
+        <input name="admin_contrasena" type="password" id="admin_contrasena" maxlength="8">
+      </p>
+      <p> <strong>Pregunta Secreta:</strong>
+        <select name="pre_desc" id="pre_desc" >
+          <
+          <option value="0">Seleccione </option>
+          <?PHP
 		$selec_Preg = sql("select pre_des from pregunta_secreta");
 		 while ($rows=oci_fetch_array($selec_Preg,OCI_BOTH))
 		{?>
-      <option value="<?php echo $rows["PRE_DES"]?>" > <?php echo $rows["PRE_DES"]?></option>
-        <?php  }        
+          <option value="<?php echo $rows["PRE_DES"]?>" > <?php echo $rows["PRE_DES"]?></option>
+          <?php  }        
  
         if(isset($_POST['pre_desc'])) //$_GET si se hace por GET (url)
         $pre_desc = $_POST['pre_desc']; //Te devolveria el atributo value del option seleccionado
  
         ?>
-      </select>
-     </p>
-    <p>
-     <strong>Respuesta Secreta:</strong>
-    <input name='admin_resp_secreta' type='text' id='admin_resp_secreta' value="" maxlength="100">
-    </p>
-    <center> 
-     <p>
-       <input name="Registrar" type="button" class="boton" id="Continuar con Registro" onClick="validaSubmite()" value="Registrar">
-       <label>
-         <input name="Limpiar" type="reset" class="boton" id="Limpiar" value="Restablecer">
-       </label>
-     </p>
-     <p><img src="../Imagenes/GA1_2344_2011_XtremeXmasJPs_COM.jpg" width="576" height="212" alt="stcris"></p>
-</center>
-    </p>
-  </th>
-    
-     <th width="100" scope="col"><img src="../Imagenes/4753.gif" width="160" height="600" alt="mm"></th>
-    </tr>
-  </table>
+        </select>
+      </p>
+      <p> <strong>Respuesta Secreta:</strong>
+        <input name='admin_resp_secreta' type='text' id='admin_resp_secreta' value="" maxlength="100">
+      </p>
+      <center>
+        <p>
+          <input name="Registrar" type="button" class="botonregs" id="Continuar con Registro" onClick="validaSubmite()" value="Registrar">
+          <label>
+            <input name="Limpiar" type="reset" class="botonregs" id="Limpiar" value="Restablecer">
+          </label>
+        </p>
+        <p><img src="../Imagenes/GA1_2344_2011_XtremeXmasJPs_COM.jpg" width="576" height="212" alt="stcris"></p>
+      </center>
+      <p></p>
+    </th>
+    <th width="100" scope="col"><img src="../Imagenes/4753.gif" width="160" height="600" alt="mm"></th>
+  </tr>
+</table>
 </form>
 <?PHP
 require_once("../Contenedores/footer.php");
