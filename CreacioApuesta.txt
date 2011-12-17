@@ -113,7 +113,7 @@ CREATE TABLE     maquina_apuesta  (
    maq_longitud  number(10) NOT NULL,
    maq_latitud  number(10) NOT NULL,
    maq_marca varchar(20) NOT NULL,
-   maq_maodelo varchar(20) NOT NULL,
+   maq_modelo varchar(20) NOT NULL,
    maq_memoria varchar(20) NOT NULL,
    maq_procesador varchar(40) NOT NULL,
    maq_medidas varchar(40) NOT NULL,
