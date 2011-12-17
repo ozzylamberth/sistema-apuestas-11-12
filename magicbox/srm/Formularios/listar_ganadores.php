@@ -45,6 +45,9 @@
 .header .content .content_resize .mainbar .article h2 #formAdmin p strong {
 	color: #800;
 }
+.header .content .content_resize .mainbar .article h2 #formAdmin table tr td {
+	font-family: "Comic Sans MS", cursive;
+}
 -->
 </style>
 </head>
