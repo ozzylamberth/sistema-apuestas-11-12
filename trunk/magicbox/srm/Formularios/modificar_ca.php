@@ -52,7 +52,7 @@ body {
 }
 -->
 </style><body bgcolor="white">
-<p align="center" class="Estilo1 Estilo1">&nbsp;</p>
+<p align="center" class="Estilo1 Estilo1"><img src="../Imagenes/APUESTASSOGAR.gif" width="902" height="90" alt="IMAGE"></p>
 	
 <h1 align="center" class="Estilo1"><strong>Modificar Categoria</strong></h1>
    
@@ -128,7 +128,10 @@ body {
         
   </fieldset>
 </form>
-<?php } ?>
+<p>
+  <?php } ?>
+</p>
+<p>&nbsp;</p>
 </body>
 
 									  
