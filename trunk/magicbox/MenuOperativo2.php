@@ -287,10 +287,9 @@ border:1px solid #ddd;
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-		<iframe style="background-image:url(srm/Imagenes/fondo.jpg)" name="paginita" frameborder="0" width="1000" height="600" align='center' target="_blank">
-        
-       
-		<h2><span></span></h2>
+		<iframe name="paginita" frameborder="0" width="1000" height="600" align='center' target="_blank">
+          <h2><span></span></h2>
+		
           <p class="infopost">Post <span class="date">on 04 November 2011</span> by <a href="#">Administrator</a> &nbsp;&nbsp;|&nbsp;&nbsp; Filed under <a href="#">Info</a>, <a href="#">Castellana</a> &nbsp;&nbsp; <a href="#" class="com"><span></span></a></p>
           <div class="clr"></div>
           <div class="img"><img src="srm/Imagenes/H3_2166_2011_XmasCalendar2011.jpg" width="182" height="165" alt="mm" /></div>
