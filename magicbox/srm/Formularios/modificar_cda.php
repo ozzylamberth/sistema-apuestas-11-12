@@ -33,6 +33,10 @@ body {
 }
 .Estilo1.Estilo1 strong {
 	color: #700;
+	font-size: large;
+}
+.irena {
+	color: #800;
 }
 -->
 </style><body bgcolor="white">
@@ -79,7 +83,7 @@ body {
   ?>
 
         <p>
-          <input name="Submit" type="submit" class="ddd" value="Buscar" />
+          <input name="Submit" type="submit" class="irena" value="Buscar" />
         </p>
 </form>
 
@@ -121,8 +125,8 @@ body {
     </p>
    
         <div align="right">
-            <center><input name="enviar" type="button" class="ddd" id="enviar" onClick="validaSubmite()" value="Modificar" />
-            <input name="limpiar" type="reset" class="ddd" id="limpiar" value=" Limpiar" /></center>
+            <center><input name="enviar" type="button" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar" />
+          <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" /></center>
     </div>
   </fieldset>
 </form>

@@ -36,6 +36,7 @@ body {
 }
 .Estilo1 strong {
 	color: #700;
+	font-size: large;
 }
 .NuevoBoton {
 	font-family: "Comic Sans MS", cursive;
@@ -46,9 +47,12 @@ body {
 	font-family: "Comic Sans MS", cursive;
 	color: #000;
 }
+.irena {
+	color: #700;
+}
 -->
 </style><body bgcolor="white">
-	<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
+<p align="center" class="Estilo1 Estilo1">&nbsp;</p>
 	
 <h1 align="center" class="Estilo1"><strong>Modificar Categoria</strong></h1>
    
@@ -77,7 +81,7 @@ body {
     ?>
 
         <p>
-          <input name="Submit" type="submit" class="NuevoBoton" value="Buscar" />
+          <input name="Submit" type="submit" class="irena" value="Buscar" />
         </p>
 </form>
 
@@ -117,8 +121,8 @@ body {
     </p>
    
          <div align="right">
-           <center><input name="enviar" type="button" class="NuevoBoton" id="enviar" onClick="validaSubmite()" value="Modificar" />
-           <input name="limpiar" type="reset" class="NuevoBoton" id="limpiar" value=" Limpiar" /></center>
+           <center><input name="enviar" type="button" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar" />
+           <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" /></center>
             
           </div>
         

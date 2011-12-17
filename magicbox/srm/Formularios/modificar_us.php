@@ -54,8 +54,11 @@ body {
 	font-family: "Comic Sans MS", cursive;
 }
 .Estilo1.Estilo1 {
-	font-size: xx-large;
+	font-size: large;
 	color: #700;
+}
+.irena {
+	color: #800;
 }
 -->
 </style><body bgcolor="white">
@@ -90,7 +93,7 @@ body {
       $admin_cedula = $_POST['admin_cedula1']; //Te devolveria el atributo value del option seleccionado
     ?>
         <p>
-          <input name="Submit" type="submit" class="bnm" value="Buscar" />
+          <input name="Submit" type="submit" class="irena" value="Buscar" />
         </p>
 </form>
 
@@ -173,8 +176,8 @@ body {
     </p>
     
     <p>
-      <center><input name="enviar" type="button" class="bnm" id="enviar" onClick="validaSubmite()" value="Modificar"/>
-      <input name="limpiar" type="reset" class="bnm" id="limpiar" value=" Limpiar" /></center>
+      <center><input name="enviar" type="button" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar"/>
+      <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" /></center>
     </p>
     <div align="center">
       </label>

@@ -37,7 +37,7 @@ body,td,th {
 }
 .Estilo1 strong {
 	font-family: Comic Sans MS, cursive;
-	font-size: 24px;
+	font-size: large;
 }
 
 .mmm {
