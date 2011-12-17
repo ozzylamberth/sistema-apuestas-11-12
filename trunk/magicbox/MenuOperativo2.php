@@ -201,8 +201,7 @@ border:1px solid #ddd;
 	<ul class="sub">
 		<li class="subline"><a href="srm/Formularios/home.php">Registro<!--[if gte IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-			<ul>
-			<li><a href="srm/Formularios/casa_apuesta.php" target='paginita'>Casa Apuesta</a></li>			
+			<ul>			
 			<li><a href="srm/Formularios/categoria.php" target='paginita'>Categorias</a></li>			
 			<li><a href="srm/Formularios/eventos.php" target='paginita'>Eventos</a></li>			
 			<li><a href="srm/Formularios/Generar_Resultados.php" target='paginita'>Generar Resultados</a></li>			
@@ -228,8 +227,7 @@ border:1px solid #ddd;
 		
 		<li class="subline"><a href="">Eliminar<!--[if gte IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-			<ul>
-			<li><a href="srm/Formularios/eliminar_cda.php" target='paginita'>Casa de Apuesta</a></li>			
+			<ul>			
 			<li><a href="srm/Formularios/eliminar_ca.php" target='paginita'>Categorias</a></li>			
 			<li><a href="srm/Formularios/eliminar_ev.php" target='paginita'>Eventos</a></li>			
 			<li><a href="srm/Formularios/eliminar_us.php" target='paginita'>Usuarios</a></li>			
@@ -242,8 +240,7 @@ border:1px solid #ddd;
 		
 		<li class="subline"><a href="">Modificar<!--[if gte IE 7]><!--></a><!--<![endif]-->
 		<!--[if lte IE 6]><table><tr><td><![endif]-->
-			<ul>
-			<li><a href="srm/Formularios/modificar_cda.php" target='paginita'>Casa de Apuesta</a></li>			
+			<ul>			
 			<li><a href="srm/Formularios/modificar_ca.php" target='paginita'>Categorias</a></li>			
 			<li><a href="srm/Formularios/modificar_ev.php" target='paginita'>Eventos</a></li>			
 			<li><a href="srm/Formularios/modificar_us.php" target='paginita'>Usuarios</a></li>			
@@ -266,7 +263,7 @@ border:1px solid #ddd;
 	
 		<li><a href="srm/Formularios/listareventos.php" target='paginita'>Listar Eventos</a></li>
 		
-		<li><a href="srm/Formularios/listar_ganadores.php" target='paginita'>Listar Ganadores</a></li>
+		<li><a href="srm/Formularios/listar_ganadores2.php" target='paginita'>Listar Ganadores</a></li>
         
         <li><a href="srm/Formularios/mostrar_maquinas.php" target='paginita'>Mostrar Maquinas</a></li>
 	</ul>
