@@ -63,6 +63,7 @@ body {
 }
 -->
 </style><body bgcolor="white">
+	<h1 align="center" class="Estilo1 Estilo1"><img src="../Imagenes/APUESTASSOGAR.gif" width="902" height="90" alt="IMAGE"></h1>
 	<h1 align="center" class="Estilo1 Estilo1"><strong>Modificar Evento</strong></h1>
 <form action="" method="post" name="formId" id="formId">
   <p>

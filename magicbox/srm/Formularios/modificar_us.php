@@ -62,6 +62,7 @@ body {
 }
 -->
 </style><body bgcolor="white">
+<p align="center" class="Estilo1"><img src="../Imagenes/APUESTASSOGAR.gif" width="902" height="90" alt="IMAGE"></p>
 <p align="center" class="Estilo1">Modificar Administrador</p>
 
     <?php
