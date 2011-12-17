@@ -94,7 +94,7 @@ body {
 	         $cat_id = $fila2['CAT_ID'];}
      ?>
 
-      
+      <?php if ($cat_id!=0){?>
 <form id="formPariente" name="formPariente" method="post" action="">
   <fieldset>
         <legend>Si desea modificar la siguente Categoria: </legend>
@@ -107,7 +107,7 @@ body {
 </form>
 
 
-     <?php if ($cat_id!=0){?>
+     
      
 <form id="formRegistro" name="formRegistro" method="post" action= "modificar_ca2.php ">
   <fieldset>
