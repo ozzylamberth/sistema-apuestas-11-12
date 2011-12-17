@@ -32,11 +32,7 @@ body {
 }
 -->
 </style><body bgcolor="white">
-<p align="center" class="Estilo1 Estilo1"><strong></strong></p>
-    
-     
-
-        <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"> 
+<META HTTP-EQUIV="REFRESH" CONTENT="5;URL=home.php"> 
         </head > 
 			<b>
 			<p align="center" class="Estilo1"><strong><?php $mensaje ?> </strong></p>

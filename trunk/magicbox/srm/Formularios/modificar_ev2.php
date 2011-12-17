@@ -25,7 +25,7 @@ $eve_nro_gan= $_POST['eve_nro_gan'];
 <style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.png);
+	background-image: url(../Imagenes/fondo.jpg);
 }
 .Estilo1 strong {
 	font-size: x-large;

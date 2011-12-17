@@ -58,7 +58,7 @@ body,td,th {
 	font-weight: bold;
 }
 .regis {
-	font-size: x-large;
+	font-size: large;
 	color: #800;
 }
 .boton {

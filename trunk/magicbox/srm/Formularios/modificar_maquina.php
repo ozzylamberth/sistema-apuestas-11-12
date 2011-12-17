@@ -90,6 +90,9 @@ body {
 	font-size: x-large;
 	color: #700;
 }
+.irena {
+	color: #700;
+}
 -->
 </style></head>
 <body onload="load()" onunload="GUnload()">
@@ -129,7 +132,7 @@ body {
 <div id="map" style="width:600px; height:400px"></div>
 <div id="message"></div>
 
-<input name="Registrar" type="submit" class="bot" value="Registrar" />
+<input name="Registrar" type="submit" class="irena" value="Registrar" />
 
 <br />
 <center><input name="ejemplo" type="text" class="linea" id="ejemplo"  size="100"/></center>
