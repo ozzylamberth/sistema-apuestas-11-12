@@ -108,19 +108,12 @@ include_once("../DataConexion/conexion.php");
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
-<<<<<<< .mine
         <div style="background-image:url(../Imagenes/fondo.jpg) "class="article">
           <form name="form1" method="post" action="" >
            <center> <table width="500" border="0">
   <tr>
-    <td width="300"> <p align="left" ><strong>Seleccione Evento</strong>:
-=======
-        <div class="article">
-          <h2>
-            <p>&nbsp;</p>
-            <p align="left" ><strong>Seleccione Evento</strong>:
->>>>>>> .r11
-             <?php
+    <td width="300"><p align="left" ><strong>Seleccione Evento</strong>:
+      <?php
  
          $fecha1=time();
 	     $fecha1 -= (270 * 60);
@@ -132,7 +125,7 @@ include_once("../DataConexion/conexion.php");
 		
         $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Activo'");
 		 ?>
-            </p>
+    </p>
             
             <select name="eve" id="eve">
               <option value="0">Seleccione </option>
