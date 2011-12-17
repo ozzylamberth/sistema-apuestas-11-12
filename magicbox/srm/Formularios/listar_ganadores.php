@@ -81,12 +81,10 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
-<<<<<<< .mine
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="957" height="186" alt=""><span>
+<<<<<<<
+<div id="coin-slider">  <a href="#"><span>
 =======
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="1022" height="100" alt="" /><span>
->>>>>>> .r11
-        </span></a></div>
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="994" height="116" alt="" /></div>
         <div class="clr"></div>
       </div>
       <div class="clr"></div>
