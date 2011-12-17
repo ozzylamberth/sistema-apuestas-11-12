@@ -27,6 +27,24 @@
 .main .content .content_resize .mainbar .article h2 #formAdmin table tr td {
 	font-family: "Comic Sans MS", cursive;
 }
+.header .content .content_resize .mainbar .article h2 form p strong {
+	font-size: medium;
+}
+.header .content .content_resize .mainbar .article h2 form p strong {
+	font-size: large;
+}
+.header .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	font-size: small;
+}
+.header .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	font-size: 14px;
+}
+.header .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	color: #A00;
+}
+.header .content .content_resize .mainbar .article h2 #formAdmin p strong {
+	color: #800;
+}
 -->
 </style>
 </head>
@@ -81,10 +99,8 @@ include_once("../DataConexion/conexion.php");
       </div>
       <div class="clr"></div>
       <div class="slider">
-<<<<<<<
-<div id="coin-slider">  <a href="#"><span>
-=======
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="994" height="116" alt="" /></div>
+        <div id="coin-slider">
+          <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="994" height="116" alt="" /></div>
         <div class="clr"></div>
       </div>
       <div class="clr"></div>
@@ -95,37 +111,41 @@ include_once("../DataConexion/conexion.php");
       <div class="mainbar">
         <div  style="background-image:url(../Imagenes/fondo.jpg)"class="article">
           <h2>
-            <p align="left" ><strong>Seleccione Evento</strong>:
-              <?php
+            <form name="form1" method="post" action="">
+             <center> <table width="500" border="0">
+  <tr>
+     <td width="300"><p><strong>Seleccione Evento</strong>:
+                <?php
         $eve_nombre='';
 		$eve_id=0;
 		$eve_fecha='';
 		$eve_nro_gan=0;
         $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Inactivo'");
   ?>
-            </p>
-   
-<form name="form1" method="post" action="">
-  
-    <select name="eve" class="gh" id="eve">
-    <option value="0">Seleccione </option>
-      <?PHP
+              </p>
+            <p>
+              <select name="eve" class="gh" id="eve">
+                <option value="0">Seleccione </option>
+                <?PHP
         while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
-      
-        <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
-      <?php  } ?>
-    </select>
-    
-    <?PHP
+                
+                <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
+                <?php  } ?>
+              </select>
+              
+              <?PHP
     if(isset($_POST['eve'])) 
     $eve_nombre = $_POST['eve']; //Te devolveria el atributo value del option seleccionado
 	?>
-    
-  
- <p class="Estilo1 Estilo3">
+              </p>
+            <p>
+              <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
+            </p></td>
+    <td>&nbsp;</td>
+  </tr>
+</table></center>
 
-      <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
-</form>
+            </form>
 
  
   <?PHP  
