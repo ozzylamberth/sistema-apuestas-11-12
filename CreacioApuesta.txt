@@ -110,8 +110,8 @@ REM ****************************************************
 CREATE TABLE     maquina_apuesta  (
    maq_id  number(10) NOT NULL,
    maq_status  varchar(100) NOT NULL,
-   maq_longitud  number(10) NOT NULL,
-   maq_latitud  number(10) NOT NULL,
+   maq_longitud  float(10) NOT NULL,
+   maq_latitud  float(10) NOT NULL,
    maq_marca varchar(20) NOT NULL,
    maq_modelo varchar(20) NOT NULL,
    maq_memoria varchar(20) NOT NULL,

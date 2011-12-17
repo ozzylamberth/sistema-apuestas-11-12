@@ -49,9 +49,9 @@ REM ****************************************************
 REM *                      CATEGORIA                   *          
 REM ****************************************************
  
-INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,1,'Futbol');
-INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,2,'Beisbol');
-INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,2,'Belleza');
+INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,'Futbol');
+INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,'Beisbol');
+INSERT INTO categoria (cat_id,cat_nombre) VALUES (AUTO_INC_categoria.NEXTVAL,'Belleza');
 
 
 
