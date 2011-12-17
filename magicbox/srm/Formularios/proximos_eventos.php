@@ -39,6 +39,12 @@
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
 	color: #000;
 }
+.content .content_resize .mainbar .article form center table tr td p strong {
+	font-size: large;
+}
+.content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
+	color: #800;
+}
 -->
 </style>
 </head>
@@ -95,11 +101,10 @@ include_once("../DataConexion/conexion.php");
 <<<<<<< .mine
 =======
       <div class="slider">
-        <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="1023" height="100" alt=""><span>
+        <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="1023" height="100" alt="" /><span>
         </span></a></div>
         <div class="clr"></div>
       </div>
->>>>>>> .r11
       <div class="clr"></div>
     </div>
       <div class="clr"></div>
@@ -225,8 +230,8 @@ include_once("../DataConexion/conexion.php");
 </form>    
  <p>
    <?php } ?>
-    <div id="coin-slider">  <a href="#"><img src="../Imagenes/proximoseventos.gif" width="997" height="100" alt="">
-     <div class="clr"></div>
+    <div id="coin-slider">  <a href="#">
+      <div class="clr"></div>
           <div class="clr"></div>
         </div>
         <p class="pages"><small>Page 1 of 1</small> <span>1</span>  </p>
