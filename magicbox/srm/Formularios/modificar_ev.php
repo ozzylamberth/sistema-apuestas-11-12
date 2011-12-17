@@ -120,7 +120,7 @@ $eve_status='';
        }
 	 ?>
 
-	
+<?php if ($eve_id!=0){?>	
 <form id="formPariente" name="formPariente" method="post" action="">
   <fieldset>
         <legend>Si desea modificar el siguiente evento :</legend>
@@ -154,7 +154,7 @@ $eve_status='';
 </form>
 
 
-   <?php if ($eve_id!=0){?>
+   
 <form id="formDatos" name="formDatos" method="post" action= "modificar_ev2.php ">
   <fieldset>
     <legend></legend>

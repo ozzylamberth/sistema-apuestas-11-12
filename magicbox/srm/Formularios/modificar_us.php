@@ -111,7 +111,7 @@ body {
 	 
      ?>
 
-	
+ <?php if ($admin_cedula!=0){?>	
 <form id="formPariente" name="formPariente" method="post" action="">
   <fieldset>
         <legend>Si desea modificar al siguente Administrador :</legend>
@@ -145,7 +145,7 @@ body {
 </form>
 
 
-   <?php if ($admin_cedula!=0){?>
+  
 <form id="consulta" name="consulta" method="post" action= "modificar_us2.php">
   <fieldset>
     <legend>Ingrese los Nuevos Datos:</legend>
