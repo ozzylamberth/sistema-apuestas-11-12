@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Apuestas GSG</title>
@@ -49,14 +49,14 @@
 	font-size: 18px;
 }
 -->
-</style>
+<!--/style>
 </head>
 <body>
 <script language=javascript>
 function ventanaSecundaria (URL){
    window.open(URL,"ventana1","width=120,height=300,scrollbars=NO,resizable=no")
 }
-</script> 
+</script--> 
 
 <?PHP
 /** 
@@ -69,11 +69,12 @@ function ventanaSecundaria (URL){
 */
 
 
-session_start();
-include_once("../DataConexion/conexion.php");
+//session_start();
+include_once ("../controladores/ControlEvento.php");
+
 
 ?>
-<div class="main">
+<!--div class="main">
   <div class="header">
     <div class="header_resize">
       <div class="searchform">
@@ -113,143 +114,75 @@ include_once("../DataConexion/conexion.php");
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-          <h2>
+          <h2-->
+          
+ <form name="form1" method="post" action="../controladores/ControlEvento.php">
             <p align="left" ><strong>Seleccione Evento</strong>:
-             <?php
+             
+  
+  
  
-         $fecha1=time();
-	     $fecha1 -= (270 * 60);
-		  $fecha = date("Y-m-d", $fecha1 );
-        $eve_nombre='';
-		$eve_id=0;
-		$eve_fecha='';
-		$eve_nro_part=0;
-		
-        $selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Activo'");
-		
-		
-  ?>
-           <?php
-        $eve_nombre='';
-		$eve_id=0;
-		$eve_fecha='';
-		$eve_nro_gan='';
-		$eve_tipo_pago='';
-        $selec_nom_eve= sql("select eve_nombre from evento");
-  ?>
-          </p>
-          <form name="form1" method="post" action="">
-              
-            <select name="eve" class="gh" id="eve">
+  
+  
+  <select name="eve" class="gh" id="eve">
               <option value="0">Seleccione </option>
-              <?PHP
-        while ($roweve=oci_fetch_array($selec_nom_eve,OCI_BOTH)){?>
-                
-              <option value="<?php echo $roweve["EVE_NOMBRE"] ?>" > <?php echo $roweve["EVE_NOMBRE"]?></option>
-              <?php  } ?>
-            </select>
-              
-            <?PHP
-    if(isset($_POST['eve'])) 
-    $eve_nombre = $_POST['eve']; //Te devolveria el atributo value del option seleccionado
-	?>
+  <?php foreach ($eventos as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["id"] ?>" > <?php echo $valor["nombre"]?></option>
+  <?php endforeach; ?>
+  </select>
               
               
             <p class="Estilo1 Estilo3">
                 
               <input name="Buscar" type="submit" class="botn" id="Buscar" value="Buscar">
-</form>
 
- 
-  <?PHP 
-       $selec_id= sql( "SELECT EVE_ID FROM EVENTO WHERE EVE_NOMBRE LIKE '$eve_nombre'");
-	   $id= oci_fetch_array($selec_id,OCI_BOTH);
-	   $eve_id= $id['EVE_ID'];
-  
-      $selec_Id_Eve= sql("SELECT EVE_NRO_GAN, EVE_FECHA, EVE_TIPO_PAGO FROM EVENTO WHERE EVE_ID= '$eve_id'");
-	  
-	  While($roweve2=oci_fetch_array($selec_Id_Eve,OCI_BOTH))
-	   {	
-	   
-          $eve_nro_gan = $roweve2['EVE_NRO_GAN'];
-		  $eve_fecha = $roweve2['EVE_FECHA'];
-		  $eve_tipo_pago = $roweve2['EVE_TIPO_PAGO'];
-       }
-	   
-	   ?>
-  	 
- 
-
-<form id="formAdmin" name="formAdmin" method="post" action="">
    
-     <?php 
-	 
-	 $query=sql("SELECT P.PAR_NOMBRE, PE.PE_TOP_APUESTA, PE.PE_TIPO_PAGO FROM EVENTO E, PAR_EVE PE, PARTICIPANTE P WHERE P.PAR_ID=PE.PE_FK_PAR_ID AND PE.PE_FK_EVE_ID = E.EVE_ID");
-	   
-	?>
-    
- <p align="center"><strong>  
-  Evento: <?php  echo $eve_nombre?> 
- </strong></p>
- <p align="center" ><strong> Fecha: <?php echo $eve_fecha?>
-  </strong></p>
- <p align="center" ><strong>Nro de Ganadores: <?php echo $eve_nro_gan?></strong></p>
+<?php  if($eve_id):?>   
 
- <p align="center" ><strong>Tipo de Pago: <?php echo $eve_tipo_pago?></strong></p>
-
- <table width="200" border="1" align="center">
-   <tr>
-    <td  align="center" width="200">Participantes</td>
     
-  
-      <?php
-	    $var= 1;
-           While($row=oci_fetch_array($query,OCI_BOTH)){
-               $par_nombre = $row['PAR_NOMBRE']; 
-		        $pe_top_apuesta = $row['PE_TOP_APUESTA']; 
-				$pe_tipo_pago = $row['PE_TIPO_PAGO'];
-	     ?>
- 
-</table>
- 
-      <table width="200" border="1" align="center">
+ 	<p align="center">
+    	<strong>  
+  			Evento: <?php  echo $eve_nombre?> 
+ 		</strong>
+    </p>
+ 	<p align="center" >
+    	<strong> 
+        	Fecha: <?php echo $eve_fecha?>
+  		</strong>
+    </p>
+ 	<p align="center" >
+    	<strong>
+        	Nro de Ganadores: <?php echo $eve_nro_gan?>
+        </strong>
+    </p>
+
+	<p align="center" >
+    	<strong>
+        	Tipo de Pago: <?php echo $eve_tipo_pago?>
+        </strong>
+    </p>
+
+
+    <table width="600" border="1" align="center">
         <tr>
-          <th width="200" scope="col"> <?php echo $par_nombre; ?> </th> 
-        </tr>
-         <tr>
-          <th width="200" scope="col"> <?php
-		  if ($pe_top_apuesta==0) 
-		  {
-			echo "Sin tope apuesta";  
-		  }
-		  else
-		  {
-		  echo $pe_top_apuesta ;
-		  }
-		  ?>
-          </th> 
-        </tr>
-        <tr>
-          <th width="200" scope="col"> <?php
-		  if ($pe_tipo_pago==0) 
-		  {
-			echo "Sin tipo pago especial";  
-		  }
-		  else
-		  {
-		  echo $pe_tipo_pago ;
-		  }
-		  ?> </th> 
-        </tr>
-      </table>
-    
+          <th scope="col" colspan="3"> Participantes </th> 
+       </tr>
+        
+    <?php foreach($participantes_eve as $clave=>$valor):?>
 
-  <?php 
-   $var ++;
-   }
-	?>
+        <tr>
+          <td width="200" scope="col"> <?php echo $valor['par_nombre']; ?> </td> 
+          <td width="200" scope="col"> <?php echo $valor['pe_top_apuesta']  ?>  </td> 
+          <td width="200" scope="col"> <?php echo $valor['pe_tipo_pago'] ?> </td> 
+        </tr>    
+
+  <?php endforeach; ?>
+    
+     </table>
+<?php endif; ?>
+
 </form>
-<center></center>
+<!--center></center>
           <div class="clr"></div>
           <div class="clr"></div>
         </div>
@@ -288,4 +221,4 @@ include_once("../DataConexion/conexion.php");
   </div>
 </div>
 </body>
-</html>
+</html-->
