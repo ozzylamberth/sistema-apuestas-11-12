@@ -9,7 +9,7 @@ include_once "conexion.php";
 		//print_r($fila);
 	 
 	 $xml='<?xml version="1.0" encoding="utf-8"?>';
-	 $nombre='C:/Users/Eleany G/Desktop/eventos.xml'; 
+	 $nombre='C:/eventos.xml'; 
      $archivo = fopen ($nombre,'w'); 
 	 fwrite ($archivo, $xml);  
 	 

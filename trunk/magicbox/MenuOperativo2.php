@@ -74,7 +74,7 @@ way to fit your requirements.
 =================================================================== */
 .pro_linedrop {
 height:36px;
-width:742px;
+width:1000px;
 background:url(line/blank_sepia.gif);
 position:relative; 
 font-family:arial, verdana, sans-serif; 
@@ -158,12 +158,12 @@ list-style:none;
 .pro_linedrop .sub li {background:transparent;}
 
 .pro_linedrop .select :hover .sub {
-height:25px;
+height:40px;
 display:block; 
 position:absolute;
 float:left;
-width:740px;
-top:28px; 
+width:998px;
+top:33px; 
 left:0; 
 text-align:center;
 background:transparent url(line/transparent.gif);
@@ -173,7 +173,7 @@ border:1px solid #ddd;
 .pro_linedrop .select :hover .rt li {float:right;}
 
 .pro_linedrop .select :hover .sub li a 
-{display:block; height:25px; line-height:22px; float:left; background:transparent url(line/transparent.gif); padding:0 16px; margin:0; white-space:nowrap; color:#888;font-size:10px;}
+{display:block; height:25px; line-height:22px; float:left; background:transparent url(line/transparent.gif); padding:8px 12px; margin:0; white-space:nowrap; color:#888;font-size:12px;}
 
 .pro_linedrop .select :hover .sub li.subline a {color:#ddd;}
 
@@ -181,9 +181,9 @@ border:1px solid #ddd;
 .pro_linedrop .select :hover .sub li:hover
 {color:#000; line-height:20px; position:relative;}
 
-.pro_linedrop .select :hover .sub li:hover > a {color:#ddd;}
+.pro_linedrop .select :hover .sub li:hover > a {color:#FFBF00; font-weight:bold}
 
-.pro_linedrop .select :hover .sub :hover ul {padding:0; margin:0; list-style:none; display:block; width:112px; position:absolute; left:-1px; top:25px; border:1px solid #ddd; border-top:0; background:#000000;}
+.pro_linedrop .select :hover .sub :hover ul {padding:0; margin:0; list-style:none; display:block; width:202px; position:absolute; left:-1px; top:25px; border:1px solid #ddd; border-top:0; background:#000;}
 
 .pro_linedrop .select :hover .sub :hover ul li a {width:80px; text-align:left; height:20px; line-height:18px;}
 .pro_linedrop .select :hover .sub :hover ul li a:hover {line-height:16px;}
@@ -266,6 +266,8 @@ border:1px solid #ddd;
 		<li><a href="srm/Formularios/listar_ganadores2.php" target='paginita'>Listar Ganadores</a></li>
         
         <li><a href="srm/Formularios/mostrar_maquinas.php" target='paginita'>Mostrar Maquinas</a></li>
+        
+        <li><a href="srm/Controladores/controlEvento.php" target='paginita'>Listar Participantes por Evento</a></li>
 	</ul>
 	</li>
 	
@@ -279,7 +281,9 @@ border:1px solid #ddd;
 </ul>
 </div>
 
-<h4>Copyright &copy; 2011 CSS </h4>
+<!--h4>Copyright &copy; 2011 CSS </h4-->
+<p> </p>
+<br />
       
     </div>
   </div>
