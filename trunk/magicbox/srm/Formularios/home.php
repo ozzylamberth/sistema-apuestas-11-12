@@ -1,7 +1,7 @@
 <?php
 session_start();
 $usuario= $_SESSION['usuario'];
-include_once ("../DataConexion/conexion.php");
+
 ?>
 
 <table align='center' border='0'>

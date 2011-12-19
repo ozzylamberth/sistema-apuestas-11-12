@@ -1,6 +1,8 @@
 <?php
 include_once ("../DataConexion/conexion.php");
 session_start();
+
+
 $usuario= $_POST['usuario'];
 $clave= $_POST['clave'];
 
@@ -9,34 +11,30 @@ $clave= $_POST['clave'];
 //$usuario= md5('$usuario');
 //$clave= md5('$clave');
 
-require 'php/Logger.php';
 
-Logger::configure('php/log4conf.xml');
-
-$log = Logger::getLogger('Sistema_de_Apuestas');
-
-                                     
-																 
-									 $validar_Existencia=sql("SELECT * FROM administrador where admin_login='$usuario' and admin_contrasena='$clave'");
-									 echo $validar_Existencia;
-									   $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
-                                       $filas=oci_num_rows($validar_Existencia);
-		
-		                           
-                                      
-										if ($filas>0){	
+/////////////////////////////////////////////////////////////
+//////luego del if del controlador sigue esta impresion ///////////////////////
+/////////////////////////////////////////////////////////////
+              
+			  $validar_Existencia=sql("SELECT * FROM administrador where admin_login='$usuario' and admin_contrasena='$clave'");
+		 $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
+         $filas=oci_num_rows($validar_Existencia);
+			if ($filas>0){	
 											
-										$_SESSION["usuario"]= "$usuario";
-										$_SESSION["clave"]= "$clave";
-										header("location:aplicacion.php");
-										}
-										else								
-										{
-											$log->error("Usuario No Existe"); 
-										?>
+					$_SESSION["usuario"]= "$usuario";
+					$_SESSION["clave"]= "$clave";
+					header("location:aplicacion.php");
+					}
+					else								
+					{
+					
+		
+		?>
+		
+									
 										<html>
 <head>
-<title>|::SISTEMA DE APUESTAS MG Provided By MG::|</title> 
+<title>|::SISTEMA DE APUESTAS SG::|</title> 
 </head>
 <body>
 <form id="formulario" name="formulario" method="post" action="iniciar.php">

@@ -156,3 +156,5 @@
 12/17/11 01:19:36,113 [5524] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
 12/17/11 01:20:08,861 [5524] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
 12/17/11 01:21:07,516 [5524] WARN Sistema_de_Apuestas - Esta intentando ingresar campos vacios en el formulario categoria
+12/18/11 19:40:49,597 [5224] ERROR Sistema_de_Apuestas - Usuario No Existe
+12/18/11 19:43:17,118 [5224] ERROR Sistema_de_Apuestas - Usuario No Existe

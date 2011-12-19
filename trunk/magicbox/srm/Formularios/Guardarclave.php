@@ -1,24 +1,14 @@
 <?php
     /**
-     *Autor: Eduardo Torres
+     *Autor: Irene Soto
 	  Fecha: 15/08/2011
 	  @copyright GrupoNSM CA
 	  Modificaciones:
      */
-      //require_once("../Contenedores/header.php");
-   // require_once("../Clases/conexiones.php");
-    //$conexiones = new conexiones();
-
-
-include_once ("../DataConexion/conexion.php");
-    $cedula=$_POST["cedula"];
-    $contrasena1=$_POST["contrasena1"];
+      
 	//$contrasena2=$_POST["contrasena2"];
 	
-	
-	
-	
-	$act_Adm = sql("update administrador set admin_contrasena='$contrasena1' where admin_cedula='$cedula'"); 
+
 	
 	?>
 	
@@ -39,9 +29,7 @@ include_once ("../DataConexion/conexion.php");
 	<?PHP
 	require_once("../Contenedores/footer.php");
 
-//echo $cedula;
+
 
 	?>
-	<?PHP
-	
-?>
+

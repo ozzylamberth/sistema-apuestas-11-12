@@ -2,7 +2,7 @@
 
 /** 
 *
-* @Eliminarcion de categorias
+ * @Eliminarcion de categorias
 * 
 * @autor: Eleany Garcia 
 * Página de eliminacion de categorias contiene la información de las distintas categorias que se pueden eliminar
@@ -40,7 +40,7 @@ h1 {
       $cat_nombre='';
       $cat_id='';
 
-        $selec_Cat= sql("select c.cat_nombre from categoria c , evento e where );
+        $selec_Cat= sql("select c.cat_nombre from categoria c , evento e where ");
 	   ?>
         
     

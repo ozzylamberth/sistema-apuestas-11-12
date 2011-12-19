@@ -26,36 +26,6 @@ include_once ("../DataConexion/conexion.php");
 
   <?php //echo $_SESSION["usuario"];  
   $contador =0;
-
-
-
-/* 
-	$consulta= "SELECT * FROM usuario where login='$usuario'"; 
-	$resultado= mysql_query($consulta);
-	while ($fila= mysql_fetch_array($resultado))
-{
-
-$us_verif=$fila[0];
-$num_user=$fila[2];
-$nombre=$fila[6]; */
-
-
-
-/* 
-REVISAR:  no imprime los datos del usuario
-$datos_Usuario=sql("SELECT * FROM administrador where admin_login='$usuario'");
-									   $fila=oci_fetch_array($datos_Usuario,OCI_BOTH);
-                                       $filas=oci_num_rows($datos_Usuario);
-		
-		
-		
-		
-		 While($fila=oci_fetch_array($datos_Usuario,OCI_BOTH))
-		 {
-         $admin_nombre= $fila['admin_nombre'];
-		 $admin_apellido= $fila['admin_apellido'];
-		 }  
- */
 		                  
 ?> 
 <table width="348" border="0" align="center">
