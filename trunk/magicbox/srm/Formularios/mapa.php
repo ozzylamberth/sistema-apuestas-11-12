@@ -97,67 +97,48 @@ body {
 </style></head>
 <body onload="load()" onunload="GUnload()">
 
-<?php
- $selectCasas= sql("select casapu_nombre from casa_apuesta");
-?>
+
 <center><label class="titulo">Registro de Maquina de Apuesta</label></center>
 
 <form id="hhhhh" action="../controladores/ControlMaquina.php" name="formMapa" method="post"/>
-
-
-<p> <label>Seleccione casa de apuesta a la que pertenece:</label>
-  <select name="casapu_nombre" class="nn" id="casapu_nombre">
-  <option value="0">Seleccione </option>
-  <?PHP
-         while ($row=oci_fetch_array($selectCasas,OCI_BOTH)){?>
-  <option value="<?php echo $row["CASAPU_NOMBRE"] ?>" > <?php echo $row["CASAPU_NOMBRE"]?></option>
-  <?php  } ?>
-</select>
-<?PHP
-    if(isset($_POST['casapu_nombre'])) 
-    $casapu_nombre = $_POST['casapu_nombre']; //Te devolveria el atributo value del option seleccionado
-	?>
-</p>
+<p>Sumistre la siguiente informacion de la maquina:</p>
 <p>
-<label>Marca: </label>
+  <label>Marca: </label>
 <label>
-  <input name="marca" type="text" id="marca" size="30" maxlength="30" />
+  <input name="maq_marca" type="text" id="maq_marca" size="30" maxlength="30" />
 </label></center>
 </p>
 <p>Modelo: 
   <label>
-    <input name="modelo" type="text" id="modelo" size="30" maxlength="30" />
+    <input name="maq_modelo" type="text" id="maq_modelo" size="30" maxlength="30" />
   </label>
 </p>
 <p>Memoria: 
   <label>
-    <input name="memoria" type="text" id="memoria" size="30" maxlength="30" />
+ 
+    <input name="maq_memoria" type="text" id="maq_memoria" size="30" maxlength="30" />
   </label>
 </p>
 <p>Procesador: 
   <label>
-    <input name="procesador" type="text" id="procesador" size="30" maxlength="30" />
+    <input name="maq_procesador" type="text" id="maq_procesador" size="30" maxlength="30" />
   </label>
 </p>
 <p>Medidas: 
   <label>
-    <input name="Medidas" type="text" id="Medidas" size="30" maxlength="30" />
+    <input name="maq_medidas" type="text" id="maq_medidas" size="30" maxlength="30" />
   </label>
 </p>
 <p>Tarjeta de memoria: 
   <label>
-    <input name="TarMe" type="text" id="TarMe" size="30" maxlength="30" />
+    <input name="maq_tarj_mem" type="text" id="maq_tarj_mem" size="30" maxlength="30" />
   </label>
 </p>
 <p>Capacidad de disco:
   <label>
-    <input name="Capacidad" type="text" id="Capacidad" size="30" maxlength="30" />
+    <input name="maq_cap_disco" type="text" id="maq_cap_disco" size="30" maxlength="30" />
   </label>
 </p>
-
- 
-
-   
 
 <center>
 <div id="map" style="width:600px; height:400px"></div>
