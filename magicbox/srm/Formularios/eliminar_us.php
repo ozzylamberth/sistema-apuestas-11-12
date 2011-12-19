@@ -9,8 +9,7 @@
 *
 */
 
-session_start();
-include_once("../DataConexion/conexion.php");
+include_once ("../controladores/ControlEliminarAdministrador.php");
 
 
 ?>
@@ -37,37 +36,25 @@ body {
 }
 -->
 </style><body bgcolor="white">
- <?php
-$admin_nombre='';
-$admin_cedula=0;
-$admin_status='';
-$admin_login='';
-$admin_apellido='';
 
-        $selec_Adm= sql("select admin_nombre from administrador");
-?>
     
 	<p align="center" class="Estilo1 Estilo1"><strong></strong><img src="../Imagenes/header.gif" width="957" height="119" alt="h5"></p>
 <p align="center" class="Estilo1"><strong>Eliminar Administrador</strong> </p>
 <tr class="rt">
   <p  class="rt">Seleccione Administrador</p>
 
-<form name="form1" method="post" action="">
+<form name="form1" method="post" action="../controladores/ControlEliminarAdministrador.php">
   
-    <select name="admin" id="admin">
-    <option value="0">Seleccione </option>
-      <?PHP
-  while ($rowad=oci_fetch_array($selec_Adm,OCI_BOTH)){?>
-      
-      <option value="<?php echo $rowad["ADMIN_NOMBRE"] ?>" > <?php echo $rowad["ADMIN_NOMBRE"]?></option>
-      <?php  } ?>
-    </select>
+<select name="admin" class="gh" id="admin">
+              <option value="0">Seleccione </option>
+  <?php foreach ($administradores as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["admin_cedula"] ?>" ><?php echo $valor["admin_cedula"]?></option>
+  <?php endforeach; ?>
+  </select>  
+  
     
-    <?PHP
-  if(isset($_POST['admin'])) 
-    $admin_nombre = $_POST['admin']; //Te devolveria el atributo value del option seleccionado
-	?>
-    
+     
+
   </p>
   <p class="Estilo1 Estilo3">
 
@@ -75,23 +62,11 @@ $admin_apellido='';
  </p>
  </form>
  
-    <?PHP  
-$selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLIDO, ADMIN_LOGIN FROM ADMINISTRADOR WHERE ADMIN_NOMBRE LIKE '$admin_nombre'");
 
-  While($rowad1=oci_fetch_array($selec_Adm1,OCI_BOTH)){	
-  $admin_cedula = $rowad1['ADMIN_CEDULA'];
-  $admin_nombre = $rowad1['ADMIN_NOMBRE'];
-  $admin_status = $rowad1['ADMIN_STATUS'];
-  $admin_apellido = $rowad1['ADMIN_APELLIDO'];
-  $admin_login = $rowad1['ADMIN_LOGIN'];
-  }
 
-?>
-<?php
-		if ($admin_nombre !='' )
-		{ ?>
+<?php  if($admin_cedula):?>
 
-  <form id="formAdmin" name="formAdmin" method="post" action="eliminar_us2.php">
+  <form id="formAdmin" name="formAdmin" method="post" action="../Formularios/eliminar_us2.php">
   
   
     <fieldset>
@@ -99,8 +74,8 @@ $selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLID
       <table width="485" height="65" border="1" align="center">
         <tr>
           <th scope="col"><legend>Datos del Administrador a Eliminar :</legend>
-            <input type="hidden" name="ADMIN_CEDULA" id="ADMIN_CEDULA" value="<?php echo $admin_cedula ?>"/>
             <p>
+              <input name="ADMIN_CEDULA" type="hidden" id="ADMIN_CEDULA" value=<?php echo $admin_cedula?>>
               <label>Cedula : <?php echo $admin_cedula; ?> </label>
             </p>
             <p>
@@ -121,9 +96,7 @@ $selec_Adm1= sql("SELECT ADMIN_CEDULA, ADMIN_NOMBRE, ADMIN_STATUS, ADMIN_APELLID
         </tr>
       </table>
     </fieldset>
-    <?php
-		}
-		?>
+   <?php endif; ?>
 </form>
 
 

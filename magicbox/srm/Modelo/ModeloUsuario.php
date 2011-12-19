@@ -57,7 +57,7 @@ include_once ("../DataConexion/guardarXmlAdmin.php");
 
 // esta función valida la existencia con clave y login, para ingresar al sistema se deben cumplir las dos condiciones
 
-    	function validarExistencia2($admin_login,$admin_contrasena);
+    	function validarExistencia2($admin_login,$admin_contrasena)
 	{
 		 $validar_Existencia=sql("SELECT * FROM administrador where admin_login='$usuario' and admin_contrasena='$clave'");
 		 $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
@@ -79,8 +79,49 @@ include_once ("../DataConexion/guardarXmlAdmin.php");
 		}
 		
 
+// funcion que se llama desde la pagina control eliminar usuario
 
+function buscarAdministradoresPorId($admin_cedula)
+	{
+		$filas=array();
+		$selec_Cedula_Admin= sql("SELECT ADMIN_NOMBRE, ADMIN_APELLIDO, ADMIN_LOGIN, ADMIN_STATUS FROM ADMINISTRADOR WHERE ADMIN_CEDULA= '$admin_cedula'");
+	   
+	   
+	   echo $admin_cedula;
+	   
+	  	while($roweve2=oci_fetch_array($selec_Cedula_Admin,OCI_BOTH))
+	   	{	
+			$fila['admin_nombre'] = $roweve2['ADMIN_NOMBRE']; 
+	        $fila['admin_apellido'] = $roweve2['ADMIN_APELLIDO'];
+			$fila['admin_login'] = $roweve2['ADMIN_LOGIN'];
+			$fila['admin_status'] = $roweve2['ADMIN_STATUS'];
+		  	$filas[]=$fila;
+       	}
+		
+		
+		return $filas;
+	  
+	}
 
+function buscarAdministradores()
+	{
+		$filas=array();
+		$selec_cedula_admin= sql("select * from administrador");
+		
+		while($row=oci_fetch_array($selec_cedula_admin,OCI_BOTH))
+		{
+			$fila['admin_cedula']=$row['ADMIN_CEDULA'];
+			$fila['admin_nombre'] = $row['ADMIN_NOMBRE']; 
+	        $fila['admin_apellido'] = $row['ADMIN_APELLIDO'];
+			$fila['admin_login'] = $row['ADMIN_LOGIN'];
+			$fila['admin_status'] = $row['ADMIN_STATUS'];
+			$filas[]=$fila;
+		}
+		
+	    		
+		return $filas;
+			
+	}
 
 
 

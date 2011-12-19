@@ -126,19 +126,13 @@ body {
             <p align="left" ><strong>Seleccione Evento</strong>:
              
   
-  
- 
-  
-  
-  <select name="eve" class="gh" id="eve">
-              <option value="0">Seleccione </option>
-  <?php foreach ($eventos as $clave=>$valor): ?>
-  		<option value="<?php echo $valor["id"] ?>" > <?php echo $valor["nombre"]?></option>
-  <?php endforeach; ?>
-  </select>
-              
-              
-            <p class="Estilo1 Estilo3">
+              <select name="admin" class="gh" id="admin">
+                <option value="0">Seleccione </option>
+                <?php foreach ($eventos as $clave=>$valor): ?>
+                <option value="<?php echo $valor["id"] ?>" > <?php echo $valor["nombre"]?></option>
+                <?php endforeach; ?>
+              </select>
+   <p class="Estilo1 Estilo3">
                 
               <input name="Buscar" type="submit" class="botn" id="Buscar" value="Buscar">
 
@@ -146,7 +140,7 @@ body {
 <?php  if($eve_id):?>   
 
     
- 	<p align="center">
+<p align="center">
     	<strong>  
   			Evento: <?php  echo $eve_nombre?> 
  		</strong>
@@ -178,8 +172,8 @@ body {
 
         <tr>
           <td width="200" scope="col"> <?php echo $valor['par_nombre']; ?> </td> 
-          <td width="200" scope="col"> <?php echo $valor['pe_top_apuesta']  ?>  </td> 
-          <td width="200" scope="col"> <?php echo $valor['pe_tipo_pago'] ?> </td> 
+          <td width="200" scope="col"> <?php echo $valor['PE_TOP_APUESTA']  ?>  </td> 
+          <td width="200" scope="col"> <?php echo $valor['PE_TIPO_PAGO'] ?> </td> 
         </tr>    
 
   <?php endforeach; ?>

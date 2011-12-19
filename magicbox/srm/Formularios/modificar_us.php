@@ -1,23 +1,4 @@
-    <script>
-function validaSubmite(){
-
-
-if (document.consulta.admin_login.value == false )
-		alert("Debe Ingresar el login") 
-else if (document.consulta.admin_contrasena.value == false )
-		alert("Debe Ingresar Contrasena")
-else if (document.consulta.admin_nombre.value == false )
-		alert("Debe Ingresar Nombre")
-else if (document.consulta.admin_apellido.value == false )
-		alert("Debe Ingresar Apellido")
-else if (document.consulta.admin_cedula.value == false )
-		alert("Debe Ingresar La Cedula")
-
-else
-       document.consulta.submit()
-		
-}</script>
-
+    
 <?PHP
 
 /** 
@@ -29,9 +10,7 @@ else
 *
 */
 
-
-session_start();
-include_once("../DataConexion/conexion.php");
+include_once ("../controladores/ControlModificarUsu.php")
 
 
 ?>
@@ -64,54 +43,21 @@ body {
 </style><body bgcolor="white">
 <p align="center" class="Estilo1">Modificar Administrador</p>
 
-    <?php
-
-  $admin_login='';
-  $admin_contrasena ='';
-  $admin_status='';
-  $admin_nombre='';
-  $admin_apellido='';
-  $admin_cedula=0;
-   
-  
-
-    $selec_admin= sql("SELECT admin_cedula FROM administrador ORDER BY admin_cedula");
-
-?>
 <form action="" method="post" name="formId" id="formId">
-  <select name="admin_cedula1" class="mn" id="admin_cedula1">
+  <select name="usuario" class="gh" id="usuario">
     <option value="0">Seleccione </option>
-    <?php  
-	while ($rows=oci_fetch_array($selec_admin,OCI_BOTH))
-	{?>
-    <option value="<?php echo $rows["ADMIN_CEDULA"] ?>" > <?php echo $rows["ADMIN_CEDULA"]?></option>
-    <?php  } ?>
+    <?php foreach ($usuarios as $clave=>$valor): ?>
+    <option value="<?php echo $valor["admin_cedula"] ?>" ><?php echo $valor["admin_cedula"]?></option>
+    <?php endforeach; ?>
   </select>
-  <?php
-  
-  if(isset($_POST['admin_cedula1'])) //$_GET si se hace por GET (url)
-      $admin_cedula = $_POST['admin_cedula1']; //Te devolveria el atributo value del option seleccionado
-    ?>
-        <p>
-          <input name="Submit" type="submit" class="irena" value="Buscar" />
-        </p>
+  <p>
+    <input name="Submit" type="submit" class="irena" value="Buscar" />
+  </p>
 </form>
 
-     <?php 
-      $selec_Admin=sql("SELECT admin_status, admin_nombre, admin_login, admin_contrasena, admin_apellido FROM administrador WHERE admin_cedula= '$admin_cedula'");
-          
-	 While($fila=oci_fetch_array($selec_Admin,OCI_BOTH))
-	   {
-	   $admin_login = $fila['ADMIN_LOGIN'];
-	   $admin_contrasena = $fila['ADMIN_CONTRASENA'];
-	   $admin_nombre = $fila['ADMIN_NOMBRE'];
-       $admin_apellido = $fila['ADMIN_APELLIDO'];
-	   $admin_status = $fila['ADMIN_STATUS'];
-       }
-	 
-     ?>
+ 
 
- <?php if ($admin_cedula!=0){?>	
+ <?php  if($admin_cedula):?>
 <form id="formPariente" name="formPariente" method="post" action="">
   <fieldset>
         <legend>Si desea modificar al siguente Administrador :</legend>
@@ -146,7 +92,7 @@ body {
 
 
   
-<form id="consulta" name="consulta" method="post" action= "modificar_us2.php">
+<form id="consulta" name="consulta" method="post" action= "../Formularios/modificar_us2.php">
   <fieldset>
     <legend>Ingrese los Nuevos Datos:</legend>
    
@@ -176,7 +122,7 @@ body {
     </p>
     
     <p>
-      <center><input name="enviar" type="button" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar"/>
+      <center><input name="enviar" type="submit" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar"/>
       <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" /></center>
     </p>
     <div align="center">
@@ -186,7 +132,5 @@ body {
   </fieldset>
 
 </form>
-
-
-<?php } ?>
+<?php endif; ?>
 </body>

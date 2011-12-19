@@ -4,15 +4,41 @@
 include_once ("../DataConexion/conexion.php");
 include_once ("../DataConexion/guardarXmlEvento.php");
 
+	     function buscarEventos()
+	{
+		$filas=array();
+		$selec_Eve1= sql("select EVE_ID, EVE_NOMBRE, EVE_STATUS, EVE_NRO_PART, EVE_NRO_GAN, EVE_TIPO_PAGO, EVE_FECHA from evento");
+
+    While($rowev1=oci_fetch_array($selec_Eve1,OCI_BOTH)){	
+     $fila['eve_id'] = $rowev1['EVE_ID'];
+	 $fila['eve_nombre'] = $rowev1['EVE_NOMBRE'];
+	 $fila['eve_status']  = $rowev1['EVE_STATUS'];
+	 $fila['eve_nro_part'] = $rowev1['EVE_NRO_PART'];
+     $fila['eve_nro_gan'] = $rowev1['EVE_NRO_GAN'];
+	 $fila['eve_tipo_pago'] = $rowev1['EVE_TIPO_PAGO'];
+	 $fila['eve_fecha'] = $rowev1['EVE_FECHA'];
+	 
+	 $filas[]= $fila;
+  
+     }
+		//print_r($filas);
+	    		
+		return $filas;
+			
+	}
+	
 	function buscarEventosActivos()
 	{
 		$filas=array();
-		$selec_nom_eve= sql("select eve_id, eve_nombre from evento WHERE eve_status LIKE 'Activo'");
+		$selec_nom_eve= sql("select * from evento WHERE eve_status LIKE 'Activo'");
 		
 		while($row=oci_fetch_array($selec_nom_eve,OCI_BOTH))
 		{
 			$fila['id']=$row['EVE_ID'];
 			$fila['nombre']=$row['EVE_NOMBRE'];
+			$fila['eve_fecha']=$row['EVE_FECHA'];
+			$fila['eve_nro_part']=$row['EVE_NRO_PART'];
+			$fila['eve_nro_gan']=$row['EVE_NRO_GAN'];
 			$filas[]=$fila;
 		}
 		//print_r($filas);
