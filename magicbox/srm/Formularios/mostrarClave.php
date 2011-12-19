@@ -11,14 +11,10 @@
 
 
 
-include_once ("../DataConexion/conexion.php");
-    $cedula=$_POST["cedula"];
-    $respuestaSecreta=$_POST["respuestaSecreta"];
+include_once("../controladores/ControlClave2.php");   
 //echo $cedula;
 
-   $validar_Existencia=sql("select * from administrador where admin_cedula = '$cedula' and admin_resp_secreta LIKE '$respuestaSecreta'");
-         $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
-		  $filas=oci_num_rows($validar_Existencia);
+   
 	
 	
 			if ($filas> 0)

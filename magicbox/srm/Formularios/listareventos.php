@@ -9,9 +9,8 @@
 *
 */
 
-session_start();
-include_once("../DataConexion/conexion.php");
-
+/* include_once("../DataConexion/conexion.php"); */
+include_once("../controladores/ControlListarEventos.php");
 ?>
 
 <style type="text/css">
@@ -35,10 +34,10 @@ body {
 <p align="center" class="Estilo1"><strong>Lista de Eventos</strong></p>
    
 
-   <?php 
-	$queryListaEve = sql("SELECT * FROM evento");
+    <?php 
+	//$queryListaEve = sql("SELECT * FROM evento");
 	
-	?>
+	?> 
  
 <table width="900" border="1" align="center">
   <tr class="kk">
@@ -51,14 +50,14 @@ body {
    </tr>
   
       <?php
-	    $var= 1;
+	   /*  $var= 1;
            While($row=oci_fetch_array($queryListaEve,OCI_BOTH)){
                $eve_nombre = $row['EVE_NOMBRE']; 
 			   $eve_status = $row['EVE_STATUS']; 
 			   $eve_fecha = $row['EVE_FECHA']; 
 			   $eve_nro_part = $row['EVE_NRO_PART']; 
 			   $eve_nro_gan = $row['EVE_NRO_GAN'];
-			   $eve_tipo_pago = $row['EVE_TIPO_PAGO'];
+			   $eve_tipo_pago = $row['EVE_TIPO_PAGO']; */
 	     ?>
  
 </table>
@@ -77,7 +76,7 @@ body {
 
   <?php 
    $var ++;
-   }
+  // }
 	?>
     
  

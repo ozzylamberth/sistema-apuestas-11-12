@@ -9,16 +9,8 @@
 */
 
 
-session_start();
-include_once("../DataConexion/conexion.php");
-include_once ("../DataConexion/guardarXmlEvento.php");
 
-$eve_id = $_POST['eve_id'];
-$eve_nombre = $_POST['eve_nombre'];
-$fecha_Evento=$_POST['fecha_Evento'];
-
-$eve_nro_part= $_POST['eve_nro_part'];
-$eve_nro_gan= $_POST['eve_nro_gan'];
+include_once("../controladores/ControlEvento3.php");
 
 ?>
 
@@ -39,11 +31,7 @@ body {
 </style><body bgcolor="white">
 	
 
-<?php	
-		$actualiza_Eve = sql("UPDATE evento SET eve_nombre='$eve_nombre', eve_fecha = TO_DATE('$fecha_Evento', 'YYYY-MM-DD'), eve_nro_part ='$eve_nro_part', eve_nro_gan ='$eve_nro_gan' WHERE eve_id= ".$eve_id);		
-		guardarXmlEvento();
-		
-?>
+
   
   <table align="center">
 	<tr>

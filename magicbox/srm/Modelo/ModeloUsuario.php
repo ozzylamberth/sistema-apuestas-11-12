@@ -48,18 +48,36 @@ include_once ("../DataConexion/guardarXmlAdmin.php");
 		$eliminar_Adm = sql("DELETE FROM ADMINISTRADOR WHERE ADMIN_CEDULA= ".$admin_cedula);
 	guardarXml();
 	
+	}
+
+	function claveAdmin ($contrasena1,$admin_cedula)
+	{
+		$act_Adm = sql("update administrador set admin_contrasena='$contrasena1' where admin_cedula='$admin_cedula'"); 
+	}
+
+// esta función valida la existencia con clave y login, para ingresar al sistema se deben cumplir las dos condiciones
+
+    	function validarExistencia2($admin_login,$admin_contrasena);
+	{
+		 $validar_Existencia=sql("SELECT * FROM administrador where admin_login='$usuario' and admin_contrasena='$clave'");
+		 $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
+         $filas=oci_num_rows($validar_Existencia);
+		 
+		 return $filas;
+	}
+	
+
+// funcion que se llama desde mostrar clave 
+
+        function ValidarExistencia3($cedula,$respuestaSecreta)
+		{
+		  $validar_Existencia=sql("select * from administrador where admin_cedula = '$cedula' and admin_resp_secreta LIKE '$respuestaSecreta'");
+          $fila=oci_fetch_array($validar_Existencia,OCI_BOTH);
+		  $filas=oci_num_rows($validar_Existencia);
+		  return $filas;
+			
 		}
-
-
-// todas estas implementaciones invican a la funcion para crear el xml
-
-
-
-
-
-
-
-
+		
 
 
 

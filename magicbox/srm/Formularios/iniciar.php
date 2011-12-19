@@ -12,7 +12,7 @@
 ventanaX = 620;
 ventanaY = 620; self.resizeTo(ventanaX,ventanaY);
 </script>
-<title>|::SISTEMA DE APUESTAS  Provided By MG ::|</title> 
+<title>|::SISTEMA DE APUESTAS  SG ::|</title> 
 </head>
 <body>
 <form id="formulario" name="formulario" method="post" action="iniciando.php" target='_blank'>

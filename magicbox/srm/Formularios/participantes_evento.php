@@ -70,7 +70,7 @@ function ventanaSecundaria (URL){
 
 
 //session_start();
-include_once ("../controladores/ControlEvento.php");
+include_once ("../controladores/controlEvento.php");
 
 
 ?>
@@ -114,7 +114,13 @@ include_once ("../controladores/ControlEvento.php");
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-          <h2-->
+          <h2--><style type="text/css">
+<!--
+body {
+	background-image: url(../Imagenes/fondo.jpg);
+}
+-->
+</style>
           
  <form name="form1" method="post" action="../controladores/ControlEvento.php">
             <p align="left" ><strong>Seleccione Evento</strong>:

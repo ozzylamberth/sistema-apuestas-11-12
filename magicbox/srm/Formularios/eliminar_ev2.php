@@ -10,9 +10,10 @@ se realiza el delete de la BD y se redirecciona a la pagina de inicio
 *
 */
 
-session_start();
-include_once("../DataConexion/conexion.php");
-include_once ("../DataConexion/guardarXmlEvento.php");
+
+include_once("../controladores/ControlEvento2.php");
+
+
 
 
 ?>
@@ -36,12 +37,7 @@ body {
 	
 
 <span class="Estilo1">
-<?php
-    $eve_id =  $_POST['eve_id'];
- 
-	$eliminar_Eve = sql ("DELETE FROM evento WHERE eve_id= ".$eve_id);
-	guardarXmlEvento();
-?>
+
 
 <table align="center" width="200" height="439" border="">
 <tr>  
