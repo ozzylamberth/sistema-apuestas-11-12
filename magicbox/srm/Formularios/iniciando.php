@@ -86,7 +86,7 @@ $clave= $_POST['clave'];
 										?>
 										<html>
 <head>
-<title>|::SISTEMA DE APUESTAS MG Provided By MG::|</title> 
+<title>|::SISTEMA DE APUESTAS MG Provided By SG::|</title> 
 </head>
 <body>
 <form id="formulario" name="formulario" method="post" action="iniciar.php">
