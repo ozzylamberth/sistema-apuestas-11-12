@@ -1,12 +1,4 @@
- <script>
-		 function validaSubmite(){
-			if (document.formRegistro.cat_nombre.value == false)
-				alert("Debe ingresar el nombre de la categoria")
-			else
-       			document.formRegistro.submit()
-			}
 
-		</script>
 
 <?PHP
 
@@ -19,10 +11,8 @@
 *
 */
 
-session_start();
-include_once("../DataConexion/conexion.php");
-$usuario= $_SESSION['usuario'];
-$cat_nombre ='';
+include_once ("../controladores/ControlModificarCat.php");
+
 ?>
 
 <style type="text/css">
@@ -56,45 +46,25 @@ body {
 	
 <h1 align="center" class="Estilo1"><strong>Modificar Categoria</strong></h1>
    
-<?php	
- $cat_nombre='';
- $cat_id=0;
-		$Consulta_ca=sql("SELECT cat_nombre FROM categoria");
-          
-?>
 
 <form action="" method="post" name="formId" id="formId">
-  <select name="cat_nombre1" id="cat_nombre1">
-    <option value="0">Seleccione </option>
-    <?php  
-	
-     $rows = array ();
-     while ( $rows=oci_fetch_array($Consulta_ca,OCI_BOTH)){?>
-    <option value="<?php echo $rows["CAT_NOMBRE"] ?>" > <?php echo $rows["CAT_NOMBRE"]?></option>
-    <?php  } ?>
+  
+  <select name="categoria" class="gh" id="categoria">
+              <option value="0">Seleccione </option>
+  <?php foreach ($categorias as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["cat_id"] ?>" ><?php echo $valor["cat_nombre"]?></option>
+  <?php endforeach; ?>
   </select>
   
-    <?php
-  
-      if(isset($_POST['cat_nombre1'])) //$_GET si se hace por GET (url)
-      $cat_nombre = $_POST['cat_nombre1']; //Te devolveria el atributo value del option seleccionado
-    ?>
 
         <p>
           <input name="Submit" type="submit" class="irena" value="Buscar" />
         </p>
 </form>
 
-     <?php
- 
-		 $selec_Id= sql("select cat_id from categoria where cat_nombre LIKE '$cat_nombre'");
+    
 
-         While($fila2=oci_fetch_array($selec_Id,OCI_BOTH))
-		 {
-	         $cat_id = $fila2['CAT_ID'];}
-     ?>
-
-      <?php if ($cat_id!=0){?>
+      <?php  if($cat_id):?>
 <form id="formPariente" name="formPariente" method="post" action="">
   <fieldset>
         <legend>Si desea modificar la siguente Categoria: </legend>
@@ -106,10 +76,8 @@ body {
   </fieldset>
 </form>
 
-
-     
-     
-<form id="formRegistro" name="formRegistro" method="post" action= "modificar_ca2.php ">
+   
+<form id="formRegistro" name="formRegistro" method="post" action= "../Formularios/modificar_ca2.php">
   <fieldset>
     <legend>Ingrese los nuevos datos:</legend>
    
@@ -121,14 +89,16 @@ body {
     </p>
    
          <div align="right">
-           <center><input name="enviar" type="button" class="irena" id="enviar" onClick="validaSubmite()" value="Modificar" />
-           <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" /></center>
+           <center>
+             <input name="enviar" type="submit" class="irena" id="enviar" value="Enviar" />
+             <input name="limpiar" type="reset" class="irena" id="limpiar" value=" Limpiar" />
+           </center>
             
           </div>
         
   </fieldset>
 </form>
-<?php } ?>
+<?php endif; ?>
 </body>
 
 									  
