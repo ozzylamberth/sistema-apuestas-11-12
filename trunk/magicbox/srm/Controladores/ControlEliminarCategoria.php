@@ -39,7 +39,7 @@ include_once ("../Modelo/ModeloCategoria.php");
 				
 				foreach($filas as $categoria)
 				{
-					//$cat_nombre = $categoria['cat_nombre'];
+					$cat_nombre = $categoria['cat_nombre'];
 					$cat_id = $categoria['cat_id'];
 					
 				}

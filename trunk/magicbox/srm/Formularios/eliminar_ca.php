@@ -47,7 +47,7 @@ h1 {
       <select name="categoria" class="gh" id="categoria">
               <option value="0">Seleccione </option>
   <?php foreach ($categorias as $clave=>$valor): ?>
-  		<option value="<?php echo $valor["cat_id"] ?>" ><?php echo $valor["cat_id"]?></option>
+  		<option value="<?php echo $valor["cat_id"] ?>" ><?php echo $valor["cat_nombre"]?></option>
   <?php endforeach; ?>
   </select>
     
@@ -66,12 +66,12 @@ h1 {
         <tr>
           <th scope="col"><legend>Datos de la Casa de Apuesta a Eliminar :</legend>
             <input type="hidden" name="cat_id" id="cat_id" value="<?php echo $cat_id ?>"/>
-            <?php echo $cat_id ?>
+            
             <p>
               <label>ID: <?php echo $cat_id ; ?> </label>
             </p>
             <p>
-              <label>Nombre: <?php //echo $cat_nombre ; ?> </label>
+              <label>Nombre: <?php echo $cat_nombre ; ?> </label>
             </p>
             <p>
               <input name="Eliminar" type="submit" class="bb" id="Eliminar" value="Eliminar" />

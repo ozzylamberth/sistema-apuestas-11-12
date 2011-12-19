@@ -24,10 +24,10 @@ include_once ("../DataConexion/conexion.php");
    function buscarCategoriasSinEvento()
 	{
 		$filas=array();
-		$selec_Cat= sql("select distinct(c.cat_id) from evento e, categoria c where c.cat_id!=e.eve_fk_id_categoria");
+		$selec_Cat= sql("select distinct(c.cat_id),(c.cat_nombre) from evento e, categoria c where c.cat_id!=e.eve_fk_id_categoria");
 
     While($rowev1=oci_fetch_array($selec_Cat,OCI_BOTH)){	
-	/* $fila['cat_nombre'] = $rowev1['CAT_NOMBRE']; */
+	 $fila['cat_nombre'] = $rowev1['CAT_NOMBRE']; 
 	 $fila['cat_id'] = $rowev1['CAT_ID'];
 	 
 	 $filas[]= $fila;
