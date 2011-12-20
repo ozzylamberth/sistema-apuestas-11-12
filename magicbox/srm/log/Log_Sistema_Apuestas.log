@@ -422,3 +422,48 @@
 12/20/11 01:49:23,943 [2840] INFO Sistema_de_Apuestas - Se cargo la pagina de listar categorias
 12/20/11 01:50:01,756 [2840] INFO Sistema_de_Apuestas - Se cargo la pagina de listar categorias
 12/20/11 01:51:54,611 [2840] INFO Sistema_de_Apuestas - Se cargo la pagina de listar categorias
+12/20/11 02:08:48,847 [6436] INFO Sistema_de_Apuestas - Se cargo la pagina de listar categorias
+12/20/11 02:25:22,208 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 02:25:55,909 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los proximos eventos
+12/20/11 02:31:51,553 [6436] ERROR Sistema_de_Apuestas - Esta agregando un administrador que ya existe
+12/20/11 02:34:47,343 [6436] INFO Sistema_de_Apuestas - Se creó un nuevo usuario de forma exitosa
+12/20/11 02:44:55,003 [6436] INFO Sistema_de_Apuestas - Se cargo la pagina de listar categorias
+12/20/11 03:18:10,722 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:51,483 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:53,539 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:54,136 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:54,435 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:55,850 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:56,082 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:56,305 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:57,111 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:19:57,291 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:20:07,149 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:21:07,237 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:22:03,739 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:22:06,852 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:23:06,493 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:34:40,867 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:34:43,696 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:34:49,430 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:35:00,941 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:42:26,082 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:46:52,027 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 03:47:00,423 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:49:29,082 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:49:37,117 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:49:48,581 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:58:01,811 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:58:08,313 [6436] INFO Sistema_de_Apuestas - Se cargó la lista de eventos en la plantilla de los participantes por evento
+12/20/11 04:58:16,163 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:00:02,506 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:00:05,806 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:01:09,600 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:28:39,788 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:30:01,577 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:31:47,381 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:33:55,665 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:36:01,632 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:37:08,902 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:37:22,407 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento
+12/20/11 05:37:28,722 [6436] INFO Sistema_de_Apuestas - Se carg� la lista de eventos en la plantilla de los participantes por evento

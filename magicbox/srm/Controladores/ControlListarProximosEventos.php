@@ -1,15 +1,4 @@
-
 <?php 
-
-
-/** 
-*
-* @Lista de Eventos caducados y sus ganadores
-* 
-* @autor: Eleany Garcia
-* Controlador de listar_ganadores (vista usuario)
-*
-*/
 
 
 require '../../../php/Logger.php';
@@ -32,7 +21,7 @@ include_once ("../Modelo/ModeloEvento.php");
 				
 		try
 		{
-			$filas=buscarEventosInactivos();
+			$filas=buscarEventosActivos();
 			$eventos=$filas;
 
 	
@@ -40,26 +29,30 @@ include_once ("../Modelo/ModeloEvento.php");
 			//die();
 
 			///mensaje log de que se cargaron los eventos en el combobox	
-			$log->info("Se cargÃ³ la lista de eventos en la plantilla de los participantes por evento"); 
+			$log->info("Se cargó la lista de eventos en la plantilla de los participantes por evento"); 
 			
 			if($eve_id>0)
 			{
-				$ganadores_eve=array();
+				$participantes_eve=array();
 				$datos_eve=buscarEventoPorId($eve_id);
-				$gant_eve=buscarganadoresEvento($eve_id);
+				$part_eve=buscarParticipantesEvento($eve_id);
 				
 				foreach($datos_eve as $eve)
 				{
 					$eve_nombre = $eve['eve_nombre'];
-					$eve_nro_gan = $eve['eve_nro_gan'];
+					$eve_nro_part = $eve['eve_nro_part'];
 					$eve_fecha = $eve['eve_fecha'];
+					$eve_tipo_pago = $eve['eve_tipo_pago'];
+					
 				}
 				
-				foreach($gant_eve as $clave=>$valor)
+				foreach($part_eve as $clave=>$valor)
 				{
-					$gant_eve['par_nombre']=$valor['par_nombre'];  
+					$parts_eve['par_nombre']=$valor['par_nombre'];  
+					if ($valor['pe_tipo_pago']==0) 
+						$parts_eve['pe_tipo_pago']=$eve['eve_tipo_pago'];  
 						
-					$ganadores_eve[]=$gant_eve;
+					$participantes_eve[]=$parts_eve;
 				}
 			}
 		}
@@ -70,7 +63,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		require "../Formularios/listar_ganadores.php";
+		require "../Formularios/proximos_eventos.php";
 	
 	
 	

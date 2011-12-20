@@ -9,8 +9,8 @@
 *
 */
 
-session_start();
-include_once ("../DataConexion/conexion.php");
+
+include_once ("../Controladores/ControlListarUsuarios.php");
 ?>
 
 <style type="text/css">
@@ -37,11 +37,6 @@ body {
 <p align="center" class="Estilo1"><strong>Lista de Administradores</strong></p>
    
 
-   <?php 
-	$queryListaAdm = sql("SELECT * FROM administrador");
-	
-	?>
- 
 <table width="800" border="1" align="center">
   <tr class="mm">
     <td width="200">Cedula</td>
@@ -51,34 +46,20 @@ body {
     <td width="200">Status</td>
     
    </tr>
-  
-      <?php
-	    $var= 1;
-           While($row=oci_fetch_array($queryListaAdm,OCI_BOTH)){
-	           $admin_cedula = $row['ADMIN_CEDULA'];
-               $admin_nombre = $row['ADMIN_NOMBRE'];
-			   $admin_apellido = $row['ADMIN_APELLIDO']; 
-			   $admin_login = $row['ADMIN_LOGIN']; 
-			   $admin_status = $row['ADMIN_STATUS']; 
-	     ?>
- 
-</table>
- 
-      <table width="800" border="1" align="center">
+   
+      <?php foreach($lista_usu as $clave=>$valor):?>
         <tr>
-          <th width="200" scope="col"> <?php  echo $admin_cedula; ?></th>
-          <th width="200" scope="col"> <?php echo $admin_nombre; ?> </th>  
-          <th width="200" scope="col"> <?php  echo $admin_apellido; ?></th>
-          <th width="200" scope="col"> <?php echo $admin_login; ?> </th>
-          <th width="200" scope="col"> <?php  echo $admin_status; ?></th>
+          <th width="200" scope="col"> <?php  echo $valor['admin_cedula']; ?></th>
+          <th width="200" scope="col"> <?php echo $valor['admin_nombre']; ?> </th>  
+          <th width="200" scope="col"> <?php  echo $valor['admin_apellido']; ?></th>
+          <th width="200" scope="col"> <?php echo $valor['admin_login']; ?> </th>
+          <th width="200" scope="col"> <?php  echo $valor['admin_status']; ?></th>
         </tr>
+        <?php endforeach; ?>
       </table>
     
 
-  <?php 
-   $var ++;
-   }
-	?>
+ 
  
 <center><p><?php  echo "<a href='Home.php'> Continuar </a> "; ?></p></center>
 </p>

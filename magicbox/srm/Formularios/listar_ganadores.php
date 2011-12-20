@@ -48,6 +48,9 @@
 .header .content .content_resize .mainbar .article h2 #formAdmin table tr td {
 	font-family: "Comic Sans MS", cursive;
 }
+.irina {
+	color: #B00;
+}
 -->
 </style>
 </head>
@@ -69,7 +72,6 @@ function ventanaSecundaria (URL){
 */
 
 
-session_start();
 
 include_once ("../controladores/ControlListarGanad.php");
 
@@ -108,49 +110,43 @@ include_once ("../controladores/ControlListarGanad.php");
           <div id="coin-slider">  <a href="#"><img src="../Imagenes/ganadores.gif" width="994" height="116" alt="" /></div>
         <div class="clr"></div>
       </div>
-      <div class="clr"></div>
-    </div>
-  </div>
+      <div class="clr"></div></div></div>
   <div class="content">
     <div class="content_resize">
       <div class="mainbar">
         <div  style="background-image:url(../Imagenes/fondo.jpg)"class="article">
           <h2>
             <form name="form1" method="post" action="">
-             <center> <table width="500" border="0">
+    <center> <table width="500" border="0">
   <tr>
-     <td width="300"><p><strong>Seleccione Evento</strong>:
- 
-              </p>
-       <p>
-         <select name="eve" class="gh" id="eve">
-              <option value="0">Seleccione </option>
- 				 <?php foreach ($eventos as $clave=>$valor): ?>
-  			  <option value="<?php echo $valor["eve_id"] ?>" ><?php echo $valor["eve_nombre"]?></option>
-  				<?php endforeach; ?>
- 		 </select>
+     <td width="300"><p><span class="hhh"><strong>Seleccione Evento</strong>:</span>
 
-      </p>
-      <p>
-         <input name="Buscar" type="submit" class="fff" id="Buscar" value="Buscar">
-      </p>
-      </td>
-    
+              </p>
+            <p>
+              <select name="eve" class="gh" id="eve">
+                <option value="0">Seleccione </option>
+                <?php foreach ($eventos as $clave=>$valor): ?>
+                <option value="<?php echo $valor["eve_id"] ?>" > <?php echo $valor["eve_nombre"]?></option>
+                <?php endforeach; ?>
+              </select>
+            </p>
+            <p>
+              <input name="Buscar" type="submit" class="irina" id="Buscar" value="Buscar">
+            </p></td>
+    <td>&nbsp;</td>
   </tr>
 </table></center>
 
-            </form>
+</form>
 
  
  
   	 
  
-<?php
-		if ($eve_id!=0:)
- ?>
+<?php  if($eve_id):?> 
+
 <form id="formAdmin" name="formAdmin" method="post" action="">
    
-    
     
  <p align="center"><strong>  
   Evento: <?php  echo $eve_nombre?> 
@@ -161,29 +157,22 @@ include_once ("../controladores/ControlListarGanad.php");
  <table width="200" border="1" align="center">
    <tr>
     <td  align="center" width="200">NOMBRES</td>
-   
+    
  
-<table width="600" border="1" align="center">
+  <?php foreach($ganadores_eve as $clave=>$valor):?>
+
         <tr>
-          <th scope="col" colspan="3"> Participantes </th> 
-       </tr>
+          <th width="200" scope="col"> <?php echo $valor['par_nombre']; ?> </th> 
+        </tr>
+        <?php endforeach; ?>
         
-    <?php foreach($ganadores_eve as $clave=>$valor):?>
-
-        <tr>
-          <td width="200" scope="col"> <?php echo $valor['par_nombre']; ?> </td> 
+      </table>
+    
+    <?php endif; ?>	
+</form> 
+ </h2>
+          <p><center><img src="../Imagenes/FB-ES-980x200-MW-9660-Europa-League.jpg" width="959" height="124" alt="nanyta" /></center></p>
           
-        </tr>    
-
-  <?php endforeach; ?>
-    
-     </table>
-    
-
-  
-    <?php endif; ?>
-	
-</form>  </h2>
           <div class="clr"></div>
           <div class="clr"></div>
         </div>

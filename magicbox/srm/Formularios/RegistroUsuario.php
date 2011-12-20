@@ -66,6 +66,9 @@ body,td,th {
 	color: #A00;
 	background-color: #000;
 }
+.irena {
+	color: #800;
+}
 -->
 </style></head>
 
@@ -130,9 +133,9 @@ body,td,th {
     </p>
     <center> 
      <p>
-       <input name="Registrar" type="button" class="boton" id="Continuar con Registro" onClick="validaSubmite()" value="Registrar">
+       <input name="Registrar" type="button" class="irena" id="Continuar con Registro" onClick="validaSubmite()" value="Registrar">
        <label>
-         <input name="Limpiar" type="reset" class="boton" id="Limpiar" value="Restablecer">
+         <input name="Limpiar" type="reset" class="irena" id="Limpiar" value="Restablecer">
        </label>
      </p>
      <p><img src="../Imagenes/GA1_2344_2011_XtremeXmasJPs_COM.jpg" width="576" height="212" alt="stcris"></p>

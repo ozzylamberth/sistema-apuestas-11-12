@@ -38,6 +38,9 @@ include_once("../controladores/ControlClave2.php");
                         </tr>
                         <tr>
                             <td><input id="cedula" type="hidden" value="<?php print($cedula); ?>" name="cedula"/></td>
+                            
+                            
+                            
                         </tr>
                         <tr>
                             <td colspan="2" align="center"><input type="submit" name="consultarCedula" value="Guardar"></td>

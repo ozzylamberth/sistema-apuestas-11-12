@@ -7,13 +7,9 @@ Modificaciones: Cambios del include, toda la persistencia de datos y la conexion
 se coloco en una carpeta llamada DataConexion
 */
 
-include_once ("../DataConexion/conexion.php");
-	 $cedula=$_POST["cedula"];
-	 
-	 $validar_Existencia=sql("SELECT * from administrador where admin_cedula=".$cedula);
-	 $fila=(oci_fetch_array($validar_Existencia,OCI_BOTH));
-	 $filas=oci_num_rows($validar_Existencia);
-	 
+
+	 include_once("../controladores/ControlPregSecreta.php");   
+	
 	 
 	 
 
@@ -36,19 +32,7 @@ include_once ("../DataConexion/conexion.php");
 	}
 	else
 	{
-	     $validar_Existencia2=sql("SELECT * from administrador where admin_cedula=".$cedula);
-		while ($fila2=oci_fetch_array($validar_Existencia2,OCI_BOTH))
-		{
-				 $admin_fk_id_pre = $fila2['ADMIN_FK_ID_PRE'];	
-				 $admin_resp_secreta= $fila2['ADMIN_RESP_SECRETA'];
-		}
-		
-		 $selec_Preg=sql("select pre_des from pregunta_secreta where pre_id = $admin_fk_id_pre");
-         $fila_pre=oci_fetch_array($selec_Preg,OCI_BOTH);
-		 $pre_des= $fila_pre['PRE_DES'];
-		
-
-?>
+	?>
 
 <html>
     <head>
@@ -69,7 +53,7 @@ include_once ("../DataConexion/conexion.php");
                             <td><input  type="password" id="respuestaSecreta" type="text" name="respuestaSecreta"/ maxlength="20"></td>
                         </tr>
                         <tr>
-                            <td><input id="cedula" type="hidden" value="<?php print($cedula); ?>" name="cedula"/></td>
+                            <td><input id="cedula" type="hidden" value="<?php echo $cedula ?>" name="cedula"/></td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center"><input type="submit" name="consultarCedula" value="Continuar"></td>
