@@ -102,7 +102,9 @@ function buscarAdministradoresPorId($admin_cedula)
 		return $filas;
 	  
 	}
-
+ 
+ //funcion que se llama desde la pagina controlListarUsuarios
+ 
 function buscarAdministradores()
 	{
 		$filas=array();
@@ -122,7 +124,43 @@ function buscarAdministradores()
 		return $filas;
 			
 	}
+	
 
+// funcion llamada desde mostrarPregSecreta para validar la existencia del administrador
+function validarExistenciaPregSec($cedula)
+
+{
+     $validar_Existencia=sql("SELECT * from administrador where admin_cedula=".$cedula);
+	 $fila=(oci_fetch_array($validar_Existencia,OCI_BOTH));
+	 $filas=oci_num_rows($validar_Existencia);
+	 return $filas;
+
+}
+
+//seleccionas el id de la pregunta secreta del administrador
+function SeleccionarPregSecreta($cedula)
+
+{
+	            $filas=array();
+                $validar_Exis=sql("SELECT * from administrador where admin_cedula=".$cedula);
+				while ($fila2=oci_fetch_array($validar_Exis,OCI_BOTH))
+				{
+						 $fila['admin_fk_id_pre'] = $fila2['ADMIN_FK_ID_PRE'];	
+						 $fila['admin_resp_secreta']= $fila2['ADMIN_RESP_SECRETA'];
+						 $filas[]=$fila;
+				}
+				return $filas;
+	
+}
+// con la foranea en la tabla administrador de la preguta buscas el enunciado de la preguntado
+function EnunciadoPreg($admin_fk_id_pre)
+{
+		 $selec_Preg=sql("select pre_des from pregunta_secreta where pre_id = $admin_fk_id_pre");
+         $fila_pre=oci_fetch_array($selec_Preg,OCI_BOTH);
+		 $pre_des= $fila_pre['PRE_DES'];
+		 
+		 return $pre_des;
+}
 
 
 

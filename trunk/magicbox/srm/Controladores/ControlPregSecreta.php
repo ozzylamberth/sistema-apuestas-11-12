@@ -11,24 +11,39 @@ include_once ("../Modelo/ModeloUsuario.php");
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 	
         $admin_cedula=$_POST["cedula"];
-        $contrasena1=$_POST["contrasena1"];
 		
 		try
 		{
-			$filas= ValidarExistencia3($cedula,$respuestaSecreta);
 			
-			
-			
-			// SI FILAS ES MAYOR A 0 IMPRIME EL FORMULARIO SINO IMPRIME Q ESTA MAL! 
+		$filas= validarExistenciaPregSec($admin_cedula);
+		
+		if ($filas>0)
+		{
+				
+			$datosPregSecreta= SeleccionarPregSecreta($cedula);
+			foreach($datosPregSecreta as $admin)
+				{
+					$admin_fk_id_pre = $admin['admin_fk_id_pre'];
+					$admin_resp_secreta = $admin['admin_resp_secreta'];
+				}
+				
+		   $pre_des=EnunciadoPreg($admin_fk_id_pre);
+		    
+		//break;
+		//exit();
+				
+				
+		}
+		
+		
+		
 		}
 		catch(Exception $e)
 		{
-				$log->error("Hubo un error al cambiar la clave del administrador"); 		
+				$log->error("Hubo un error al validar la existencia del administrador"); 		
 				$mensaje= "Ocurrio un error de conexion";
 		}
-		
-	
-		require "../Formularios/mostrarClave.php";
+	//	require "../Formularios/mostrarPreguntaSecreta.php";
 
 
 ?>

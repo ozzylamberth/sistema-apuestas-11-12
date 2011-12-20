@@ -1,16 +1,13 @@
-
 <?php 
-
 
 /** 
 *
 * @Lista de Eventos caducados y sus ganadores
 * 
 * @autor: Eleany Garcia
-* Controlador de listar_ganadores (vista usuario)
+* Controlador de listar_ganadores (vista administrador)
 *
 */
-
 
 require '../../../php/Logger.php';
 include_once ("../Modelo/ModeloEvento.php");
@@ -70,7 +67,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		require "../Formularios/listar_ganadores.php";
+		require "../Formularios/listar_ganadores2.php";
 	
 	
 	

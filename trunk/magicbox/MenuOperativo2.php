@@ -268,6 +268,8 @@ border:1px solid #ddd;
         <li><a href="srm/Formularios/mostrar_maquinas.php" target='paginita'>Mostrar Maquinas</a></li>
         
         <li><a href="srm/Controladores/controlEvento.php" target='paginita'>Listar Participantes por Evento</a></li>
+        
+        <li><a href="srm/Formularios/ListarUsuariosP.php" target='paginita'>Listar Administradores</a></li>
 	</ul>
 	</li>
 	

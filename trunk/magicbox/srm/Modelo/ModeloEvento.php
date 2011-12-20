@@ -51,12 +51,12 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 	function buscarEventosInactivos()
 	{
 		$filas=array();
-		$selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Inactivo'");
+		$selec_nom_eve= sql("select * from evento WHERE eve_status LIKE 'Inactivo'");
 		
 		while($row=oci_fetch_array($selec_nom_eve,OCI_BOTH))
 		{
-			$fila['id']=$row['EVE_ID'];
-			$fila['nombre']=$row['EVE_NOMBRE'];
+			$fila['eve_id']=$row['EVE_ID'];
+			$fila['eve_nombre']=$row['EVE_NOMBRE'];
 			$fila['eve_fecha']=$row['EVE_FECHA'];
 			$fila['eve_nro_part']=$row['EVE_NRO_PART'];
 			$fila['eve_nro_gan']=$row['EVE_NRO_GAN'];
@@ -83,7 +83,7 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 	function buscarEventoPorId($eve_id)
 	{
 		$filas=array();
-		$selec_Id_Eve= sql("SELECT EVE_NOMBRE, EVE_NRO_GAN, EVE_FECHA, EVE_TIPO_PAGO FROM EVENTO WHERE EVE_ID= '$eve_id'");
+		$selec_Id_Eve= sql("SELECT EVE_NOMBRE, EVE_NRO_GAN, EVE_FECHA, EVE_TIPO_PAGO, EVE_NRO_PART FROM EVENTO WHERE EVE_ID= '$eve_id'");
 	  
 	  	while($roweve2=oci_fetch_array($selec_Id_Eve,OCI_BOTH))
 	   	{	
@@ -91,6 +91,7 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 	        $fila['eve_nro_gan'] = $roweve2['EVE_NRO_GAN'];
 			$fila['eve_fecha'] = $roweve2['EVE_FECHA'];
 			$fila['eve_tipo_pago'] = $roweve2['EVE_TIPO_PAGO'];
+			$fila['eve_nro_part'] = $roweve2['EVE_NRO_PART'];
 		  	$filas[]=$fila;
        	}
 		
@@ -105,7 +106,7 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 	 	$query=sql("SELECT P.PAR_NOMBRE, PE.PE_TOP_APUESTA, PE.PE_TIPO_PAGO FROM EVENTO E, PAR_EVE PE, PARTICIPANTE P WHERE P.PAR_ID=PE.PE_FK_PAR_ID AND PE.PE_FK_EVE_ID = E.EVE_ID AND E.EVE_ID= '$eve_id'");
 	 
 	 
-	  While($row=oci_fetch_array($query,OCI_BOTH))
+	  while($row=oci_fetch_array($query,OCI_BOTH))
 		   {
                	$fila['par_nombre'] = $row['PAR_NOMBRE']; 
 		       	$fila['pe_top_apuesta'] = $row['PE_TOP_APUESTA']; 
@@ -117,6 +118,24 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 	}
 	
 	
+			 function buscarganadoresEvento($eve_id)
+		 {
+			 
+		$selec_Id_Par= sql("SELECT P.PAR_NOMBRE FROM RES_PAR RP, EVENTO E, PARTICIPANTE P WHERE RP.RP_FK_PAR_ID=P.PAR_ID AND RP.RP_FK_EVE_ID=E.EVE_ID AND E.EVE_ID=".$eve_id);	 
+			
+			while($row=oci_fetch_array($selec_Id_Par,OCI_BOTH))
+		{
+			$fila['par_nombre']=$row['PAR_NOMBRE'];
+			// Se hace un arreglo porque pueden ser varios ganadores 
+			
+			$filas[]=$fila;
+		} 
+			 return $filas;
+		 }
+	
+	
+	
+	
    function eliminarEvento($eve_id)
    {
     $eliminar_Eve = sql ("DELETE FROM evento WHERE eve_id= ".$eve_id);
@@ -125,22 +144,24 @@ include_once ("../DataConexion/guardarXmlEvento.php");
    }
 
 
-  // FUNCION QUE ES LLAMADA DESDE LA PÁGINA LISTAR EVENTOS
+    // FUNCION QUE ES LLAMADA DESDE LA PÁGINA LISTAR EVENTOS
    function mostraEventos()
    {
    		$queryListaEve = sql("SELECT * FROM evento");
-		 $var= 1;
+		
            While($row=oci_fetch_array($queryListaEve,OCI_BOTH))
 		   {
-               $eve_nombre = $row['EVE_NOMBRE']; 
-			   $eve_status = $row['EVE_STATUS']; 
-			   $eve_fecha = $row['EVE_FECHA']; 
-			   $eve_nro_part = $row['EVE_NRO_PART']; 
-			   $eve_nro_gan = $row['EVE_NRO_GAN'];
-			   $eve_tipo_pago = $row['EVE_TIPO_PAGO'];
+               $fila['eve_nombre'] = $row['EVE_NOMBRE']; 
+			   $fila['eve_status'] = $row['EVE_STATUS']; 
+			   $fila['eve_fecha'] = $row['EVE_FECHA']; 
+			   $fila['eve_nro_part'] = $row['EVE_NRO_PART']; 
+			   $fila['eve_nro_gan'] = $row['EVE_NRO_GAN'];
+			   $fila['eve_tipo_pago'] = $row['EVE_TIPO_PAGO'];
+			   $filas[]=$fila;
 		   }
-
+         return $filas;
    }
+   
    
    function actualizarEvento ($eve_id,$eve_nombre,$fecha_Evento,$eve_nro_part,$eve_nro_gan)
    {
@@ -180,30 +201,8 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 		
 		
 		
-		 function buscarganadoresEvento($eve_id)
-		 {
-			 
-		$selec_Id_Par= sql("SELECT P.PAR_NOMBRE FROM RES_PAR RP, EVENTO E, PARTICIPANTE P WHERE RP.RP_FK_PAR_ID=P.PAR_ID AND RP.RP_FK_EVE_ID=E.EVE_ID AND E.EVE_ID=".$eve_id);	 
-			while($row=oci_fetch_array($selec_Id_Par,OCI_BOTH))
-		{
-			$fila['par_nombre']=$row['PAR_NOMBRE'];
-			// Se hace un arreglo porque pueden ser varios ganadores 
-			
-			$filas[]=$fila;
-		} 
-			 
-		 }
-		
-		
-		
-   
-   
-   
-   
-   
-   
 
-
+		
 
 
 

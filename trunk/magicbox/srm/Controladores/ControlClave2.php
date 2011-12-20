@@ -11,7 +11,7 @@ include_once ("../Modelo/ModeloUsuario.php");
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 	
         $admin_cedula=$_POST["cedula"];
-        $contrasena1=$_POST["contrasena1"];
+       // $contrasena1=$_POST["contrasena1"];
 		
 		try
 		{

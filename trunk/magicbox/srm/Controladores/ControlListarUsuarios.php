@@ -2,7 +2,7 @@
 
 
 require '../../../php/Logger.php';
-include_once ("../Modelo/ModeloEvento.php");
+include_once ("../Modelo/ModeloUsuario.php");
 //include_once ("../Formularios/RegistroUsuario2_1.php");
 
 
@@ -14,19 +14,18 @@ include_once ("../Modelo/ModeloEvento.php");
 				
 		try
 		{
-			 $filas= mostraEventos();
+			 $filas= buscarAdministradores();
 			 $eventos= $filas;
-			 $lista_eve=array();
+			 $lista_usu=array();
 			 
 			 foreach($filas as $clave=>$valor)
 				{
-					$filas['eve_nombre']=$valor['eve_nombre'];
-				    $filas['eve_status']=$valor['eve_status'];
-					$filas['eve_fecha']=$valor['eve_fecha'];	
-					$filas['eve_nro_part']=$valor['eve_nro_part'];	
-					$filas['eve_nro_gan']=$valor['eve_nro_gan'];	
-					$filas['eve_tipo_pago']=$valor['eve_tipo_pago'];	
-					$lista_eve[]=$filas;
+					$filas['admin_nombre']=$valor['admin_nombre'];
+				    $filas['admin_cedula']=$valor['admin_cedula'];
+					$filas['admin_apellido']=$valor['admin_apellido'];	
+					$filas['admin_status']=$valor['admin_status'];	
+					$filas['admin_login']=$valor['admin_login'];		
+					$lista_usu[]=$filas;
 				}
 		}
 		catch(Exception $e)
@@ -36,7 +35,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		require "../Formularios/listareventos.php";
+		require "../Formularios/ListarUsuariosP.php";
 	
 	
 	
