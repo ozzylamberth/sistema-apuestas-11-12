@@ -161,14 +161,7 @@ include_once ("../controladores/ControlListarGanad.php");
  <table width="200" border="1" align="center">
    <tr>
     <td  align="center" width="200">NOMBRES</td>
-    
-  
-      <?php
-	   
-          
-               $par_nombre = $row['PAR_NOMBRE']; 
-		
-	     ?>
+   
  
 <table width="600" border="1" align="center">
         <tr>
