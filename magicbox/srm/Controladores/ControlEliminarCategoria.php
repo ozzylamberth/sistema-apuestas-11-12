@@ -42,9 +42,10 @@ include_once ("../Modelo/ModeloCategoria.php");
 					$cat_nombre = $categoria['cat_nombre'];
 					$cat_id = $categoria['cat_id'];
 					
+					
 				}
 				
-				
+			
 			}
 		}
 		catch(Exception $e)
