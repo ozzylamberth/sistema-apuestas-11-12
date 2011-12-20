@@ -2,7 +2,6 @@
 
 
 require '../../../php/Logger.php';
-include_once ("../DataConexion/guardarXmlEvento.php");
 include_once ("../Modelo/ModeloEvento.php");
 //include_once ("../Formularios/RegistroUsuario2_1.php");
 

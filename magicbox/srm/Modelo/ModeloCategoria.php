@@ -20,6 +20,25 @@ include_once ("../DataConexion/conexion.php");
 		return $filas;			
 	}
   
+   // Esta función se usa para imprimir todas las categorias, es invocada es ControlListarCat y usada por listarcat
+   function buscarCategoriasOrdenadas()
+	{
+		$filas=array();
+		$Consulta_ca=sql("SELECT * FROM categoria ORDER BY cat_nombre");
+
+    While($rowev1=oci_fetch_array($Consulta_ca,OCI_BOTH)){	
+     $fila['cat_id'] = $rowev1['CAT_ID'];
+	 $fila['cat_nombre'] = $rowev1['CAT_NOMBRE']; 
+	 $filas[]= $fila;
+  
+     }
+		//print_r($filas);	    		
+		return $filas;			
+	}
+  
+  
+ 
+  
   
    function buscarCategoriasSinEvento()
 	{

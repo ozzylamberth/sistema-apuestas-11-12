@@ -1,3 +1,4 @@
+
 <!--!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,40 +14,40 @@
 <style type="text/css">
 <!--
 .main .content .content_resize .mainbar .article h2 p strong {
-	color: #700;
+        color: #700;
 }
 .main .content .content_resize .mainbar .article h2 #formAdmin p strong {
-	color: #000;
+        color: #000;
 }
 .main .content .content_resize .mainbar .article h2 #formAdmin p strong {
-	font-family: "Comic Sans MS", cursive;
+        font-family: "Comic Sans MS", cursive;
 }
 .fff {
-	color: #A00;
+        color: #A00;
 }
 .main .content .content_resize .mainbar .article h2 #formAdmin table tr td {
-	font-family: "Comic Sans MS", cursive;
+        font-family: "Comic Sans MS", cursive;
 }
 .main .content .content_resize .mainbar .article p strong {
-	font-size: 18px;
+        font-size: 18px;
 }
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
-	font-size: 14px;
+        font-size: 14px;
 }
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
-	color: #E9D3AD;
+        color: #E9D3AD;
 }
 .main .content .content_resize .mainbar .article #formAdmin .Estilo1 strong {
-	color: #000;
+        color: #000;
 }
 .main .content .content_resize .mainbar .article #formAdmin p strong {
-	font-size: 14;
+        font-size: 14;
 }
 .main .content .content_resize .mainbar .article #formAdmin p strong {
-	color: #000;
+        color: #000;
 }
 .main .content .content_resize .mainbar .article p strong {
-	font-size: 18px;
+        font-size: 18px;
 }
 -->
 <!--/style>
@@ -117,7 +118,7 @@ include_once ("../controladores/controlEvento.php");
           <h2--><style type="text/css">
 <!--
 body {
-	background-image: url(../Imagenes/fondo.jpg);
+        background-image: url(../Imagenes/fondo.jpg);
 }
 -->
 </style>
@@ -126,13 +127,19 @@ body {
             <p align="left" ><strong>Seleccione Evento</strong>:
              
   
-              <select name="admin" class="gh" id="admin">
-                <option value="0">Seleccione </option>
-                <?php foreach ($eventos as $clave=>$valor): ?>
+  
+ 
+  
+  
+  <select name="eve" class="gh" id="eve">
+              <option value="0">Seleccione </option>
+  <?php foreach ($eventos as $clave=>$valor): ?>
                 <option value="<?php echo $valor["id"] ?>" > <?php echo $valor["nombre"]?></option>
-                <?php endforeach; ?>
-              </select>
-   <p class="Estilo1 Estilo3">
+  <?php endforeach; ?>
+  </select>
+              
+              
+            <p class="Estilo1 Estilo3">
                 
               <input name="Buscar" type="submit" class="botn" id="Buscar" value="Buscar">
 
@@ -140,25 +147,25 @@ body {
 <?php  if($eve_id):?>   
 
     
-<p align="center">
-    	<strong>  
-  			Evento: <?php  echo $eve_nombre?> 
- 		</strong>
+        <p align="center">
+        <strong>  
+                        Evento: <?php  echo $eve_nombre?> 
+                </strong>
     </p>
- 	<p align="center" >
-    	<strong> 
-        	Fecha: <?php echo $eve_fecha?>
-  		</strong>
+        <p align="center" >
+        <strong> 
+                Fecha: <?php echo $eve_fecha?>
+                </strong>
     </p>
- 	<p align="center" >
-    	<strong>
-        	Nro de Ganadores: <?php echo $eve_nro_gan?>
+        <p align="center" >
+        <strong>
+                Nro de Ganadores: <?php echo $eve_nro_gan?>
         </strong>
     </p>
 
-	<p align="center" >
-    	<strong>
-        	Tipo de Pago: <?php echo $eve_tipo_pago?>
+        <p align="center" >
+        <strong>
+                Tipo de Pago: <?php echo $eve_tipo_pago?>
         </strong>
     </p>
 
@@ -172,8 +179,8 @@ body {
 
         <tr>
           <td width="200" scope="col"> <?php echo $valor['par_nombre']; ?> </td> 
-          <td width="200" scope="col"> <?php echo $valor['PE_TOP_APUESTA']  ?>  </td> 
-          <td width="200" scope="col"> <?php echo $valor['PE_TIPO_PAGO'] ?> </td> 
+          <td width="200" scope="col"> <?php echo $valor['pe_top_apuesta']  ?>  </td> 
+          <td width="200" scope="col"> <?php echo $valor['pe_tipo_pago'] ?> </td> 
         </tr>    
 
   <?php endforeach; ?>
