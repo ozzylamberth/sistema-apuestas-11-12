@@ -46,6 +46,30 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 		return $filas;
 			
 	}
+	// Esta funcion es llamada desde listar ganadores de un evento para que en el combo muestre los inactivos
+	
+	function buscarEventosInactivos()
+	{
+		$filas=array();
+		$selec_nom_eve= sql("select eve_nombre from evento WHERE eve_status LIKE 'Inactivo'");
+		
+		while($row=oci_fetch_array($selec_nom_eve,OCI_BOTH))
+		{
+			$fila['id']=$row['EVE_ID'];
+			$fila['nombre']=$row['EVE_NOMBRE'];
+			$fila['eve_fecha']=$row['EVE_FECHA'];
+			$fila['eve_nro_part']=$row['EVE_NRO_PART'];
+			$fila['eve_nro_gan']=$row['EVE_NRO_GAN'];
+			$filas[]=$fila;
+		}
+		//print_r($filas);
+	    		
+		return $filas;
+			
+	}
+	
+	
+	
 	
 	function buscarEventoPorNombre($eve_nombre)
 	{
@@ -154,6 +178,21 @@ include_once ("../DataConexion/guardarXmlEvento.php");
 			
 	}
 		
+		
+		
+		 function buscarganadoresEvento($eve_id)
+		 {
+			 
+		$selec_Id_Par= sql("SELECT P.PAR_NOMBRE FROM RES_PAR RP, EVENTO E, PARTICIPANTE P WHERE RP.RP_FK_PAR_ID=P.PAR_ID AND RP.RP_FK_EVE_ID=E.EVE_ID AND E.EVE_ID=".$eve_id);	 
+			while($row=oci_fetch_array($selec_Id_Par,OCI_BOTH))
+		{
+			$fila['par_nombre']=$row['PAR_NOMBRE'];
+			// Se hace un arreglo porque pueden ser varios ganadores 
+			
+			$filas[]=$fila;
+		} 
+			 
+		 }
 		
 		
 		
