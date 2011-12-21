@@ -10,34 +10,15 @@ include_once ("../Modelo/ModeloUsuario.php");
 		// Fetch a logger, it will inherit settings from the root logger
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 	
-        $admin_cedula=$_POST["cedula"];
+        $cedula=$_POST["cedula"];
+		$contrasena1=$_POST["contrasena1"];
 		
 		try
 		{
 			
-		$filas= validarExistenciaPregSec($admin_cedula);
+		$act= ActualizacionClave ($cedula,$contrasena1);
 		
-		if ($filas>0)
-		{
-				
-			$datosPregSecreta= SeleccionarPregSecreta($admin_cedula);
-			
-			foreach($datosPregSecreta as $admin)
-				{
-					$admin_fk_id_pre = $admin['admin_fk_id_pre'];
-					$admin_resp_secreta = $admin['admin_resp_secreta'];
-				}
-				
-		   $pre_des=EnunciadoPreg($admin_fk_id_pre);
 		    
-		//break;
-		//exit();
-				
-				
-		}
-		
-		
-		
 		}
 		catch(Exception $e)
 		{

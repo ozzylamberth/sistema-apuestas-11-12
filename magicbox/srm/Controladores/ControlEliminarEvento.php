@@ -22,7 +22,7 @@ include_once ("../Modelo/ModeloEvento.php");
 				
 		try
 		{
-			$filas=buscarEventos();
+			$filas=buscarEventosInactivos();
 			$eventos=$filas;
 
 	
@@ -35,11 +35,11 @@ include_once ("../Modelo/ModeloEvento.php");
 			
 			if($eve_id>0)
 			{
-				/*$admin2=array();
-				$datos_admin=buscarAdministradoresPorId($admin_cedula);
-				$admin2 = $datos_admin;*/
+				$eve2=array();
+				$datos_eve=buscarEventoPorId($eve_id);
+				$eve2 = $datos_eve;
 				
-				foreach($filas as $evento)
+				foreach($eve2 as $evento)
 				{
 					$eve_nombre = $evento['eve_nombre'];
 					$eve_fecha = $evento['eve_fecha'];

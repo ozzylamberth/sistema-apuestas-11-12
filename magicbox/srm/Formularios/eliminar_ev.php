@@ -10,7 +10,7 @@
 */
 
 
-include_once ("../controladores/ControlEliminarEvento.php");
+include_once ("../Controladores/ControlEliminarEvento.php");
 
 
 ?>

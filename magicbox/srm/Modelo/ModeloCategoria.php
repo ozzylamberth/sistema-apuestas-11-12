@@ -19,6 +19,19 @@ include_once ("../DataConexion/conexion.php");
 		//print_r($filas);	    		
 		return $filas;			
 	}
+	
+// Esta funcion es llamada de controlEliminarCategoria y devuelve los datos a imprimir de la categoria	
+	function buscarCategoriasporid($cat_id)
+	{
+		$filas=array();
+		$Consulta_ca=sql("SELECT * FROM categoria where CAT_ID= $cat_id");
+
+    $rowev1=oci_fetch_array($Consulta_ca,OCI_BOTH);	
+     $cat_nombre= $rowev1['CAT_NOMBRE']; 
+	 return $cat_nombre;			
+	}
+	
+	
   
    // Esta función se usa para imprimir todas las categorias, es invocada es ControlListarCat y usada por listarcat
    function buscarCategoriasOrdenadas()
@@ -52,7 +65,7 @@ include_once ("../DataConexion/conexion.php");
 	 $filas[]= $fila;
   
      }
-		print_r($filas);	    		
+		//print_r($filas);	    		
 		return $filas;			
 	}
   

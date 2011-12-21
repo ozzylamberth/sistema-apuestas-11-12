@@ -35,14 +35,14 @@ include_once ("../Modelo/ModeloEvento.php");
 			
 			if($eve_id>0)
 			{
-			
+			    $eve2=array();
+				$datos_eve=buscarEventoPorId($eve_id);
+				$eve2 = $datos_eve;
 				
-				foreach($filas as $evento)
+				foreach($eve2 as $evento)
 				{
-					$eve_nombre = $evento['nombre'];
+					$eve_nombre = $evento['eve_nombre'];
 					$eve_fecha = $evento['eve_fecha'];
-					$eve_nro_part = $evento ['eve_nro_part'];
-					$eve_nro_gan = $evento ['eve_nro_gan'];
 					
 					
 				}

@@ -2,22 +2,22 @@
     /**
      * autor: Eduardo Torres
      * Fecha: 15/08/2011
-		@copyright GrupoNSM C.A
-		Modificaciones:
+                @copyright GrupoNSM C.A
+                Modificaciones:
      */
 
-	 
-	
+         
+        
 
-	 //require_once("../Contenedores/header.php");
+         //require_once("../Contenedores/header.php");
 ?>
 <script>
 function validaSubmite(){
     if (document.RecuperarClave.cedula.value == false )
-		alert("Debe Ingresar Cedula")
-		else 
+                alert("Debe Ingresar Cedula")
+                else 
        document.RecuperarClave.submit()
-} 	
+}       
 </script>
 
 <html>
@@ -38,12 +38,12 @@ function validaSubmite(){
                             <td colspan="2" align='center'><input type="button" name="Registrar" id="Continuar" value="Continuar" onclick="validaSubmite()"></td>
                         </tr>
                     </table>
-					</form>
-					<form name='volverse' action='iniciar.php'> 
+                                        </form>
+                                        <form name='volverse' action='iniciar.php'> 
 <table align='center'>
-					<td><input type="submit" align='center' name="Cancelar" id="button2" value="Cancelar"></td>
-					</tr>
-					</table>
+                                        <td><input type="submit" align='center' name="Cancelar" id="button2" value="Cancelar"></td>
+                                        </tr>
+                                        </table>
 </form>
             </font>
         </center>

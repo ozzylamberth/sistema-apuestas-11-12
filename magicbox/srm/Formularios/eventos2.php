@@ -1,33 +1,7 @@
 <?php
 
-session_start();
-$usuario= $_SESSION['usuario'];
-include_once ("../DataConexion/conexion.php");
-/* session_start();
-$usuario= $_SESSION['usuario'];
-include_once ('conexion.php'); */
- $cat_Nombre= $_POST["Cat_nombre"];
- $desc_Evento= $_POST["desc_Evento"];
- $fecha_Evento= $_POST["fecha_Evento"];
-$fecha= $_POST['Fecha'];
- if(isset($_POST['tipo_Ganador'])) $tipo_Ganador= $_POST['tipo_Ganador'];
- $nro_Participantes= $_POST["nro_Participantes"];
- 
- require 'php/Logger.php';
-// Tell log4php to use our configuration file.
-Logger::configure('php/log4conf.xml');
-// Fetch a logger, it will inherit settings from the root logger
-$log = Logger::getLogger('Sistema_de_Apuestas');
- 
-     /*  VALIDACION DE LA FECHA   
-	 
-	 if ($fecha<$fecha_Evento){
-		      echo "<script language='javascript'>
-              window.location='casa_apuesta.php';			
-	          </script>";
-	
-			
-		} */
+ include_once ("../Controladores/ControlCrearEventos2.php");
+ echo $cat_id;
  ?>
 
 
@@ -119,9 +93,7 @@ body {
 }
        </style>
 		
-		<title>
-<strong>Registro de Categoria</strong>
-		</title>
+	
 		
 		</head>
 
@@ -129,16 +101,13 @@ body {
 
 	    <p>
 	      <?php 
-	 	$select_Id_Cat= sql("SELECT CAT_ID FROM CATEGORIA WHERE CAT_NOMBRE LIKE '$cat_Nombre'");
 	 
-	 	$filas=oci_fetch_array($select_Id_Cat,OCI_BOTH);
-	 	$cat_Id= $filas["CAT_ID"];
 	
 		if ($tipo_Ganador==='un_Ganador') {
 		
 	?>
         </p>
-	    <form action="eventos3.php" method="post" name="unganador">
+	    <form action="../Formularios/eventos3.php" method="post" name="unganador">
         <p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
     	  <table align="center" border="0" width="900">
 			<tr>
@@ -161,38 +130,29 @@ body {
          </p>
 			  
 		          <p>
-		            <select name="par_nombre" id="par_nombre" >
-		              <option value="0">Seleccione </option>
-		              <?PHP
-		        $selec_Parnom = sql("select par_nombre, par_id from participante");
-	 
-	 			print_r($select_Parnom);
-		         while ($rows=oci_fetch_array($selec_Parnom,OCI_BOTH))
-				 {
-					 
-					 echo $rows["PAR_NOMBRE"]?>
-		              <option value="<?php echo $rows["PAR_ID"]?>" > <?php echo $rows["PAR_NOMBRE"]?></option>
-		              <?php  
-				}        
-                ?>
-	                </select>
-		            
-		            <input name="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
+                  <select name="par_nombre" class="gh" id="par_nombre">
+              <option value="0">Seleccione </option>
+  <?php foreach ($participantes as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["par_id"] ?>" ><?php echo $valor["par_nombre"]?></option>
+  <?php endforeach; ?>
+ 
+  </select>
+                    <input name="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
 		            <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>"> 
 		            <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>"> 
 		            <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
-		            <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
-		            <input name="Agregar" type="button" class="hhhh" id="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
-	              </p>
-		          <p><br> 
-		            </br>
+		            <input name="cat_id" type="hidden" value="<?php echo $cat_id?>">
+                   <input name="Agregar" type="button" class="hhhh" id="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
+	              
 		            <?php 
 			$nro_Part=1;
             while ($nro_Part <=  $nro_Participantes)
             {
            
-			    echo $nro_Part?>
+			  //  echo $nro_Part?>
 		            <input name="Id_<?php echo $nro_Part ?>" id="Id_<?php echo $nro_Part ?>"  type="hidden" maxlength="20">
+		          </p>
+		          <p>
 		            <input name="Participante_<?php echo $nro_Part ?>" type="text" id="Participante_<?php echo $nro_Part ?>" size="40" maxlength="40">
 		            <!--input name="Participante_<?php echo $nro_Part ?>" type="hidden" value="Participante_<?php echo $nro_Part ?>"-->
 		            
@@ -219,7 +179,7 @@ body {
 	} 	if ($tipo_Ganador==='tabla_Resultados'){   
 	?>
     </p>
-	    <form name="eventos2" id= "eventos2" method="post" action="eventos3.php">
+	    <form name="eventos2" id= "eventos2" method="post" action="../Formularios/eventos3.php">
 	      <p>&nbsp;</p>
 	      <table align="center" border="0" width="900">
 	        <tr>
@@ -230,26 +190,22 @@ body {
 	          </strong></p>
 	            <p><strong>Seleccione los participantes y presione agregar (en caso de no existir agreguelos)</strong></p>
 	            <p>
-	              <select name="par_nombre" id="par_nombre" >
-	               <option value="0">Seleccione </option>
-	              <?PHP
-					$selec_Parnom = sql("select par_nombre,par_id from participante");
-	  				 while ($rows=oci_fetch_array($selec_Parnom,OCI_BOTH))
-		             {			
-	                 echo $rows["PAR_NOMBRE"]?>
-	                <option value="<?php echo $rows["PAR_ID"]?>" > <?php echo $rows["PAR_NOMBRE"]?></option>
-	                <?php  
-					}
-					?>
-                    
-                  </select>
-                  
-	              <input name="nro_Participantes" id="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
-	              <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>">
-	              <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>">
-	              <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
-	              <input name="cat_Id" type="hidden" value="<?php echo $cat_Id?>">
-	              <input name="Agregar2" type="button" class="hhhh" id="Agregar2" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
+	                               <select name="par_nombre" class="gh" id="par_nombre">
+              <option value="0">Seleccione </option>
+  <?php foreach ($participantes as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["par_id"] ?>" ><?php echo $valor["par_nombre"]?></option>
+  <?php endforeach; ?>
+ 
+  </select>
+          <input name="nro_Participantes" type="hidden" value="<?php echo $nro_Participantes?>">
+		            <input name="tipo_Ganador" type="hidden" value="<?php echo $tipo_Ganador?>"> 
+		            <input name="fecha_Evento" type="hidden" value="<?php echo $fecha_Evento?>"> 
+		            <input name="desc_Evento" type="hidden" value="<?php echo $desc_Evento?>">
+		            <input name="cat_id" type="hidden" value="<?php echo $cat_id?>">
+          
+          
+           <input name="Agregar" type="button" class="hhhh" id="Agregar" onClick="javascript:agregarParticipante('<?php echo $nro_Participantes?>')" value="Agregar">
+	          
 	              </strong></p>
 	            <p>
                 <strong>Ingrese el Nombre, Raz&oacute;n de pago y Monto tope si aplica</p>
@@ -290,7 +246,7 @@ body {
 				   ?>
                 </p>
 	            <p>
-	              <input name="button" type="button" class="hhhh" id="button" onClick="validaSubmite()" value="continuar" align='center'>
+	               <input name="continuar" type="submit" class="hhhh" id="button2" value="continuar" align='center'>
 	            </p>
               </td>
             </tr>

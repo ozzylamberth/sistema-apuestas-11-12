@@ -1,18 +1,20 @@
+
 <?php
     /**
-     *Autor: Irene Soto
-	  Fecha: 15/08/2011
-	  @copyright GrupoNSM CA
-	  Modificaciones:
+     *Autor: 
+         
+          Modificaciones:
      */
-      
-	//$contrasena2=$_POST["contrasena2"];
-	
+      //require_once("../Contenedores/header.php");
+   // require_once("../Clases/conexiones.php");
+    //$conexiones = new conexiones();
 
-	
-	?>
-	
-		 <html>
+
+include_once ("../Controladores/ControlGuardarClave.php");
+ 
+        ?>
+        
+                 <html>
     <head>
         <title></title>
     </head>
@@ -21,15 +23,15 @@
             <font color="#000000" face="verdana">
                 <p><h3>Su Nueva Contrasena se ha Guardado Exitosamente</h3></p>
                <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=iniciar.php"> </head > 
-			<b>
-			<a href='iniciar.php' class="Estilo1"></br>Regresar al Menu Principal</a></p>
-					
-	</body>
-	</html>
-	<?PHP
-	require_once("../Contenedores/footer.php");
+                        <b>
+                        <a href='iniciar.php' class="Estilo1"></br>Regresar al Menu Principal</a></p>
+                                        
+        </body>
+        </html>
+        <?PHP
+        require_once("../Contenedores/footer.php");
 
+//echo $cedula;
 
-
-	?>
-
+        ?>
+ 

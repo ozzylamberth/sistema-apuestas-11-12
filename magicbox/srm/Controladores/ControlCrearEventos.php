@@ -4,42 +4,46 @@
 require '../../../php/Logger.php';
 
 include_once ("../Modelo/ModeloCategoria.php");
-//include_once ("../Formularios/RegistroUsuario2_1.php");
+
+
+session_start();
+$usuario= $_SESSION['usuario'];
+
+
 
 
 		// Tell log4php to use our configuration file.
 		Logger::configure('../../../php/log4conf.xml');
 		// Fetch a logger, it will inherit settings from the root logger
 		$log = Logger::getLogger('Sistema_de_Apuestas');
-		
-			
+		/*  $cat_Nombre= $_POST["Cat_nombre"];
+		 $desc_Evento= $_POST["desc_Evento"];
+		 $fecha_Evento= $_POST["fecha_Evento"];
+		 $fecha= $_POST['Fecha'];
+		 
+		 if(isset($_POST['tipo_Ganador'])) $tipo_Ganador= $_POST['tipo_Ganador'];
+		 $nro_Participantes= $_POST["nro_Participantes"];
+			 */
 		if(array_key_exists('categoria',$_POST))
 			$cat_id=$_POST['categoria'];
 		else
 			$cat_id=0;
+			
 
 		$categorias=array();
 				
 		try
 		{
-			$filas=buscarcategoriasSinEvento();
+			$filas=buscarCategoriasOrdenadas();
 			$categorias=$filas;
 
-	
-			//print_r($filas);
-			//die();
-
+			
+			
+			
 			///mensaje log de que se cargaron los eventos en el combobox	
-			$log->info("Se cargó la lista de eventos en la plantilla de las categorias"); 
+			$log->info("Se cargó la lista de categorias en la plantilla de Creacion de un Evento"); 
 			
 			
-			if($cat_id>0)
-			{
-				//llama a la funcion buscarCategoriaporid para que cambien los datos al seleccionar del combo
-				$cat_nombre= buscarCategoriasporid($cat_id);
-						
-			
-			}
 		}
 		catch(Exception $e)
 		{
@@ -48,10 +52,5 @@ include_once ("../Modelo/ModeloCategoria.php");
 		}
 		
 	
-		require "../Formularios/eliminar_ca.php";
-	
-	
-	
-	
-
+		require "../Formularios/eventos.php";
 ?>

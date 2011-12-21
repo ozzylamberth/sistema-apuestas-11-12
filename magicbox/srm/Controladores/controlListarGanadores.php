@@ -67,7 +67,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		require "../Formularios/listar_ganadores2.php";
+		//require "../Formularios/listar_ganadores2.php";
 	
 	
 	

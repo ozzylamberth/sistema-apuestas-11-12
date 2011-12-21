@@ -78,19 +78,7 @@ body {
             
     </p>
         
-          <p>
-          <label>Nro de Participantes:
-            <?php echo $eve_nro_part ; ?>
-          </label>
-            
-        </p>
-        
-         <p>
-          <label>Nro de Ganadores:
-            <?php echo $eve_nro_gan ; ?>
-          </label>
-            
-        </p>
+      
   </fieldset>
 </form>
 
@@ -125,15 +113,6 @@ body {
       <input name="fecha_Evento" id="fecha_Evento" type="text" readonly="readonly" value="" >
     <a href="javascript:NewCssCal('fecha_Evento','YYYYMMDD')"> <img src="scripts/cal.gif" width="16" height="16" border="0" alt="Seleccione una Fecha"> </a>    
     
-    </p>
-    <p>
-      <label>Nro de Participantes: </label>
-      <input type="text" name="eve_nro_part" id="eve_nro_part"  maxlength="45"/>
-    </p>
-    
-    <p>
-      <label>Nro de Ganadores: </label>
-      <input type="text" name="eve_nro_gan" id="eve_nro_gan"  maxlength="45"/>
     </p>
     
     

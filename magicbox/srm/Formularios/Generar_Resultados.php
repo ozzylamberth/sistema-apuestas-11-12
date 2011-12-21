@@ -9,8 +9,9 @@
 *
 */
 
-session_start();
+
 include_once("../DataConexion/conexion.php");
+include_once ("../Controladores/ControlGenerarResultados2.php");
 
 
 ?>
@@ -100,19 +101,7 @@ body {
 		</script>
         
     
-    
-    <?php
-$eve_nombre='';
-$eve_id=0;
-$eve_status='';
-$eve_nro_part=0;
-$eve_nro_gan=0;
-$eve_tipo_pago=0;
-$eve_fecha='';
 
-        $selec_Eve= sql("select EVE_NOMBRE from evento WHERE EVE_STATUS LIKE 'Activo'");
-	 
-	?>
         
   <br>
   </p>
@@ -122,21 +111,19 @@ $eve_fecha='';
 
 
  <p class="Estilo1 Estilo3">
-   <?PHP
-      if(isset($_POST['eve_nombre'])) 
-     $eve_nombre = $_POST['eve_nombre']; //Te devolveria el atributo value del option seleccionado
-	?>
+   
  <center><table width="500" border="0">
   <tr>
     <td width="300"><strong>Seleccione el Evento</strong></p>
  <p class="Estilo1 Estilo3">
-   <select name="eve_nombre" id="eve_nombre">
-     <option value="0">Seleccione </option>
-     <?PHP
-         while ($rowev=oci_fetch_array($selec_Eve,OCI_BOTH)){?>
-     <option value="<?php echo $rowev["EVE_NOMBRE"] ?>" > <?php echo $rowev["EVE_NOMBRE"]?></option>
-     <?php  } ?>
-   </select>
+ 
+  <select name="evento" class="gh" id="evento">
+              <option value="0">Seleccione </option>
+  <?php foreach ($eventos as $clave=>$valor): ?>
+  		<option value="<?php echo $valor["id"] ?>" ><?php echo $valor["nombre"]?></option>
+  <?php endforeach; ?>
+  </select>
+  
  </p>
  <p class="Estilo1 Estilo3">
     <input name="Buscar" type="submit" class="bot" id="Buscar" value="Buscar">
@@ -151,7 +138,7 @@ $eve_fecha='';
     <p>
       <?PHP
 	
-	$selec_Eve1= sql("select EVE_ID,  EVE_NRO_GAN, EVE_TIPO_PAGO, EVE_FECHA, EVE_NRO_PART from evento where EVE_NOMBRE LIKE '$eve_nombre'");
+	$selec_Eve1= sql("select EVE_ID,  EVE_NRO_GAN, EVE_TIPO_PAGO, EVE_FECHA, EVE_NRO_PART from evento where EVE_NOMBRE LIKE '$evento'");
 
     While($rowev1=oci_fetch_array($selec_Eve1,OCI_BOTH))
 	{	
@@ -164,7 +151,7 @@ $eve_fecha='';
      }
      ?>
     </p>
-   
+    <?php  if($id):?>
 <form action="Generar_Resultados2.php" method="post" name="resul">
   <table align="center" border="0" width="900">
 	<tr>
@@ -229,5 +216,5 @@ $eve_fecha='';
       </td>
     </tr>
   </table>
-		
+<?php endif; ?>		
 </form>

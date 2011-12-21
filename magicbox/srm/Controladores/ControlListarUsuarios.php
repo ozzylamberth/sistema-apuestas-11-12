@@ -35,7 +35,7 @@ include_once ("../Modelo/ModeloUsuario.php");
 		}
 		
 	
-		require "../Formularios/ListarUsuariosP.php";
+		//require "../Formularios/ListarUsuariosP.php";
 	
 	
 	

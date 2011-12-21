@@ -36,7 +36,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		require "../Formularios/listareventos.php";
+		//require "../Formularios/listareventos.php";
 	
 	
 	

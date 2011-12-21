@@ -2,9 +2,9 @@
 
 
 require '../../../php/Logger.php';
-include_once ("../DataConexion/guardarXmlEvento.php");
+
 include_once ("../Modelo/ModeloCategoria.php");
-//include_once ("../Formularios/RegistroUsuario2_1.php");
+
 
 
 		// Tell log4php to use our configuration file.
@@ -13,15 +13,20 @@ include_once ("../Modelo/ModeloCategoria.php");
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 		
 			
-	
+		if(array_key_exists('categoria',$_POST))
+			$cat_id=$_POST['categoria'];
+		else
+			$cat_id=0;
 
 		$categorias=array();
 				
 		try
 		{
 			$filas=buscarCategoriasOrdenadas();
-			$categorias=$filas;	
-			$log->info("Se cargo la pagina de listar categorias"); 
+			$categorias=$filas;
+
+			///mensaje log de que se cargaron los eventos en el combobox	
+			$log->info("Se cargó la lista de categorias en la plantilla de Creacion de un Evento"); 
 			
 			
 		}
@@ -32,10 +37,5 @@ include_once ("../Modelo/ModeloCategoria.php");
 		}
 		
 	
-		//require "../Formularios/listarcat.php";
-	
-	
-	
-	
-
+		require "../Formularios/eventos.php";
 ?>

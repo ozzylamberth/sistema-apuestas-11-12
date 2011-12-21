@@ -35,13 +35,14 @@ include_once ("../Modelo/ModeloCategoria.php");
 			
 			if($cat_id>0)
 			{
-			
+			   
+				$cat_nombre= buscarCategoriasporid($cat_id);
 				
-				foreach($filas as $categoria)
-				{
-					$cat_nombre = $categoria['cat_nombre'];
+				
+				
 					
-				}
+					
+				
 				
 				
 			}
