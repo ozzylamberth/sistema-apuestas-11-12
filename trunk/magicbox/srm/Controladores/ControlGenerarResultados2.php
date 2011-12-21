@@ -2,8 +2,9 @@
 
 
 require '../../../php/Logger.php';
+
 include_once ("../Modelo/ModeloEvento.php");
-//include_once ("../Formularios/RegistroUsuario2_1.php");
+
 
 
 		// Tell log4php to use our configuration file.
@@ -12,8 +13,8 @@ include_once ("../Modelo/ModeloEvento.php");
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 		
 			
-		if(array_key_exists('eve',$_POST))
-			$eve_id=$_POST['eve'];
+		if(array_key_exists('evento',$_POST))
+			$eve_id=$_POST['evento'];
 		else
 			$eve_id=0;
 
@@ -31,29 +32,22 @@ include_once ("../Modelo/ModeloEvento.php");
 			///mensaje log de que se cargaron los eventos en el combobox	
 			$log->info("Se cargó la lista de eventos en la plantilla de los participantes por evento"); 
 			
+			
 			if($eve_id>0)
 			{
-				$participantes_eve=array();
+			    $eve2=array();
 				$datos_eve=buscarEventoPorId($eve_id);
-				$part_eve=buscarParticipantesEvento($eve_id);
+				$eve2 = $datos_eve;
 				
-				foreach($datos_eve as $eve)
+				foreach($eve2 as $evento)
 				{
-					$eve_nombre = $eve['eve_nombre'];
-					$eve_nro_part = $eve['eve_nro_part'];
-					$eve_fecha = $eve['eve_fecha'];
-					$eve_tipo_pago = $eve['eve_tipo_pago'];
+					$eve_nombre = $evento['eve_nombre'];
+					$eve_fecha = $evento['eve_fecha'];
+					
 					
 				}
 				
-				foreach($part_eve as $clave=>$valor)
-				{
-					$parts_eve['par_nombre']=$valor['par_nombre'];  
-					if ($valor['pe_tipo_pago']==0) 
-						$parts_eve['pe_tipo_pago']=$eve['eve_tipo_pago'];  
-						
-					$participantes_eve[]=$parts_eve;
-				}
+				
 			}
 		}
 		catch(Exception $e)
@@ -63,7 +57,7 @@ include_once ("../Modelo/ModeloEvento.php");
 		}
 		
 	
-		//require "../Formularios/proximos_eventos.php";
+		require "../Formularios/Generar_Resultados.php";
 	
 	
 	

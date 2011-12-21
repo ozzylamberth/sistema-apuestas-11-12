@@ -42,7 +42,7 @@ se coloco en una carpeta llamada DataConexion
         <center>
             <font color="#000000" face="verdana">
                 <h3>Recuperaci&oacute;n de Clave</h3>
-                <form name="respuestaSecreta" id="formPreguntaSecreta"  method="post" action="mostrarClave.php">
+                <form name="formPreguntaSecreta" id="formPreguntaSecreta"  method="post" action="../Formularios/mostrarClave.php">
                     <table border="0">
                         <tr>
                             <td>Pregunta Secreta: </td>
@@ -50,10 +50,12 @@ se coloco en una carpeta llamada DataConexion
                         </tr>
                         <tr>
                             <td>Respuesta Secreta: </td>
-                            <td><input  type="password" id="respuestaSecreta" type="text" name="respuestaSecreta"/ maxlength="20"></td>
+                            <td><label>
+                              <input type="text" name="respuestaSecreta" id="respuestaSecreta">
+                            </label></td>
                         </tr>
                         <tr>
-                            <td><input id="cedula" type="hidden" value="<?php echo $cedula ?>" name="cedula"/></td>
+                            <td><input id="admin_cedula" type="hidden" value="<?php echo $admin_cedula ?>" name="cedula"/></td>
                         </tr>
                         <tr>
                             <td colspan="2" align="center"><input type="submit" name="consultarCedula" value="Continuar"></td>

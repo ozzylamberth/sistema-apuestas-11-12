@@ -2,9 +2,6 @@
 
 require '../../../php/Logger.php';
 include_once ("../Modelo/ModeloResultado.php");
-
-
-
 		// Tell log4php to use our configuration file.
 		Logger::configure('../../../php/log4conf.xml');
 		// Fetch a logger, it will inherit settings from the root logger
@@ -23,9 +20,5 @@ include_once ("../Modelo/ModeloResultado.php");
 				$log->error("Hubo un error de conexion al intentar insertar un resultado en la base de datos"); 		
 				$mensaje= "Ocurrio un error de conexion";
 		}
-		
-	
 		require "../Formularios/Generar_Resultados2.php";
-
-
 ?>

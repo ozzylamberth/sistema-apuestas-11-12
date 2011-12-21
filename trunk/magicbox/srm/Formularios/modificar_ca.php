@@ -70,6 +70,7 @@ body {
         <legend>Si desea modificar la siguente Categoria: </legend>
         <p>
           <label><?php echo $cat_nombre ; ?>
+          
           </label>
         </p>
     

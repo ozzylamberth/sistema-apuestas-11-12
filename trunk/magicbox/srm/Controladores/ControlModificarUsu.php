@@ -36,11 +36,13 @@ include_once ("../Modelo/ModeloUsuario.php");
 			if($admin_cedula>0)
 			{
 			
+			    $usu2=array();
+				$datos_usu=buscarAdministradoresPorId($admin_cedula);
+				$usu2 = $datos_usu;
 				
-				foreach($filas as $usuario)
+				foreach($usu2 as $usuario)
 				{
 					$admin_nombre = $usuario['admin_nombre'];
-					$admin_cedula = $usuario['admin_cedula'];
 					$admin_apellido = $usuario ['admin_apellido'];
 					$admin_login = $usuario ['admin_login'];
 					$admin_status = $usuario ['admin_status']; 

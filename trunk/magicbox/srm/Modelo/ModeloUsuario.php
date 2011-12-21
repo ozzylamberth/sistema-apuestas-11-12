@@ -87,7 +87,7 @@ function buscarAdministradoresPorId($admin_cedula)
 		$selec_Cedula_Admin= sql("SELECT ADMIN_NOMBRE, ADMIN_APELLIDO, ADMIN_LOGIN, ADMIN_STATUS FROM ADMINISTRADOR WHERE ADMIN_CEDULA= '$admin_cedula'");
 	   
 	   
-	   echo $admin_cedula;
+	   
 	   
 	  	while($roweve2=oci_fetch_array($selec_Cedula_Admin,OCI_BOTH))
 	   	{	
@@ -152,6 +152,23 @@ function SeleccionarPregSecreta($cedula)
 				return $filas;
 	
 }
+
+//selecciona todas las preguntas secretas para que el usuario seleccion en su registro
+function BuscarPregSecreta()
+
+{
+	            $pregun=array();
+                $preg_secre=sql("SELECT * from pregunta_secreta");
+				while ($fila2=oci_fetch_array($preg_secre,OCI_BOTH))
+				{
+						 $pregun['pre_id'] = $fila2['PRE_ID'];	
+						 $pregun['pre_des']= $fila2['PRE_DES'];
+						 $preguns[]=$pregun;
+				}
+				return $preguns;
+	
+}
+
 // con la foranea en la tabla administrador de la preguta buscas el enunciado de la preguntado
 function EnunciadoPreg($admin_fk_id_pre)
 {
@@ -162,6 +179,11 @@ function EnunciadoPreg($admin_fk_id_pre)
 		 return $pre_des;
 }
 
+
+function ActualizacionClave ($cedula,$contrasena1)
+{
+	$act_Adm = sql("update administrador set admin_contrasena='$contrasena1' where admin_cedula='$cedula'"); 
+}
 
 
 ?>

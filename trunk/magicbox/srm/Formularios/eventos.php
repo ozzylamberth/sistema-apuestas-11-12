@@ -7,15 +7,10 @@
 * Página de creación de eventos, contiene formularios introducidos por el usuario.
 *
 */
-session_start();
-$usuario= $_SESSION['usuario'];
-include_once ("../DataConexion/conexion.php");
-// Replace the path with where you installed log4php
-require 'php/Logger.php';
-// Tell log4php to use our configuration file.
-Logger::configure('php/log4conf.xml');
-// Fetch a logger, it will inherit settings from the root logger
-$log = Logger::getLogger('Sistema_de_Apuestas');
+
+
+include_once ("../Controladores/ControlCrearEventos.php");
+
 ?>
 <head>
         <script language='javascript' src="../js/popcalendar.js"></script>
@@ -88,7 +83,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 
 <body>
 
-<form id="eventos" name="eventos" method="post" action="eventos2.php">
+<form id="eventos" name="eventos" method="post" action="../Formularios/eventos2.php">
 
 <table>
 		<tr align='left'>	
@@ -105,7 +100,7 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 				
 <fieldset height="100">
 <legend><strong>Datos del evento </strong></legend>
-<table align="center" border="0" width="" >
+<table align="center" border="0" width="">
 		<tr>
         <table align="center" border="0" width="900">
 		 <tr>
@@ -119,28 +114,17 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
         <table align="center" border="0" width="900">
 			<tr>
 			<td width="500" align='center'>
-		
-			<select type="submit" name="Cat_nombre" id="Cat_nombre" >
-						  <option value="0">Seleccione </option>
-		  <?PHP
-		$selec_Cat = sql("select cat_nombre from categoria");
-	    //$row=oci_fetch_array($selec_Preg,OCI_BOTH);
-		 //print_r($row);
-		
-		
-		 while ($rows=oci_fetch_array($selec_Cat,OCI_BOTH))
-		{?>
-		  <option value="<?php echo $rows["CAT_NOMBRE"]?>" > <?php echo $rows["CAT_NOMBRE"]?></option>
-		  <?php  }        
- 
-  
-        if(isset($_POST['Cat_nombre'])) //$_GET si se hace por GET (url)
-        $Cat_nombre = $_POST['Cat_nombre']; //Te devolveria el atributo value del option seleccionado		
-?>
-			
-			</select>
             
-       
+	<form id="eventos" name="eventos" method="post" action="../Controladores/ControlCrearEventos.php">
+		
+  		<select name="categoria" class="gh" id="categoria">
+              <option value="0">Seleccione </option>
+              <?php foreach ($categorias as $clave=>$valor): ?>
+                    <option value="<?php echo $valor["cat_id"] ?>" ><?php echo $valor["cat_nombre"]?></option>
+              <?php endforeach; ?>
+ 		 </select>
+            
+	</form>  
             
 	
   
@@ -180,9 +164,9 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
             <img src="scripts/cal.gif" width="16" height="16" border="0" alt="Seleccione una Fecha">
             </a>
               </p>
-             </td>
+            </td>
             
-		   </tr>
+	      </tr>
 		</table>
         
         <table align="center" border="0" width="900">	
@@ -205,21 +189,22 @@ $log = Logger::getLogger('Sistema_de_Apuestas');
 		  </tr>
 		</table>
    
-        
+        <input name="cat_id" type="hidden" value="<?php echo $cat_id?>">
+       <input name="cat_nombre" type="hidden" value="<?php echo $cat_nombre?>">
   
         <tr>
-        <input name="Registrar" type="button" class="nn" id="Continuar con Registro" onClick="validaSubmite()" value="Continuar con Registro">
+        <input name="Registrar" type="submit" class="nn" id="Continuar con Registro" value="Submit">
   <tr> 
 </form>
 
 
 <form name='volverse' action='home.php'> 
-  <p>
-    <input name="Cancelar" type="submit" class="nn" id="button2" value="Cancelar" align='left'>
-  </p>
-  <center><p><img src="../Imagenes/ELECCIONES2012.gif" width="1000" height="90" alt="gg"></p></center>
-  <table align='center'>				
-  </table>
+              <p>
+                <input name="Cancelar" type="submit" class="nn" id="button2" value="Cancelar" align='left'>
+              </p>
+              <center><p><img src="../Imagenes/ELECCIONES2012.gif" width="1000" height="90" alt="gg"></p></center>
+              <table align='center'>				
+              </table>
 </form>
 <?PHP
 require_once("../Contenedores/footer.php");

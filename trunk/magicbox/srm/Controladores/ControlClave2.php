@@ -11,11 +11,11 @@ include_once ("../Modelo/ModeloUsuario.php");
 		$log = Logger::getLogger('Sistema_de_Apuestas');
 	
         $admin_cedula=$_POST["cedula"];
-       // $contrasena1=$_POST["contrasena1"];
+        $respuestaSecreta=$_POST["respuestaSecreta"];
 		
 		try
 		{
-			$filas= ValidarExistencia3($cedula,$respuestaSecreta);
+			$filas= ValidarExistencia3($admin_cedula,$respuestaSecreta);
 			
 			
 			
