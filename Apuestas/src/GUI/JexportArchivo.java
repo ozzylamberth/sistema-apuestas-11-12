@@ -13,7 +13,7 @@ import java.awt.event.KeyEvent;
  */
 public class JexportArchivo extends javax.swing.JFrame {
 Administrador admin = new Administrador();
-
+private String letraRuta;
 /*private Integer id = 6;
 private Integer monto =99;
 private Integer maqId = 7;*/
@@ -27,6 +27,7 @@ ListadoApuesta control =  new ListadoApuesta();
     }
 
     JexportArchivo(String letter) {
+     letraRuta=letter;  
         
     }
 
@@ -123,6 +124,7 @@ private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GE
     String contrasena = this.jContrasena.getText();
     String cedula = this.jCedula.getText();
     
+    //admin.ValidarExistencia(usuario, contrasena, cedula, letraRuta); 
     admin.ValidarExistencia(usuario, contrasena, cedula); 
     
 }//GEN-LAST:event_jButtonAceptarActionPerformed
