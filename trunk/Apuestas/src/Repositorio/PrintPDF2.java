@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 package Repositorio;
-    import java.io.FileInputStream;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -55,5 +55,3 @@ pe.printStackTrace();
 }
 }
 }
-
-
