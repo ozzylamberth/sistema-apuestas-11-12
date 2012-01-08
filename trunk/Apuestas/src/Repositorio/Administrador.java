@@ -5,7 +5,6 @@ import Dominio.ConectarBD;
 import java.sql.*;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 /**
  * @author Irene
  * esta clase tiene los atributos de administrador y la insercion a la base de datos

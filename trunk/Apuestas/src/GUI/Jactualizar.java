@@ -12,7 +12,7 @@ package GUI;
 
 /**
  *
- * @author Eleany G
+ * @author Eleany G    
  * Pantalla de informacion cuando la maquina esta siendo actualizada
  */
 public class Jactualizar extends javax.swing.JFrame {
