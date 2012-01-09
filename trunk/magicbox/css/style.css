@@ -4,7 +4,8 @@ body {
 	margin:0;
 	padding:0;
 	width:100%;
-	color:#8a8a8a;
+	/*color:#8a8a8a;*/
+	color 490000;
 	font:normal 12px/1.5em "Liberation sans", Arial, Helvetica, sans-serif;
 	background:#0f0f0f url(../images/main_bg.gif) repeat left top;
 }
@@ -30,18 +31,41 @@ h2 {
 	font-weight:normal;
 	color:#3f3f3f;
 }
+table.lista {
+	padding: 2px 4px 2px 4px;
+	border: 1px solid #490000;
+	margin-left:auto;
+	margin-right:auto;
+	text-align: center;
+}
+table.lista th
+{
+	background:#ffeda6;
+	color:490000;
+	font-size:14px;
+	font-weight:bold;
+	height:30px;
+}
+table.lista td
+{
+	background:#f8c82e;
+	color:490000;
+	font-size:12px;
+	font-weight:normal;
+}
 p {
 	margin:8px 0;
 	padding:0 0 8px 0;
 }
 a {
-	color:#fdbb20;
-	text-decoration:underline;
+	color:#664800;
+	text-decoration:none;
 }
 .header, .content, .menu_nav, .fbg, .footer, form, ol, ol li, ul, .content .mainbar, .content .sidebar {
 	margin:0;
 	padding:0;
 	font-size: 14px;
+	color: 490000;
 }
 .header {
 }
@@ -63,7 +87,7 @@ h1 {
 	font-weight:normal;
 	line-height:1.2em;
 	text-transform:none;
-	text-align:left;
+	text-align:center;
 }
 h1 a, h1 a:hover {
 	color:#fff;

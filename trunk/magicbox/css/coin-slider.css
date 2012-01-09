@@ -8,7 +8,24 @@
 	zoom:1;
 	position:relative;
 	float:right;
+	height:250px;
 }
+
+.coin-slider_2 {
+	padding:0;
+	overflow:hidden;
+	zoom:1;
+	position:relative;
+	float:right;
+	height:100px;
+}
+
+.coin-slider_2 a {
+	text-decoration:none;
+	outline:none;
+	border:none;
+}
+
 .coin-slider a {
 	text-decoration:none;
 	outline:none;

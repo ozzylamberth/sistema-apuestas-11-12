@@ -68,6 +68,7 @@ REM ****************************************************
 CREATE TABLE     categoria  (
    cat_id  number(10) NOT NULL,
    cat_nombre  varchar(200) NOT NULL,
+   fk_cat_id number(10),
  
 CONSTRAINT pk_categoria
 PRIMARY KEY(cat_id)
@@ -311,4 +312,10 @@ alter table administrador
 	add constraint admi_fk_preg foreign key (admin_fk_id_pre)
 references pregunta_secreta (pre_id);
 
+REM ****************************************************
+REM *                  ALTER CATEGORIA                 *         
+REM ****************************************************
 
+alter table categoria
+	add constraint cat_fk_cat foreign key (fk_cat_id)
+references categoria (cat_id);
