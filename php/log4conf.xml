@@ -4,7 +4,7 @@
 		
 	<appender name="myFileAppender" class="LoggerAppenderFile">
 		<layout class="LoggerLayoutTTCC" />
-		<param name="file" value="../log/Log_Sistema_Apuestas.log" />
+		<param name="file" value="log/Log_Sistema_Apuestas.log" />
 	</appender>
 	<logger name="Sistema_de_Apuestas">
 		<appender_ref ref="myFileAppender" />

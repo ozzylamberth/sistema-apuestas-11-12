@@ -1,5 +1,0 @@
-11/27/11 21:30:48,444 [3980] DEBUG Foo - My second message.
-11/27/11 21:30:48,445 [3980] INFO Foo - My third message.
-11/27/11 21:30:48,446 [3980] WARN Foo - My fourth message.
-11/27/11 21:30:48,446 [3980] ERROR Foo - My fifth message.
-11/27/11 21:30:48,446 [3980] FATAL Foo - My sixth message.

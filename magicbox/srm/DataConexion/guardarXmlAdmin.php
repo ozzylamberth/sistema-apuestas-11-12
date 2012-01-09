@@ -9,7 +9,9 @@ include_once "conexion.php";
 		//print_r($fila);
 	 
 	 $xml='<?xml version="1.0" encoding="utf-8"?>';
-	 $nombre='C:/Users/Eleany G/Desktop/administrador.xml'; 
+	 
+	 // ARREGLAR RUTA/////
+	 $nombre='C:/Users/Irene/Desktop/administrador.xml'; 
      $archivo = fopen ($nombre,'w'); 
 	 fwrite ($archivo, $xml);  
 	 
