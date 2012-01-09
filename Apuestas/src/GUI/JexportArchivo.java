@@ -59,6 +59,7 @@ ListadoApuesta control =  new ListadoApuesta();
         jContrasena = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jCedula = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1080, 720));
@@ -89,14 +90,14 @@ ListadoApuesta control =  new ListadoApuesta();
         jLabel2.setBounds(257, 41, 558, 64);
 
         jButtonAceptar.setFont(new java.awt.Font("Tahoma", 1, 24));
-        jButtonAceptar.setText("Aceptar");
+        jButtonAceptar.setText("Exportar Archivo");
         jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAceptarActionPerformed(evt);
             }
         });
         getContentPane().add(jButtonAceptar);
-        jButtonAceptar.setBounds(450, 570, 280, 70);
+        jButtonAceptar.setBounds(130, 560, 280, 70);
 
         jContrasena.setFont(new java.awt.Font("Tahoma", 1, 18));
         getContentPane().add(jContrasena);
@@ -110,6 +111,16 @@ ListadoApuesta control =  new ListadoApuesta();
         jCedula.setFont(new java.awt.Font("Tahoma", 1, 18));
         getContentPane().add(jCedula);
         jCedula.setBounds(490, 170, 370, 70);
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton1.setText("Cargar Archivo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(750, 560, 280, 70);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -128,6 +139,10 @@ private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GE
     admin.ValidarExistencia(usuario, contrasena, cedula); 
     
 }//GEN-LAST:event_jButtonAceptarActionPerformed
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,6 +180,7 @@ private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GE
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JTextField jCedula;
     private javax.swing.JPasswordField jContrasena;
