@@ -4,7 +4,7 @@ create sequence AUTO_INC_categoria
 increment by 1
 start with 1
  cache 10;
-
+ 
 create sequence AUTO_INC_lugar
 increment by 1
 start with 1
