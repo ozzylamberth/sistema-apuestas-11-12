@@ -3351,3 +3351,37 @@
 01/13/12 04:48:51,235 [5752] INFO Sistema_de_Apuestas - Descargando el archivo XML generado en el sistema
 01/13/12 04:49:26,581 [5752] INFO Sistema_de_Apuestas - El usuario: ADMIN esta cerrando sesion en el sistema de apuestas SOGAR
 01/13/12 04:49:28,376 [5752] INFO Sistema_de_Apuestas - Cargando la pagina principal del sistema de apuestas SOGAR
+01/13/12 07:53:14,136 [5752] INFO Sistema_de_Apuestas - Se esta mostrando la plantilla de inicio de sesion en el sistema de apuestas SOGAR
+01/13/12 07:55:58,222 [5752] INFO Sistema_de_Apuestas - Se esta mostrando la plantilla de inicio de sesion en el sistema de apuestas SOGAR
+01/13/12 07:56:06,234 [5752] INFO Sistema_de_Apuestas - El usuario: ADMIN esta inciando sesion en el sistema de apuestas SOGAR
+01/13/12 07:56:10,694 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 07:57:06,220 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de agregar categorias
+01/13/12 07:57:11,885 [5752] INFO Sistema_de_Apuestas - Se ha guardado una nueva categoria en la base de datos
+01/13/12 07:57:14,713 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 07:57:19,172 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de agregar eventos
+01/13/12 07:57:35,071 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de agregar eventos parte 2
+01/13/12 07:57:58,626 [5752] INFO Sistema_de_Apuestas - Guardando los datos completos del evento: CCC
+01/13/12 07:59:56,295 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de creacion de un nuevo administrador del sistema
+01/13/12 08:01:33,493 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 08:01:37,324 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de creacion de un nuevo administrador del sistema
+01/13/12 08:02:26,773 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 08:02:30,106 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de creacion de un nuevo administrador del sistema
+01/13/12 08:03:12,839 [5752] INFO Sistema_de_Apuestas - Ingresando a la pagina de eliminar categorias
+01/13/12 08:03:18,441 [5752] INFO Sistema_de_Apuestas - Se cargaron los datos de la categoria seleccionada en la plantilla de eliminar categorias
+01/13/12 08:03:21,126 [5752] INFO Sistema_de_Apuestas - Eliminando la categoria: 51
+01/13/12 08:03:23,551 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 08:03:28,871 [5752] INFO Sistema_de_Apuestas - Ingresando a la plantilla de desactivar una maquina
+01/13/12 08:03:36,692 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de agregar maquinas de apuesta en el sistema
+01/13/12 08:03:55,294 [5752] INFO Sistema_de_Apuestas - Se ha guardado una nueva maquina de forma exitosa
+01/13/12 08:04:03,934 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de listar maquinas de apuesta en el sistema
+01/13/12 08:04:21,107 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de listar maquinas de apuesta en el sistema
+01/13/12 08:04:31,687 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de listar maquinas de apuesta en el sistema
+01/13/12 08:04:35,373 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de listar maquinas de apuesta en el sistema
+01/13/12 08:05:03,823 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de exportación de la data del sistema de apuestas en un archivo XML
+01/13/12 08:10:36,024 [5752] INFO Sistema_de_Apuestas - Cargando la pagina de exportación de la data del sistema de apuestas en un archivo XML
+01/13/12 08:10:38,244 [5752] INFO Sistema_de_Apuestas - Exportando la data del sistema de apuestas en un archivo XML
+01/13/12 08:10:40,713 [5752] INFO Sistema_de_Apuestas - Descargando el archivo XML generado en el sistema
+01/13/12 08:11:43,046 [5752] INFO Sistema_de_Apuestas - Se cargo la lista de eventos que seran mostrados en la plantilla de listar participantes de eventos para usuarios registrados
+01/13/12 08:11:46,390 [5752] INFO Sistema_de_Apuestas - El usuario ADMIN ha iniciado sesion en el sistema de apuestas
+01/13/12 08:12:01,438 [5752] INFO Sistema_de_Apuestas - El usuario: ADMIN esta cerrando sesion en el sistema de apuestas SOGAR
+01/13/12 08:12:03,473 [5752] INFO Sistema_de_Apuestas - Cargando la pagina principal del sistema de apuestas SOGAR

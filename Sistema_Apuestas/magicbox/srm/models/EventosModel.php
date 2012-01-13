@@ -207,7 +207,7 @@ class EventosModel
 	{
 		$categorias=array();
 		try{
-		echo	$consulta="INSERT INTO evento (EVE_ID,EVE_NOMBRE,EVE_STATUS,EVE_FECHA,EVE_NRO_PART,EVE_NRO_GAN,EVE_TIPO_PAGO,EVE_FK_ID_ADMIN,EVE_FK_ID_CATEGORIA) VALUES (AUTO_INC_evento.NEXTVAL,'".$eve_desc."','Activo',to_date('".$eve_fecha."','YYYY-MM-DD'),".$eve_nro_par.",".$eve_nro_gan.",".$eve_tipo_pago.",".$admin_cedula.",".$eve_categoria_id.")";
+		$consulta="INSERT INTO evento (EVE_ID,EVE_NOMBRE,EVE_STATUS,EVE_FECHA,EVE_NRO_PART,EVE_NRO_GAN,EVE_TIPO_PAGO,EVE_FK_ID_ADMIN,EVE_FK_ID_CATEGORIA) VALUES (AUTO_INC_evento.NEXTVAL,'".$eve_desc."','Activo',to_date('".$eve_fecha."','YYYY-MM-DD'),".$eve_nro_par.",".$eve_nro_gan.",".$eve_tipo_pago.",".$admin_cedula.",".$eve_categoria_id.")";
 			$this->db->exec($consulta);
 			$retorno='true';
 		}		
