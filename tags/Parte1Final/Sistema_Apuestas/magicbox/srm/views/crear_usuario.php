@@ -126,7 +126,7 @@ Vista o interfaz grafica utilizada al crear un administrador-->
 					<strong>Apellido:</strong>
 				</th>
 				<th align="left" scope="col">
-					<input name='admin_apellido' type='text' id='admin_apellido' value="" size="30" maxlength="25">
+					<input name='admin_apellido' type='text' id='admin_apellido' value="" size="30" maxlength="20">
 				</th>
 			</tr>
             <tr>

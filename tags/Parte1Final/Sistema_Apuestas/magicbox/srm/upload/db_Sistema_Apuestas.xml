@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?> <archivoXML>
   <categorias>
    <categoria>
+     <catid>52</catid>
+     <catnombre>ABC</catnombre>
+   </categoria>
+   <categoria>
      <catid>4</catid>
      <catnombre>Concurso De Belleza</catnombre>
    </categoria>
@@ -13,17 +17,51 @@
      <catnombre>Carreras de Caballos</catnombre>
    </categoria>
    <categoria>
-     <catid>51</catid>
-     <catnombre>LALALA</catnombre>
-   </categoria>
-   <categoria>
      <catid>2</catid>
      <catnombre>Beisbol</catnombre>
    </categoria>
   </categorias>
   <eventos>
+   <evento>
+     <id>12</id>
+     <nombre>CCC</nombre>
+     <fecha>25/01/12</fecha>
+     <nropart>4</nropart>
+     <nrogan>4</nrogan>
+     <idcat>52</idcat>
+     <tipopago>2</tipopago>
+     <cedadmin>18491656</cedadmin>
+   </evento>
   </eventos>
   <participantes>
+   <participante>
+     <idpart>17</idpart>
+     <nombrepart>Caballo Supra</nombrepart>
+     <tipopagop>2</tipopagop>
+     <topeapuesta>0</topeapuesta>
+     <ideve>12</ideve>
+   </participante>
+   <participante>
+     <idpart>34</idpart>
+     <nombrepart>C</nombrepart>
+     <tipopagop>2</tipopagop>
+     <topeapuesta>7</topeapuesta>
+     <ideve>12</ideve>
+   </participante>
+   <participante>
+     <idpart>35</idpart>
+     <nombrepart>A</nombrepart>
+     <tipopagop>2</tipopagop>
+     <topeapuesta>0</topeapuesta>
+     <ideve>12</ideve>
+   </participante>
+   <participante>
+     <idpart>36</idpart>
+     <nombrepart>B</nombrepart>
+     <tipopagop>3</tipopagop>
+     <topeapuesta>0</topeapuesta>
+     <ideve>12</ideve>
+   </participante>
   </participantes>
   <administradores>
    <administrador>
@@ -58,6 +96,10 @@
    </administrador>
   </administradores>
   <maquinas>
+   <maquina>
+     <maqid>53</maqid>
+     <maqstatus>Activo</maqstatus>
+   </maquina>
    <maquina>
      <maqid>44</maqid>
      <maqstatus>Inactivo</maqstatus>
